@@ -330,8 +330,8 @@ const SEEDS: Seed[] = [
   { title: 'British Carrots 1kg', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400' },
   { title: 'White Potatoes 2.5kg', category: 'grocery', basePrice: 1.85, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
   { title: 'Maris Piper Potatoes 2kg', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
-  { title: 'Brown Onions 1kg', category: 'grocery', basePrice: 0.95, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
-  { title: 'Red Onions 500g', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
+  { title: 'Brown Onions 1kg', category: 'grocery', basePrice: 0.95, image: 'https://loremflickr.com/400/400/brown,onion,vegetable' },
+  { title: 'Red Onions 500g', category: 'grocery', basePrice: 0.85, image: 'https://loremflickr.com/400/400/red,onion,vegetable' },
   { title: 'Garlic Bulb (3 pack)', category: 'grocery', basePrice: 0.99, image: 'https://images.unsplash.com/photo-1582284540020-8acbe03f2bdb?w=400' },
   { title: 'Tomatoes on the Vine 500g', category: 'grocery', basePrice: 1.4, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400' },
   { title: 'Cherry Tomatoes 250g', category: 'grocery', basePrice: 1.2, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400' },
@@ -347,7 +347,7 @@ const SEEDS: Seed[] = [
   { title: 'Sweet Potato 1kg', category: 'grocery', basePrice: 1.6, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
   { title: 'Avocado (2 pack)', category: 'grocery', basePrice: 1.85, image: 'https://images.unsplash.com/photo-1601039641847-7857b994d704?w=400' },
   { title: 'Ginger Root 100g', category: 'grocery', basePrice: 0.7, image: 'https://images.unsplash.com/photo-1582284540020-8acbe03f2bdb?w=400' },
-  { title: 'Spring Onions Bunch', category: 'grocery', basePrice: 0.6, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
+  { title: 'Spring Onions Bunch', category: 'grocery', basePrice: 0.6, image: 'https://loremflickr.com/400/400/spring,onion,green' },
 
   // Fresh fruit
   { title: 'Bananas Loose 1kg', category: 'grocery', basePrice: 0.79, image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400' },
@@ -356,7 +356,7 @@ const SEEDS: Seed[] = [
   { title: 'Strawberries 400g', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1543528176-61b239494933?w=400' },
   { title: 'Blueberries 300g', category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400' },
   { title: 'Raspberries 150g', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400' },
-  { title: 'Green Seedless Grapes 500g', category: 'grocery', basePrice: 2.3, image: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=400' },
+  { title: 'Green Seedless Grapes 500g', category: 'grocery', basePrice: 2.3, image: 'https://loremflickr.com/400/400/green,grapes,fruit' },
   { title: 'Easy Peeler Satsumas 600g', category: 'grocery', basePrice: 1.9, image: 'https://images.unsplash.com/photo-1457296259969-cc63d9ed7c45?w=400' },
   { title: 'Lemons 5 pack', category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1582287014914-1db836b8ce5c?w=400' },
   { title: 'Pineapple Whole', category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400' },
