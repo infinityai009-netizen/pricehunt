@@ -2,7 +2,11 @@
 
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
-const RETAILERS = ['amazon','ebay','argos','currys','johnlewis','tesco','asda','temu','shein','wayfair','ikea','b&q','walmart'];
+const RETAILERS = [
+  'amazon','ebay','argos','currys','johnlewis',
+  'tesco','asda','sainsburys','morrisons','waitrose','aldi','lidl','iceland','ocado',
+  'temu','shein','aliexpress','wayfair','ikea','b&q','walmart',
+];
 const SORTS = [
   { value: 'relevance',  label: 'Relevance' },
   { value: 'price-asc',  label: 'Price: low → high' },

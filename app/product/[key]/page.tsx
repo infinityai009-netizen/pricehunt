@@ -11,6 +11,8 @@ export const dynamic = 'force-dynamic';
 const RETAILER_NAME: Record<string, string> = {
   amazon: 'Amazon', ebay: 'eBay', argos: 'Argos', currys: 'Currys',
   johnlewis: 'John Lewis', tesco: 'Tesco', asda: 'ASDA', sainsburys: "Sainsbury's",
+  morrisons: 'Morrisons', waitrose: 'Waitrose', aldi: 'Aldi', lidl: 'Lidl',
+  iceland: 'Iceland', ocado: 'Ocado',
   temu: 'Temu', shein: 'Shein', aliexpress: 'AliExpress', wayfair: 'Wayfair',
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
 };

@@ -5,6 +5,8 @@ import WishlistButton from './WishlistButton';
 const RETAILER_NAME: Record<string, string> = {
   amazon: 'Amazon', ebay: 'eBay', argos: 'Argos', currys: 'Currys',
   johnlewis: 'John Lewis', tesco: 'Tesco', asda: 'ASDA', sainsburys: "Sainsbury's",
+  morrisons: 'Morrisons', waitrose: 'Waitrose', aldi: 'Aldi', lidl: 'Lidl',
+  iceland: 'Iceland', ocado: 'Ocado',
   temu: 'Temu', shein: 'Shein', aliexpress: 'AliExpress', wayfair: 'Wayfair',
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
 };
@@ -18,6 +20,12 @@ const RETAILER_COLOR: Record<string, string> = {
   tesco: 'bg-blue-100 text-blue-700',
   asda: 'bg-green-100 text-green-800',
   sainsburys: 'bg-orange-100 text-orange-700',
+  morrisons: 'bg-yellow-100 text-yellow-700',
+  waitrose: 'bg-emerald-100 text-emerald-800',
+  aldi: 'bg-sky-100 text-sky-700',
+  lidl: 'bg-blue-100 text-blue-800',
+  iceland: 'bg-rose-100 text-rose-700',
+  ocado: 'bg-violet-100 text-violet-800',
   temu: 'bg-orange-100 text-orange-800',
   shein: 'bg-slate-900 text-white',
   aliexpress: 'bg-red-100 text-red-700',

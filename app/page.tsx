@@ -3,13 +3,15 @@ import SearchBar from '@/components/SearchBar';
 import CategoryGrid from '@/components/CategoryGrid';
 
 const TRENDING = [
-  'iPhone 15', 'PlayStation 5', 'Dyson Airwrap', 'Nintendo Switch',
-  'Air Fryer', 'MacBook Air', 'Nike Air Force 1', 'LEGO',
+  'iPhone 15', 'PlayStation 5', 'Dyson Airwrap', 'Air Fryer',
+  'Milk', 'Cheese', 'Chicken', 'Frozen Pizza', 'Eggs', 'Bread',
+  'Nike Air Force 1', 'LEGO',
 ];
 
 const RETAILERS = [
-  'Amazon','eBay','Argos','Currys','John Lewis','Tesco','ASDA',
-  "Sainsbury's",'Temu','Shein','AliExpress','Wayfair','IKEA','B&Q','Walmart',
+  'Amazon','eBay','Argos','Currys','John Lewis',
+  'Tesco','ASDA',"Sainsbury's",'Morrisons','Waitrose','Aldi','Lidl','Iceland','Ocado',
+  'Temu','Shein','AliExpress','Wayfair','IKEA','B&Q','Walmart',
 ];
 
 export default function HomePage() {

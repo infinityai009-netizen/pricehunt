@@ -91,14 +91,193 @@ const SEEDS: Seed[] = [
   { title: 'Ninja Foodi Air Fryer 7.6L', category: 'home', basePrice: 199, image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400' },
   { title: 'Tower Vortx Air Fryer 4L', category: 'home', basePrice: 59, image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400' },
 
-  // Grocery (UK)
-  { title: 'Heinz Baked Beans 415g x6', category: 'grocery', basePrice: 6, image: 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=400' },
-  { title: 'Cadbury Dairy Milk 360g', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
-  { title: 'Yorkshire Tea 240 Bags', category: 'grocery', basePrice: 7, image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400' },
-  { title: 'Coca-Cola Original 24x330ml', category: 'grocery', basePrice: 14, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
-  { title: 'Quaker Oats 1kg', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  // ─── Grocery (UK supermarket-style) ─────────────────────────────────────────
+
+  // Milk & dairy
+  { title: 'Cravendale Whole Milk 2L', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400' },
+  { title: 'Semi-Skimmed Milk 4 Pints (2.27L)', category: 'grocery', basePrice: 1.7, image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400' },
+  { title: 'Whole Milk 4 Pints (2.27L)', category: 'grocery', basePrice: 1.7, image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400' },
+  { title: 'Skimmed Milk 2 Pints', category: 'grocery', basePrice: 1.1, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400' },
+  { title: 'Alpro Oat Milk 1L', category: 'grocery', basePrice: 1.8, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=400' },
+  { title: 'Oatly Barista Edition 1L', category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=400' },
+  { title: 'Alpro Almond Milk Unsweetened 1L', category: 'grocery', basePrice: 1.8, image: 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=400' },
+  { title: 'Lactofree Semi-Skimmed Milk 1L', category: 'grocery', basePrice: 1.9, image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400' },
+
+  // Cheese
+  { title: 'Cathedral City Mature Cheddar 350g', category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400' },
+  { title: 'Pilgrims Choice Extra Mature Cheddar 550g', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400' },
+  { title: 'Babybel Mini Cheese 12 pack', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400' },
+  { title: 'Philadelphia Original Soft Cheese 280g', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400' },
+  { title: 'Galbani Mozzarella 125g', category: 'grocery', basePrice: 1.2, image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400' },
+  { title: 'Boursin Garlic & Herbs 150g', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400' },
+  { title: 'Parmigiano Reggiano 200g', category: 'grocery', basePrice: 5.5, image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400' },
+  { title: 'Feta Cheese 200g', category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400' },
+  { title: 'Halloumi 225g', category: 'grocery', basePrice: 2.8, image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=400' },
+
+  // Yoghurt, butter, eggs
   { title: 'Lurpak Slightly Salted Butter 500g', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=400' },
-  { title: 'Walkers Crisps Variety 18x25g', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400' },
+  { title: 'Anchor Spreadable Butter 500g', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=400' },
+  { title: 'Free Range Large Eggs (12 pack)', category: 'grocery', basePrice: 3.2, image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400' },
+  { title: 'Free Range Medium Eggs (6 pack)', category: 'grocery', basePrice: 1.7, image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400' },
+  { title: 'Yeo Valley Natural Yoghurt 500g', category: 'grocery', basePrice: 1.6, image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400' },
+  { title: 'Fage Total 0% Greek Yoghurt 450g', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400' },
+  { title: 'Müller Corner Strawberry 6 pack', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400' },
+  { title: 'Activia Strawberry Yoghurt 4 pack', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400' },
+
+  // Fresh vegetables
+  { title: 'British Carrots 1kg', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400' },
+  { title: 'White Potatoes 2.5kg', category: 'grocery', basePrice: 1.85, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
+  { title: 'Maris Piper Potatoes 2kg', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
+  { title: 'Brown Onions 1kg', category: 'grocery', basePrice: 0.95, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
+  { title: 'Red Onions 500g', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
+  { title: 'Garlic Bulb (3 pack)', category: 'grocery', basePrice: 0.99, image: 'https://images.unsplash.com/photo-1582284540020-8acbe03f2bdb?w=400' },
+  { title: 'Tomatoes on the Vine 500g', category: 'grocery', basePrice: 1.4, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400' },
+  { title: 'Cherry Tomatoes 250g', category: 'grocery', basePrice: 1.2, image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400' },
+  { title: 'Baby Spinach 250g', category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400' },
+  { title: 'Iceberg Lettuce', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400' },
+  { title: 'Cucumber Whole', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400' },
+  { title: 'Bell Pepper Mixed 3 pack', category: 'grocery', basePrice: 1.7, image: 'https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?w=400' },
+  { title: 'Broccoli 350g', category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400' },
+  { title: 'Cauliflower Whole', category: 'grocery', basePrice: 1.1, image: 'https://images.unsplash.com/photo-1568584711271-6c929fb49b60?w=400' },
+  { title: 'Mushrooms Closed Cup 250g', category: 'grocery', basePrice: 0.9, image: 'https://images.unsplash.com/photo-1602273532010-9c8a9faf5ea3?w=400' },
+  { title: 'Aubergine', category: 'grocery', basePrice: 0.9, image: 'https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400' },
+  { title: 'Courgettes 500g', category: 'grocery', basePrice: 0.99, image: 'https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400' },
+  { title: 'Sweet Potato 1kg', category: 'grocery', basePrice: 1.6, image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400' },
+  { title: 'Avocado (2 pack)', category: 'grocery', basePrice: 1.85, image: 'https://images.unsplash.com/photo-1601039641847-7857b994d704?w=400' },
+  { title: 'Ginger Root 100g', category: 'grocery', basePrice: 0.7, image: 'https://images.unsplash.com/photo-1582284540020-8acbe03f2bdb?w=400' },
+  { title: 'Spring Onions Bunch', category: 'grocery', basePrice: 0.6, image: 'https://images.unsplash.com/photo-1620574387735-3624d75b2d56?w=400' },
+
+  // Fresh fruit
+  { title: 'Bananas Loose 1kg', category: 'grocery', basePrice: 0.79, image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400' },
+  { title: 'Pink Lady Apples 4 pack', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400' },
+  { title: 'Gala Apples 6 pack', category: 'grocery', basePrice: 1.6, image: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400' },
+  { title: 'Strawberries 400g', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1543528176-61b239494933?w=400' },
+  { title: 'Blueberries 300g', category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400' },
+  { title: 'Raspberries 150g', category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400' },
+  { title: 'Green Seedless Grapes 500g', category: 'grocery', basePrice: 2.3, image: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?w=400' },
+  { title: 'Easy Peeler Satsumas 600g', category: 'grocery', basePrice: 1.9, image: 'https://images.unsplash.com/photo-1457296259969-cc63d9ed7c45?w=400' },
+  { title: 'Lemons 5 pack', category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1582287014914-1db836b8ce5c?w=400' },
+  { title: 'Pineapple Whole', category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400' },
+  { title: 'Watermelon Whole', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400' },
+  { title: 'Mango Ripen at Home', category: 'grocery', basePrice: 0.9, image: 'https://images.unsplash.com/photo-1605027990121-cbae9ecd5b18?w=400' },
+
+  // Meat & poultry
+  { title: 'British Chicken Breast Fillets 650g', category: 'grocery', basePrice: 5.5, image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400' },
+  { title: 'British Chicken Thighs 1kg', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400' },
+  { title: 'British Beef Mince 5% Fat 500g', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'British Beef Steak Mince 12% Fat 500g', category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'Richmond Thick Pork Sausages 8 pack', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'British Smoked Back Bacon 300g', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'British Pork Loin Steaks 500g', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'Lamb Mince 500g', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400' },
+  { title: 'Whole Chicken 1.5kg', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400' },
+
+  // Fish & seafood
+  { title: 'Atlantic Salmon Fillets 240g', category: 'grocery', basePrice: 4.5, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400' },
+  { title: 'Smoked Salmon Slices 100g', category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400' },
+  { title: 'Cod Fillets 320g', category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400' },
+  { title: 'King Prawns Cooked 200g', category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400' },
+  { title: 'Tinned Tuna in Spring Water 4x80g', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1559561853-08451507cbe7?w=400' },
+
+  // Frozen
+  { title: 'Birds Eye Garden Peas 800g (Frozen)', category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Birds Eye Sweetcorn 720g (Frozen)', category: 'grocery', basePrice: 2.4, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'McCain Home Chips 1.5kg (Frozen)', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Aunt Bessies Roast Potatoes 700g (Frozen)', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Birds Eye Chicken Fillets 12 pack (Frozen)', category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Birds Eye Fish Fingers 24 pack', category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Chicago Town Pepperoni Pizzas 4 pack (Frozen)', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400' },
+  { title: 'Goodfellas Stonebaked Margherita Pizza (Frozen)', category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400' },
+  { title: 'Quorn Chicken Style Pieces 300g (Frozen)', category: 'grocery', basePrice: 2.7, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: 'Frozen Mixed Berries 500g', category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?w=400' },
+  { title: "Ben & Jerry's Cookie Dough Ice Cream 465ml", category: 'grocery', basePrice: 5.5, image: 'https://images.unsplash.com/photo-1581088382144-cffdbf85b8b3?w=400' },
+  { title: "Magnum Classic Ice Cream 6 pack", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1581088382144-cffdbf85b8b3?w=400' },
+  { title: "Cornetto Classico 6 pack", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1581088382144-cffdbf85b8b3?w=400' },
+  { title: "Häagen-Dazs Vanilla 460ml", category: 'grocery', basePrice: 4.5, image: 'https://images.unsplash.com/photo-1581088382144-cffdbf85b8b3?w=400' },
+
+  // Bakery
+  { title: "Warburtons Toastie Thick Sliced White Loaf 800g", category: 'grocery', basePrice: 1.4, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Hovis Soft White Medium Sliced 800g", category: 'grocery', basePrice: 1.3, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Kingsmill Wholemeal Medium 800g", category: 'grocery', basePrice: 1.3, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Tiger Bloomer Loaf", category: 'grocery', basePrice: 1.6, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Butter Croissants 4 pack", category: 'grocery', basePrice: 1.8, image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400' },
+  { title: "Pain au Chocolat 4 pack", category: 'grocery', basePrice: 1.9, image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400' },
+  { title: "Warburtons White Bagels 5 pack", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Soft White Tortilla Wraps 8 pack", category: 'grocery', basePrice: 1.3, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Brioche Burger Buns 4 pack", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+
+  // Pantry: pasta, rice, sauces
+  { title: "Tilda Basmati Rice 1kg", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400' },
+  { title: "Long Grain Easy Cook Rice 2kg", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400' },
+  { title: "Napolina Penne Pasta 500g", category: 'grocery', basePrice: 1.2, image: 'https://images.unsplash.com/photo-1551462147-37885acc36f1?w=400' },
+  { title: "Napolina Spaghetti 500g", category: 'grocery', basePrice: 1.2, image: 'https://images.unsplash.com/photo-1551462147-37885acc36f1?w=400' },
+  { title: "Dolmio Bolognese Sauce 500g", category: 'grocery', basePrice: 1.85, image: 'https://images.unsplash.com/photo-1551462147-37885acc36f1?w=400' },
+  { title: "Heinz Baked Beans 415g x6", category: 'grocery', basePrice: 6, image: 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=400' },
+  { title: "Heinz Tomato Soup 400g x4", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=400' },
+  { title: "Heinz Tomato Ketchup 460g", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Hellmann's Real Mayonnaise 600ml", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Branston Pickle 360g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Filippo Berio Extra Virgin Olive Oil 500ml", category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400' },
+  { title: "Tate & Lyle Granulated Sugar 1kg", category: 'grocery', basePrice: 1.3, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  { title: "Saxa Table Salt 750g", category: 'grocery', basePrice: 0.85, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  { title: "Quaker Oats Rolled Oats 1kg", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  { title: "Kellogg's Corn Flakes 500g", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  { title: "Weetabix 24 pack", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1517673400267-0251440c45dc?w=400' },
+  { title: "Nutella Hazelnut Spread 400g", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Robertson's Strawberry Jam 340g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Yorkshire Tea 240 Bags", category: 'grocery', basePrice: 7, image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400' },
+  { title: "PG Tips Pyramid Tea 160 Bags", category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400' },
+  { title: "Nescafé Gold Blend Instant Coffee 200g", category: 'grocery', basePrice: 6.5, image: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=400' },
+  { title: "Lavazza Qualità Oro Ground Coffee 250g", category: 'grocery', basePrice: 4.5, image: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=400' },
+
+  // Drinks
+  { title: "Coca-Cola Original 24x330ml", category: 'grocery', basePrice: 14, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
+  { title: "Diet Coke 24x330ml", category: 'grocery', basePrice: 12, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
+  { title: "Pepsi Max 24x330ml", category: 'grocery', basePrice: 11, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
+  { title: "Tropicana Smooth Orange Juice 1.4L", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400' },
+  { title: "Innocent Smooth Orange Juice 900ml", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400' },
+  { title: "Robinsons Apple & Blackcurrant Squash 1L", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400' },
+  { title: "Evian Still Water 6x1.5L", category: 'grocery', basePrice: 4.5, image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400' },
+  { title: "Highland Spring Still Water 12x500ml", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=400' },
+  { title: "Red Bull Energy Drink 4x250ml", category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
+  { title: "Lucozade Original Sport 4x500ml", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400' },
+
+  // Snacks & sweets
+  { title: "Cadbury Dairy Milk 360g", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+  { title: "Cadbury Dairy Milk Buttons 240g", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+  { title: "Galaxy Smooth Milk Chocolate 200g", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+  { title: "Maltesers Sharing Bag 175g", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+  { title: "Kit Kat 4 Finger Multipack 9 pack", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+  { title: "Walkers Crisps Variety 18x25g", category: 'grocery', basePrice: 5, image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400' },
+  { title: "Doritos Chilli Heatwave 150g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400' },
+  { title: "Pringles Original 200g", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400' },
+  { title: "McVitie's Digestive Biscuits 360g", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400' },
+  { title: "McVitie's Chocolate Digestives 433g", category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400' },
+  { title: "Jaffa Cakes 30 pack", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400' },
+  { title: "Haribo Starmix 700g", category: 'grocery', basePrice: 4.5, image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400' },
+
+  // Indian / world food
+  { title: "Patak's Tikka Masala Cooking Sauce 450g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Patak's Korma Curry Paste 290g", category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "TRS Chana Dal 500g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400' },
+  { title: "TRS Kala Chana 500g", category: 'grocery', basePrice: 2, image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400' },
+  { title: "TRS Red Lentils 1kg", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400' },
+  { title: "Sharwood's Plain Naan Bread 2 pack", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400' },
+  { title: "Patak's Mango Chutney 340g", category: 'grocery', basePrice: 2.2, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Kikkoman Soy Sauce 250ml", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Old El Paso Fajita Kit", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+  { title: "Sriracha Hot Chilli Sauce 481g", category: 'grocery', basePrice: 3.5, image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400' },
+
+  // Household & toiletries (still grocery-cart category in UK supermarkets)
+  { title: "Andrex Classic Clean Toilet Roll 16 pack", category: 'grocery', basePrice: 9.5, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Plenty Kitchen Roll 6 pack", category: 'grocery', basePrice: 7, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Fairy Original Washing Up Liquid 870ml", category: 'grocery', basePrice: 3, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Persil Bio Washing Liquid 1.43L", category: 'grocery', basePrice: 7, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Comfort Pure Fabric Conditioner 1.5L", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Cif Cream Lemon 500ml", category: 'grocery', basePrice: 1.5, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Colgate Total Toothpaste 75ml", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400' },
+  { title: "Head & Shoulders Classic Clean Shampoo 500ml", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400' },
+  { title: "Pampers Baby Dry Size 4 Nappies 50 pack", category: 'grocery', basePrice: 9, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
 
   // Toys
   { title: 'LEGO Star Wars Millennium Falcon', category: 'toys', basePrice: 159, image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
@@ -131,10 +310,16 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   ebay:       ['electronics','fashion','gaming','sports','toys','cameras','home','furniture'],
   argos:      ['electronics','home','gaming','toys','sports','furniture','beauty','outdoor'],
   currys:     ['electronics','gaming','home','cameras'],
-  johnlewis:  ['electronics','fashion','beauty','home','furniture','toys','cameras'],
-  tesco:      ['grocery','home','beauty','toys'],
-  asda:       ['grocery','home','beauty','toys','fashion'],
-  sainsburys: ['grocery','home','beauty'],
+  johnlewis:  ['electronics','fashion','beauty','home','furniture','toys','cameras','grocery'],
+  tesco:      ['grocery','home','beauty','toys','pet'],
+  asda:       ['grocery','home','beauty','toys','fashion','pet'],
+  sainsburys: ['grocery','home','beauty','pet'],
+  morrisons:  ['grocery','home','beauty','pet'],
+  waitrose:   ['grocery','home','beauty'],
+  aldi:       ['grocery','home','beauty','toys'],
+  lidl:       ['grocery','home','beauty','toys'],
+  iceland:    ['grocery','home'],
+  ocado:      ['grocery','home','beauty','pet'],
   temu:       ['fashion','home','toys','beauty','outdoor','pet','sports'],
   shein:      ['fashion','beauty','home'],
   aliexpress: ['electronics','fashion','home','toys','outdoor','sports'],
@@ -203,6 +388,12 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'tesco':      return `https://www.tesco.com/groceries/en-GB/search?query=${q}`;
     case 'asda':       return `https://groceries.asda.com/search/${q}`;
     case 'sainsburys': return `https://www.sainsburys.co.uk/gol-ui/SearchResults/${q}`;
+    case 'morrisons':  return `https://groceries.morrisons.com/search?entry=${q}`;
+    case 'waitrose':   return `https://www.waitrose.com/ecom/shop/search?searchTerm=${q}`;
+    case 'aldi':       return `https://www.aldi.co.uk/search?text=${q}`;
+    case 'lidl':       return `https://www.lidl.co.uk/q/search?query=${q}`;
+    case 'iceland':    return `https://www.iceland.co.uk/search?q=${q}`;
+    case 'ocado':      return `https://www.ocado.com/search?entry=${q}`;
     case 'temu':       return `https://www.temu.com/search_result.html?search_key=${q}`;
     case 'shein':      return `https://uk.shein.com/pdsearch/${q}/`;
     case 'aliexpress': return `https://www.aliexpress.com/wholesale?SearchText=${q}`;
