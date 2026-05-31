@@ -4,7 +4,7 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 const RETAILERS = [
   'amazon','ebay','argos','currys','johnlewis',
-  'tesco','asda','sainsburys','morrisons','waitrose','aldi','lidl','iceland','ocado',
+  'tesco','asda','sainsburys','morrisons','waitrose','aldi','lidl','iceland','ocado','coop','marksandspencer',
   'temu','shein','aliexpress','wayfair','ikea','b&q','walmart',
 ];
 const SORTS = [

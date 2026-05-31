@@ -13,6 +13,8 @@ export type Retailer =
   | 'lidl'
   | 'iceland'
   | 'ocado'
+  | 'coop'
+  | 'marksandspencer'
   | 'temu'
   | 'shein'
   | 'aliexpress'

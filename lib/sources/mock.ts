@@ -320,6 +320,8 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   lidl:       ['grocery','home','beauty','toys'],
   iceland:    ['grocery','home'],
   ocado:      ['grocery','home','beauty','pet'],
+  coop:       ['grocery','home','beauty','pet'],
+  marksandspencer: ['grocery','home','beauty','fashion','home'],
   temu:       ['fashion','home','toys','beauty','outdoor','pet','sports'],
   shein:      ['fashion','beauty','home'],
   aliexpress: ['electronics','fashion','home','toys','outdoor','sports'],
@@ -394,6 +396,8 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'lidl':       return `https://www.lidl.co.uk/q/search?query=${q}`;
     case 'iceland':    return `https://www.iceland.co.uk/search?q=${q}`;
     case 'ocado':      return `https://www.ocado.com/search?entry=${q}`;
+    case 'coop':       return `https://www.coop.co.uk/search?q=${q}`;
+    case 'marksandspencer': return `https://www.marksandspencer.com/l/food-to-order/search?q=${q}`;
     case 'temu':       return `https://www.temu.com/search_result.html?search_key=${q}`;
     case 'shein':      return `https://uk.shein.com/pdsearch/${q}/`;
     case 'aliexpress': return `https://www.aliexpress.com/wholesale?SearchText=${q}`;

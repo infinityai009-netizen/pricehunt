@@ -6,7 +6,7 @@ const RETAILER_NAME: Record<string, string> = {
   amazon: 'Amazon', ebay: 'eBay', argos: 'Argos', currys: 'Currys',
   johnlewis: 'John Lewis', tesco: 'Tesco', asda: 'ASDA', sainsburys: "Sainsbury's",
   morrisons: 'Morrisons', waitrose: 'Waitrose', aldi: 'Aldi', lidl: 'Lidl',
-  iceland: 'Iceland', ocado: 'Ocado',
+  iceland: 'Iceland', ocado: 'Ocado', coop: 'Co-op', marksandspencer: 'M&S',
   temu: 'Temu', shein: 'Shein', aliexpress: 'AliExpress', wayfair: 'Wayfair',
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
 };
@@ -26,6 +26,8 @@ const RETAILER_COLOR: Record<string, string> = {
   lidl: 'bg-blue-100 text-blue-800',
   iceland: 'bg-rose-100 text-rose-700',
   ocado: 'bg-violet-100 text-violet-800',
+  coop: 'bg-indigo-100 text-indigo-700',
+  marksandspencer: 'bg-emerald-100 text-emerald-900',
   temu: 'bg-orange-100 text-orange-800',
   shein: 'bg-slate-900 text-white',
   aliexpress: 'bg-red-100 text-red-700',

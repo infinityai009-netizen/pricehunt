@@ -10,7 +10,7 @@ const TRENDING = [
 
 const RETAILERS = [
   'Amazon','eBay','Argos','Currys','John Lewis',
-  'Tesco','ASDA',"Sainsbury's",'Morrisons','Waitrose','Aldi','Lidl','Iceland','Ocado',
+  'Tesco','ASDA',"Sainsbury's",'Morrisons','Waitrose','Aldi','Lidl','Iceland','Ocado','Co-op','M&S',
   'Temu','Shein','AliExpress','Wayfair','IKEA','B&Q','Walmart',
 ];
 
