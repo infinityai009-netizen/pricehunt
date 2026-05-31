@@ -1,12 +1,11 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function SearchBar({ initial = '' }: { initial?: string }) {
   const router = useRouter();
-  const params = useSearchParams();
-  const [q, setQ] = useState(initial || params.get('q') || '');
+  const [q, setQ] = useState(initial);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
