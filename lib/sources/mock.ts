@@ -1040,6 +1040,378 @@ function hash(s: string): number {
 // Marketplace retailers we want to surface heavily — they stock almost everything cheap.
 const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
 
+// ─── Central image picker ───────────────────────────────────────────────────
+// Single source of truth for product photos. Maps the product TITLE
+// to known-good keywords (no brand names) so LoremFlickr returns the
+// right kind of image. If no rule matches, falls back to category.
+function smartImage(seed: Seed): string {
+  const t = seed.title.toLowerCase();
+  const lf = (kw: string) => `https://loremflickr.com/400/400/${kw}`;
+
+  // ─ Phones ────────────────────────────────────
+  if (/iphone\s*16\s*pro/.test(t))   return lf('smartphone,pro,modern');
+  if (/iphone\s*16/.test(t))         return lf('smartphone,modern,phone');
+  if (/iphone\s*15\s*pro/.test(t))   return lf('smartphone,pro,titanium');
+  if (/iphone\s*15/.test(t))         return lf('smartphone,phone,colorful');
+  if (/iphone\s*14/.test(t))         return lf('smartphone,iphone,phone');
+  if (/iphone\s*13/.test(t))         return lf('smartphone,phone,blue');
+  if (/iphone\s*12/.test(t))         return lf('smartphone,phone,purple');
+  if (/iphone\s*11|iphone\s*se/.test(t)) return lf('smartphone,phone,older');
+  if (/galaxy\s*s2[345]|galaxy\s*z/.test(t)) return lf('smartphone,android,phone');
+  if (/galaxy\s*a/.test(t))          return lf('smartphone,android,budget');
+  if (/pixel/.test(t))               return lf('smartphone,android,modern');
+  if (/(motorola|moto\s|nokia|honor|oppo|nothing\s*phone|redmi|xiaomi\s*\d+t|oneplus\s*\d+)/.test(t)) return lf('smartphone,android,mobile');
+  if (/doro/.test(t))                return lf('smartphone,simple,phone');
+
+  // ─ Laptops / tablets ─────────────────────────
+  if (/macbook\s*air/.test(t))       return lf('laptop,silver,thin');
+  if (/macbook\s*pro/.test(t))       return lf('laptop,professional,modern');
+  if (/xps|thinkpad|pavilion/.test(t)) return lf('laptop,computer,modern');
+  if (/ipad\s*pro/.test(t))          return lf('tablet,pro,large');
+  if (/ipad\s*air/.test(t))          return lf('tablet,thin,modern');
+  if (/ipad/.test(t))                return lf('tablet,touchscreen');
+  if (/galaxy\s*tab/.test(t))        return lf('tablet,android');
+
+  // ─ TVs ───────────────────────────────────────
+  if (/85"|85 inch/.test(t))         return lf('television,large,screen');
+  if (/(75"|75 inch|77")/.test(t))   return lf('television,big,screen');
+  if (/65"|65 inch/.test(t))         return lf('television,large,modern');
+  if (/oled/.test(t))                return lf('television,oled,thin');
+  if (/qled|crystal|neo qled/.test(t)) return lf('television,modern,4k');
+  if (/fire tv\s*stick|chromecast|roku|apple tv/.test(t)) return lf('streaming,stick,device');
+  if (/\btv\b|television/.test(t))   return lf('television,screen,living');
+
+  // ─ Headphones / audio ────────────────────────
+  if (/airpods\s*pro/.test(t))       return lf('earbuds,wireless,white');
+  if (/airpods\s*max/.test(t))       return lf('headphones,over-ear,premium');
+  if (/airpods/.test(t))             return lf('earbuds,wireless,case');
+  if (/(buds|earbud|in-ear)/.test(t)) return lf('earbuds,wireless,small');
+  if (/(gaming\s*head|arctis|kraken|cloud\s*iii|hyperx|razer|corsair)/.test(t)) return lf('gaming,headset,microphone');
+  if (/(headphone|over-ear|on-ear|wh-1000|quietcomfort|qc\s*ultra|momentum|hd\s*\d|px\s*\d)/.test(t)) return lf('headphones,wireless,music');
+  if (/(echo|alexa|nest|homepod|sonos|jbl|bose\s*soundlink|soundcore\s*boom)/.test(t)) return lf('speaker,smart,home');
+
+  // ─ Smartwatches ──────────────────────────────
+  if (/apple\s*watch/.test(t))       return lf('smartwatch,wrist,modern');
+  if (/galaxy\s*watch/.test(t))      return lf('smartwatch,android,round');
+  if (/(fitbit|charge|inspire|sense)/.test(t)) return lf('fitness,tracker,wristband');
+  if (/(garmin|forerunner|fenix|venu|instinct)/.test(t)) return lf('sports,watch,wrist');
+  if (/(g-shock|casio|amazfit|ticwatch|withings|huawei\s*watch|huawei\s*band|xiaomi\s*smart\s*band|xiaomi\s*watch|oneplus\s*watch|pixel\s*watch|timex)/.test(t)) return lf('smartwatch,watch,wrist');
+  if (/f-91w|vintage|a158/.test(t))  return lf('digital,watch,retro');
+
+  // ─ Cameras ───────────────────────────────────
+  if (/gopro/.test(t))               return lf('action,camera,small');
+  if (/dji|osmo/.test(t))            return lf('gimbal,camera,pocket');
+  if (/(canon|sony\s*alpha|nikon|mirrorless)/.test(t)) return lf('camera,mirrorless,lens');
+
+  // ─ Gaming consoles & accessories ─────────────
+  if (/playstation\s*5|ps5/.test(t)) return lf('console,gaming,white');
+  if (/xbox/.test(t))                return lf('console,gaming,black');
+  if (/nintendo\s*switch/.test(t))   return lf('console,handheld,switch');
+  if (/steam\s*deck/.test(t))        return lf('console,handheld,portable');
+  if (/quest\s*3|vr/.test(t))        return lf('vr,headset,virtual');
+  if (/(razer\s*deathadder|gaming\s*mouse)/.test(t)) return lf('gaming,mouse,rgb');
+
+  // ─ Phone cases / chargers / cables ───────────
+  if (/(case|cover|protector|sleeve|otterbox|spigen)/.test(t)) {
+    if (/screen\s*protector|tempered\s*glass|glas\s*tr|whitestone/.test(t)) return lf('screen,protector,glass');
+    return lf('phone,case,protection');
+  }
+  if (/magsafe/.test(t))             return lf('wireless,charger,magnetic');
+  if (/(wireless\s*charg|charging\s*pad|charging\s*stand)/.test(t)) return lf('wireless,charger,pad');
+  if (/(power\s*bank|powercore|portable\s*charger|powerstation|maggo|portable\s*power\s*station)/.test(t)) return lf('powerbank,portable,charger');
+  if (/(charger|power\s*adapter|wall\s*charger|gan\s*charger|charging\s*hub)/.test(t)) return lf('charger,adapter,plug');
+  if (/(lightning\s*cable|usb-c\s*cable|usbc\s*cable|charge\s*cable|thunderbolt)/.test(t)) return lf('cable,usb,wire');
+  if (/hdmi/.test(t))                return lf('hdmi,cable,wire');
+  if (/(ethernet|cat\s*6|cat\s*8)/.test(t)) return lf('ethernet,cable,network');
+  if (/(usb-c\s*hub|usbc\s*hub|multiport\s*adapter|digital\s*av\s*multiport)/.test(t)) return lf('usb,hub,adapter');
+  if (/(displayport)/.test(t))       return lf('displayport,cable,monitor');
+  if (/(aux\s*audio|3\.5mm\s*audio)/.test(t)) return lf('audio,cable,jack');
+  if (/(micro\s*usb)/.test(t))       return lf('micro,usb,cable');
+  if (/(airtag|smarttag|tile\s*mate)/.test(t)) return lf('bluetooth,tracker,tag');
+  if (/(ring\s*doorbell|ring\s*indoor|eufy)/.test(t)) return lf('security,camera,doorbell');
+  if (/(philips\s*hue|tp-link\s*tapo|smart\s*plug|smart\s*bulb)/.test(t)) return lf('smart,light,bulb');
+
+  // ─ White goods (fridges / washers / dryers) ──
+  if (/(fridge|refrigerator|freezer)/.test(t)) {
+    if (/american|side-by-side|side\s*by\s*side|instaview/.test(t)) return lf('refrigerator,american,silver');
+    if (/wine\s*cooler|drinks\s*display/.test(t)) return lf('wine,cooler,bottles');
+    if (/cosmetic.*pink/.test(t)) return lf('mini,refrigerator,pink');
+    if (/(mini|cookology|husky|under\s*counter)/.test(t)) return lf('mini,refrigerator,small');
+    if (/retro|smeg/.test(t))     return lf('retro,refrigerator,pastel');
+    if (/chest/.test(t))          return lf('chest,freezer,white');
+    if (/tall\s*freezer|larder/.test(t)) return lf('freezer,tall,kitchen');
+    return lf('refrigerator,kitchen,modern');
+  }
+  if (/washer\s*dryer/.test(t))      return lf('washer,dryer,combo');
+  if (/(washing\s*machine|washer|laundry\s*machine)/.test(t)) return lf('washing,machine,laundry');
+  if (/(tumble\s*dryer|heat\s*pump\s*dryer|condenser\s*dryer|vented\s*dryer|\sdryer\s|\sdryer$)/.test(t)) return lf('tumble,dryer,laundry');
+  if (/dishwasher/.test(t))          return lf('dishwasher,kitchen,modern');
+  if (/(microwave)/.test(t))         return lf('microwave,kitchen,countertop');
+  if (/(range\s*cooker|electric\s*cooker|cookcentre|sterling)/.test(t)) return lf('cooker,range,kitchen');
+  if (/(built-in\s*oven|single\s*oven|double\s*oven|steam\s*oven)/.test(t)) return lf('oven,built-in,kitchen');
+  if (/(induction\s*hob|hob|hot\s*plate)/.test(t)) return lf('hob,cooktop,kitchen');
+
+  // ─ Fans & cooling ────────────────────────────
+  if (/(bladeless|dyson\s*cool|dyson\s*hot|dyson\s*pure)/.test(t)) return lf('bladeless,tower,fan');
+  if (/tower\s*fan/.test(t))         return lf('tower,fan,tall');
+  if (/pedestal\s*fan/.test(t))      return lf('pedestal,fan,standing');
+  if (/desk\s*fan|usb\s*fan|mini\s*fan|handheld\s*fan|clip.on\s*fan/.test(t)) return lf('desk,fan,small');
+  if (/ceiling\s*fan/.test(t))       return lf('ceiling,fan,room');
+  if (/air\s*conditioner|portable\s*ac|chillflex|pinguino|vornado/.test(t)) return lf('air,conditioner,cool');
+  if (/(\sfan\s|\sfan$|cooling)/.test(t)) return lf('fan,electric,cooling');
+
+  // ─ Other home appliances ─────────────────────
+  if (/(air\s*fryer|airfryer)/.test(t)) return lf('airfryer,kitchen,appliance');
+  if (/vacuum/.test(t))              return lf('vacuum,cleaner,cordless');
+  if (/(coffee\s*machine|nespresso|espresso|coffee\s*maker)/.test(t)) return lf('coffee,machine,espresso');
+  if (/(kettle|toaster)/.test(t))    return lf('kettle,toaster,kitchen');
+
+  // ─ Beauty / personal care ────────────────────
+  if (/(airwrap|hair\s*dryer|supersonic|hair\s*styler|hair\s*curling)/.test(t)) return lf('hairdryer,beauty,salon');
+  if (/(hair\s*brush|scalp\s*massager|hair\s*wax|hair\s*ribbon)/.test(t)) return lf('hair,brush,care');
+  if (/(jade\s*roller|gua\s*sha|ice\s*roller|face\s*brush|cleansing\s*brush)/.test(t)) return lf('beauty,face,skincare');
+  if (/(makeup\s*sponge|eyelash|magnetic\s*eyeliner|lip\s*plumper|press\s*on\s*nails|nail\s*polish|vanity\s*mirror)/.test(t)) return lf('makeup,beauty,cosmetics');
+  if (/(lip\s*balm|sheet\s*mask|pimple\s*patch|self.tanning|hair\s*removal)/.test(t)) return lf('skincare,beauty,product');
+  if (/(magic\s*cream|niacinamide|olaplex|charlotte\s*tilbury)/.test(t)) return lf('skincare,beauty,bottle');
+
+  // ─ Fashion ───────────────────────────────────
+  if (/(maxi\s*dress|midi\s*dress|bodycon|satin\s*slip|cottagecore|knit\s*dress)/.test(t)) return lf('dress,fashion,elegant');
+  if (/(crop\s*top|tank\s*top|graphic\s*tee|oversized\s*tee|mesh\s*top|bralette)/.test(t)) return lf('top,fashion,style');
+  if (/(jeans|denim)/.test(t))       return lf('jeans,denim,fashion');
+  if (/(cargo\s*pants|chinos|trousers|joggers)/.test(t)) return lf('pants,trousers,fashion');
+  if (/(mini\s*skirt|pleated\s*skirt|skirt|skort)/.test(t)) return lf('skirt,fashion,women');
+  if (/(leather\s*jacket|denim\s*jacket|puffer\s*jacket|trench\s*coat|blazer|bomber\s*jacket|nuptse)/.test(t)) return lf('jacket,fashion,outer');
+  if (/(cardigan|hoodie|sweatshirt|sweater)/.test(t)) return lf('hoodie,fashion,casual');
+  if (/(pyjama|lounge\s*set|onesie|hoodie\s*blanket)/.test(t)) return lf('pyjama,loungewear,sleep');
+  if (/(yoga\s*leggings|sports\s*bra|activewear|leggings)/.test(t)) return lf('activewear,fitness,women');
+  if (/(bikini|swimsuit|swim\s*shorts|beach\s*cover|kaftan)/.test(t)) return lf('swimwear,beach,summer');
+  if (/(polo|polo\s*shirt|flannel|sweatshirt|t.shirt|suit)/.test(t)) return lf('mens,fashion,shirt');
+  if (/(boxer|brief|sock)/.test(t))  return lf('underwear,basics,clothing');
+  if (/(air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|new\s*balance|trainer|sneaker)/.test(t)) return lf('sneakers,trainers,fashion');
+  if (/(dr\.\s*martens|ugg|boot)/.test(t)) return lf('boots,fashion,leather');
+  if (/(heel|court\s*shoe|strappy|stiletto)/.test(t)) return lf('heels,shoes,women');
+  if (/(loafer|sandal|flip.flop|birkenstock)/.test(t)) return lf('sandals,shoes,summer');
+  if (/(crossbody|tote\s*bag|shoulder\s*bag|mini\s*bag|fluffy\s*tote|pearl\s*beaded)/.test(t)) return lf('handbag,fashion,women');
+  if (/(backpack|eastpak|jansport)/.test(t)) return lf('backpack,bag,school');
+  if (/(wallet)/.test(t))            return lf('wallet,leather,money');
+  if (/(sunglasses|aviator|wayfarer|cat\s*eye)/.test(t)) return lf('sunglasses,fashion,style');
+  if (/(earring|hoop|necklace|pendant|bracelet|ring\s*set|anklet|toe\s*ring|body\s*chain|drop\s*crystal|aesthetic\s*ring|scrunchie|hair\s*clip|butterfly\s*clip|coquette|bow)/.test(t)) return lf('jewellery,fashion,accessory');
+  if (/(beanie|baseball\s*cap|bucket\s*hat|wide\s*brim|hat)/.test(t)) return lf('hat,fashion,headwear');
+  if (/(belt|scarf|tights|fishnet|leg\s*warmer)/.test(t)) return lf('accessory,fashion,wear');
+  if (/(phone\s*strap)/.test(t))     return lf('phone,strap,accessory');
+  if (/(maid\s*costume|cosplay)/.test(t)) return lf('costume,cosplay,outfit');
+
+  // ─ Grocery: dairy ────────────────────────────
+  if (/(whole\s*milk|semi.skimmed|skimmed\s*milk|cravendale|lactofree)/.test(t)) return lf('milk,bottle,dairy');
+  if (/(oat\s*milk|almond\s*milk|alpro|oatly)/.test(t)) return lf('milk,plant,carton');
+  if (/(cheddar|babybel|philadelphia|mozzarella|parmesan|parmigiano|feta|halloumi|boursin|cheese)/.test(t)) return lf('cheese,dairy,block');
+  if (/(yoghurt|yogurt|fage|muller|activia)/.test(t)) return lf('yoghurt,pot,dairy');
+  if (/(butter|lurpak|anchor)/.test(t)) return lf('butter,dairy,block');
+  if (/(eggs|free\s*range)/.test(t)) return lf('eggs,carton,fresh');
+
+  // ─ Grocery: fresh produce ────────────────────
+  if (/(carrot)/.test(t))            return lf('carrots,orange,vegetable');
+  if (/potato|maris\s*piper/.test(t)) return lf('potatoes,brown,vegetable');
+  if (/sweet\s*potato/.test(t))      return lf('sweet,potato,orange');
+  if (/brown\s*onion/.test(t))       return lf('onion,brown,vegetable');
+  if (/red\s*onion/.test(t))         return lf('onion,red,vegetable');
+  if (/spring\s*onion/.test(t))      return lf('spring,onion,green');
+  if (/garlic/.test(t))              return lf('garlic,bulb,cloves');
+  if (/(tomato|cherry\s*tomato)/.test(t)) return lf('tomatoes,red,fresh');
+  if (/spinach/.test(t))             return lf('spinach,green,leaves');
+  if (/lettuce/.test(t))             return lf('lettuce,iceberg,green');
+  if (/cucumber/.test(t))            return lf('cucumber,green,fresh');
+  if (/(pepper|bell\s*pepper)/.test(t)) return lf('peppers,colorful,bell');
+  if (/broccoli/.test(t))            return lf('broccoli,green,vegetable');
+  if (/cauliflower/.test(t))         return lf('cauliflower,white,vegetable');
+  if (/mushroom/.test(t))            return lf('mushrooms,brown,fresh');
+  if (/aubergine|eggplant/.test(t))  return lf('aubergine,purple,vegetable');
+  if (/courgette|zucchini/.test(t))  return lf('courgette,green,vegetable');
+  if (/avocado/.test(t))             return lf('avocado,green,fresh');
+  if (/ginger/.test(t))              return lf('ginger,root,fresh');
+
+  if (/banana/.test(t))              return lf('bananas,yellow,fruit');
+  if (/apple|pink\s*lady|gala/.test(t)) return lf('apples,red,fruit');
+  if (/strawberr/.test(t))           return lf('strawberries,red,fruit');
+  if (/blueberr/.test(t))            return lf('blueberries,blue,fruit');
+  if (/raspberr/.test(t))            return lf('raspberries,red,fruit');
+  if (/green\s*seedless\s*grape|green\s*grape/.test(t)) return lf('green,grapes,fruit');
+  if (/grape/.test(t))               return lf('grapes,bunch,fruit');
+  if (/satsuma|orange/.test(t))      return lf('oranges,citrus,fruit');
+  if (/lemon/.test(t))               return lf('lemons,yellow,citrus');
+  if (/pineapple/.test(t))           return lf('pineapple,tropical,fruit');
+  if (/watermelon/.test(t))          return lf('watermelon,red,sliced');
+  if (/mango/.test(t))               return lf('mango,yellow,tropical');
+
+  // ─ Grocery: meat & fish ──────────────────────
+  if (/chicken\s*breast|chicken\s*fillet|whole\s*chicken/.test(t)) return lf('chicken,raw,meat');
+  if (/chicken\s*thigh/.test(t))     return lf('chicken,thighs,meat');
+  if (/beef\s*mince|steak\s*mince/.test(t)) return lf('beef,mince,meat');
+  if (/sausage|richmond/.test(t))    return lf('sausages,raw,meat');
+  if (/bacon/.test(t))               return lf('bacon,strips,raw');
+  if (/pork\s*loin|pork\s*steak/.test(t)) return lf('pork,steak,meat');
+  if (/lamb\s*mince/.test(t))        return lf('lamb,mince,meat');
+  if (/salmon|cod|prawn|tuna/.test(t)) return lf('fish,seafood,raw');
+
+  // ─ Grocery: frozen ───────────────────────────
+  if (/(garden\s*peas|frozen\s*peas)/.test(t)) return lf('peas,frozen,green');
+  if (/sweetcorn|corn/.test(t))      return lf('sweetcorn,frozen,kernels');
+  if (/(home\s*chips|frozen\s*chips|roast\s*potatoes)/.test(t)) return lf('chips,frozen,potato');
+  if (/(fish\s*fingers)/.test(t))    return lf('fish,fingers,frozen');
+  if (/(pizza|chicago\s*town|goodfellas|margherita\s*pizza)/.test(t)) return lf('pizza,frozen,box');
+  if (/(quorn)/.test(t))             return lf('vegetarian,quorn,frozen');
+  if (/(frozen\s*mixed\s*berries)/.test(t)) return lf('berries,frozen,fruit');
+  if (/ice\s*cream|magnum|cornetto|haagen|ben.*jerry/.test(t)) return lf('ice,cream,scoop');
+
+  // ─ Grocery: bakery ───────────────────────────
+  if (/loaf|toastie\s*thick|kingsmill|hovis|tiger\s*bloomer/.test(t)) return lf('bread,loaf,sliced');
+  if (/croissant|pain au chocolat|greggs/.test(t)) return lf('croissant,pastry,bakery');
+  if (/bagel/.test(t))               return lf('bagel,bread,bakery');
+  if (/tortilla\s*wrap/.test(t))     return lf('tortilla,wraps,flatbread');
+  if (/burger\s*buns|brioche/.test(t)) return lf('burger,buns,bakery');
+  if (/crumpet/.test(t))             return lf('crumpets,british,breakfast');
+  if (/english\s*muffin/.test(t))    return lf('muffin,bread,breakfast');
+  if (/pancake|maple\s*syrup/.test(t)) return lf('pancake,breakfast,syrup');
+
+  // ─ Grocery: cereals & breakfast ──────────────
+  if (/weetabix/.test(t))            return lf('weetabix,cereal,breakfast');
+  if (/cornflake/.test(t))           return lf('cornflakes,cereal,breakfast');
+  if (/(coco\s*pops|frosties|krispies|crunchy\s*nut|special\s*k|cheerios|shreddies|shredded\s*wheat|cookie\s*crisp)/.test(t)) return lf('cereal,box,breakfast');
+  if (/muesli|alpen|dorset|country\s*crisp|bran\s*flakes/.test(t)) return lf('muesli,oats,breakfast');
+  if (/(oats|porridge|oat\s*so\s*simple)/.test(t)) return lf('oats,porridge,bowl');
+  if (/belvita|nature\s*valley|cereal\s*bar/.test(t)) return lf('breakfast,biscuit,bar');
+
+  // ─ Grocery: pantry / sauces / staples ────────
+  if (/baked\s*beans/.test(t))       return lf('baked,beans,tin');
+  if (/tomato\s*soup|heinz\s*tomato/.test(t)) return lf('soup,tin,tomato');
+  if (/ketchup/.test(t))             return lf('ketchup,bottle,sauce');
+  if (/mayonnaise|mayo|hellmann/.test(t)) return lf('mayonnaise,jar,sauce');
+  if (/branston|pickle|chutney|mango\s*chutney/.test(t)) return lf('pickle,jar,relish');
+  if (/olive\s*oil|filippo\s*berio/.test(t)) return lf('olive,oil,bottle');
+  if (/sugar|granulated/.test(t))    return lf('sugar,bag,sweet');
+  if (/salt|saxa/.test(t))           return lf('salt,seasoning,table');
+  if (/nutella/.test(t))             return lf('nutella,chocolate,spread');
+  if (/jam|jelly|robertson/.test(t)) return lf('jam,jar,fruit');
+  if (/yorkshire\s*tea|pg\s*tips|tea\s*bag/.test(t)) return lf('tea,bags,box');
+  if (/nescaf|lavazza|instant\s*coffee|ground\s*coffee/.test(t)) return lf('coffee,beans,jar');
+  if (/(pasta|penne|spaghetti|napolina)/.test(t)) return lf('pasta,italian,dry');
+  if (/bolognese|cooking\s*sauce|dolmio/.test(t)) return lf('pasta,sauce,jar');
+  if (/(basmati\s*rice|long\s*grain|tilda|rice)/.test(t)) return lf('rice,grains,bag');
+  if (/(chana\s*dal|kala\s*chana|red\s*lentil|lentil|trs)/.test(t)) return lf('lentils,pulses,dry');
+  if (/(naan|sharwood)/.test(t))     return lf('naan,indian,bread');
+  if (/(patak|tikka|korma|curry\s*paste)/.test(t)) return lf('curry,sauce,jar');
+  if (/(soy\s*sauce|kikkoman|sriracha)/.test(t)) return lf('sauce,bottle,asian');
+  if (/(fajita|old\s*el\s*paso)/.test(t)) return lf('mexican,food,kit');
+
+  // ─ Grocery: drinks (soft) ────────────────────
+  if (/coca.cola|coke|pepsi|fizzy|diet\s*coke|pepsi\s*max/.test(t)) return lf('cola,bottle,fizzy');
+  if (/orange\s*juice|tropicana|innocent/.test(t)) return lf('juice,orange,carton');
+  if (/squash|robinsons/.test(t))    return lf('squash,cordial,bottle');
+  if (/(evian|highland\s*spring|still\s*water|bottled\s*water)/.test(t)) return lf('water,bottle,still');
+  if (/red\s*bull|lucozade|energy\s*drink/.test(t)) return lf('energy,drink,can');
+
+  // ─ Grocery: alcohol ──────────────────────────
+  if (/(beer|lager|ipa|brewdog|stella|carling|heineken|corona|peroni|budweiser|beck|asahi|madri|cobra|kingfisher|guinness|stout|ale|hobgoblin|old\s*speckled)/.test(t)) return lf('beer,bottle,pub');
+  if (/(cider|strongbow|kopparberg|magners|rekorderlig)/.test(t)) return lf('cider,glass,apple');
+  if (/(vodka|smirnoff|absolut)/.test(t)) return lf('vodka,bottle,spirit');
+  if (/(gin|gordon|bombay)/.test(t)) return lf('gin,bottle,clear');
+  if (/(rum|captain\s*morgan|bacardi)/.test(t)) return lf('rum,bottle,spirit');
+  if (/(whisky|whiskey|jack\s*daniel|famous\s*grouse|jameson)/.test(t)) return lf('whiskey,bottle,amber');
+  if (/(wine|chardonnay|merlot|shiraz|rosé|rose|cabernet|hardys|echo\s*falls|yellow\s*tail|casillero)/.test(t)) return lf('wine,glass,bottle');
+  if (/(prosecco|cava|sparkling|champagne|freixenet)/.test(t)) return lf('sparkling,wine,celebration');
+
+  // ─ Grocery: snacks ───────────────────────────
+  if (/(crisps|walkers|doritos|pringles|hula\s*hoops|quavers|wotsits|monster\s*munch|mccoy|kettle\s*chips|tyrrell|popchips|frazzles|skips|discos|tortilla\s*chip|bombay\s*mix|pom-bear|twiglet|mini\s*cheddars|snack\s*a\s*jacks)/.test(t)) return lf('crisps,snack,packet');
+  if (/(dairy\s*milk|cadbury|galaxy|maltesers|kit\s*kat)/.test(t)) return lf('chocolate,bar,sweet');
+  if (/(digestive|chocolate\s*digestive|mcvitie|jaffa\s*cakes|biscuit)/.test(t)) return lf('biscuits,tea,pack');
+  if (/(haribo|gummy|sweets)/.test(t)) return lf('gummy,sweets,candy');
+
+  // ─ Household & toiletries ────────────────────
+  if (/(toilet\s*roll|andrex|plenty\s*kitchen\s*roll)/.test(t)) return lf('toilet,roll,paper');
+  if (/(fairy|washing.up\s*liquid)/.test(t)) return lf('washing,up,liquid');
+  if (/(persil|comfort|fabric\s*conditioner|laundry\s*detergent)/.test(t)) return lf('detergent,laundry,bottle');
+  if (/(cif|cleaner|household\s*cleaner)/.test(t)) return lf('cleaning,spray,bottle');
+  if (/(toothpaste|colgate)/.test(t)) return lf('toothpaste,tube,oral');
+  if (/(shampoo|head\s*shoulders)/.test(t)) return lf('shampoo,bottle,hair');
+  if (/(nappies|pampers)/.test(t))   return lf('nappies,baby,pack');
+
+  // ─ Furniture ─────────────────────────────────
+  if (/(bed\s*frame|malm)/.test(t))  return lf('bedframe,bedroom,modern');
+  if (/(armchair|poang)/.test(t))    return lf('armchair,chair,modern');
+  if (/(bookcase|billy)/.test(t))    return lf('bookcase,shelving,books');
+  if (/(sofa|3\s*seater)/.test(t))   return lf('sofa,living,grey');
+  if (/(dining\s*table)/.test(t))    return lf('dining,table,wood');
+  if (/(office\s*chair)/.test(t))    return lf('office,chair,desk');
+
+  // ─ Toys / outdoor / pets / sports ────────────
+  if (/lego/.test(t))                return lf('lego,bricks,toy');
+  if (/(barbie|doll)/.test(t))       return lf('doll,toy,kids');
+  if (/(hot\s*wheels|toy\s*car)/.test(t)) return lf('toy,cars,kids');
+  if (/(magnetic\s*building\s*block|building\s*block)/.test(t)) return lf('building,blocks,magnetic');
+  if (/(pop\s*it|fidget\s*spinner|fidget|stress\s*relief)/.test(t)) return lf('fidget,toy,sensory');
+  if (/(kinetic\s*sand|slime|slime\s*kit)/.test(t)) return lf('slime,kids,play');
+  if (/(bubble\s*machine)/.test(t))  return lf('bubble,machine,kids');
+  if (/(plushie|squishmallow|kawaii|plush)/.test(t)) return lf('plushie,plush,soft');
+  if (/(rc\s|drone|remote\s*control)/.test(t)) return lf('drone,quadcopter,sky');
+  if (/(tennis\s*racket|wilson)/.test(t)) return lf('tennis,racket,sport');
+  if (/(running\s*shoe|kalenji)/.test(t)) return lf('running,shoes,fitness');
+  if (/(camping\s*tent|coleman|tent)/.test(t)) return lf('tent,camping,outdoor');
+  if (/(dog\s*food|pedigree|cat\s*pouches|whiskas|drinkwell|pet\s*fountain)/.test(t)) return lf('pet,food,bowl');
+  if (/(resistance\s*band)/.test(t)) return lf('resistance,band,fitness');
+  if (/(yoga\s*mat)/.test(t))        return lf('yoga,mat,fitness');
+  if (/(foam\s*roller)/.test(t))     return lf('foam,roller,fitness');
+  if (/(water\s*bottle|stanley.*tumbler|tumbler|insulated\s*bottle)/.test(t)) return lf('water,bottle,steel');
+  if (/(skipping\s*rope)/.test(t))   return lf('skipping,rope,fitness');
+  if (/(camping\s*lantern|led\s*lantern)/.test(t)) return lf('lantern,camping,light');
+  if (/(vacuum\s*storage\s*bag)/.test(t)) return lf('storage,bag,travel');
+  if (/(inflatable\s*beach|air\s*sofa|inflatable\s*lounger)/.test(t)) return lf('inflatable,beach,lounger');
+
+  // ─ Temu/Shein home gadgets ───────────────────
+  if (/(handheld\s*vacuum|mini\s*vacuum|usb\s*vacuum)/.test(t)) return lf('mini,vacuum,handheld');
+  if (/(drain\s*plug|hair\s*catcher)/.test(t)) return lf('drain,bathroom,silicone');
+  if (/(refrigerator\s*storage|fridge\s*storage|magnetic\s*storage)/.test(t)) return lf('storage,kitchen,rack');
+  if (/(garlic\s*press|garlic\s*mincer)/.test(t)) return lf('garlic,press,kitchen');
+  if (/(vegetable\s*slicer|chopper)/.test(t)) return lf('vegetable,chopper,kitchen');
+  if (/(egg\s*slicer)/.test(t))      return lf('egg,slicer,gadget');
+  if (/(silicone\s*lid|stretch\s*lid)/.test(t)) return lf('silicone,lid,kitchen');
+  if (/(drawer\s*divider|storage\s*basket|caddy|organiser)/.test(t)) return lf('organiser,storage,home');
+  if (/(makeup\s*organiser)/.test(t)) return lf('makeup,organiser,vanity');
+  if (/(lazy\s*susan|turntable)/.test(t)) return lf('lazy,susan,kitchen');
+  if (/(cordless\s*sweeper|cordless\s*mop|sweeper)/.test(t)) return lf('sweeper,mop,floor');
+  if (/(wall\s*hook|adhesive\s*hook)/.test(t)) return lf('wall,hooks,storage');
+  if (/(string\s*light|fairy\s*light)/.test(t)) return lf('fairy,lights,string');
+  if (/(galaxy\s*projector|star\s*projector|sunset\s*lamp|moon\s*lamp|sunset\s*projector|night\s*light)/.test(t)) return lf('night,light,projector');
+  if (/(led\s*light\s*strip|led\s*strip|rgb\s*strip|bluetooth\s*led)/.test(t)) return lf('led,strip,light');
+  if (/(diffuser|aromatherapy|essential\s*oil)/.test(t)) return lf('diffuser,aromatherapy,wood');
+  if (/(scented\s*candle|soy\s*wax)/.test(t)) return lf('candle,scented,decor');
+  if (/(faux\s*plant|fake\s*plant|artificial\s*plant)/.test(t)) return lf('plant,faux,decor');
+  if (/(macrame|plant\s*holder)/.test(t)) return lf('macrame,plant,bohemian');
+  if (/(boho\s*cushion|tufted\s*cushion|cushion)/.test(t)) return lf('cushion,pillow,decor');
+  if (/(bath\s*mat|memory\s*foam\s*mat)/.test(t)) return lf('bath,mat,rug');
+  if (/(area\s*rug|tufted\s*rug|rug)/.test(t)) return lf('rug,floor,carpet');
+  if (/(lint\s*roller|pet\s*hair)/.test(t)) return lf('lint,roller,pet');
+  if (/(cat\s*brush|grooming\s*brush)/.test(t)) return lf('cat,grooming,brush');
+  if (/(slow\s*feeder|dog\s*bowl)/.test(t)) return lf('dog,bowl,feeder');
+  if (/(cat\s*laser|laser\s*toy)/.test(t)) return lf('cat,toy,laser');
+
+  // ─ Fallback by category ──────────────────────
+  switch (seed.category) {
+    case 'electronics': return lf('electronics,gadget,device');
+    case 'fashion':     return lf('fashion,clothes,style');
+    case 'beauty':      return lf('beauty,cosmetic,skincare');
+    case 'grocery':     return lf('grocery,food,shop');
+    case 'home':        return lf('home,appliance,kitchen');
+    case 'furniture':   return lf('furniture,home,room');
+    case 'gaming':      return lf('gaming,console,gamepad');
+    case 'sports':      return lf('sports,fitness,gym');
+    case 'toys':        return lf('toys,kids,fun');
+    case 'outdoor':     return lf('outdoor,adventure,nature');
+    case 'pet':         return lf('pet,dog,cat');
+    case 'cameras':     return lf('camera,photography,lens');
+  }
+  return seed.image;
+}
+
 function buildVariants(seed: Seed): Product[] {
   const eligibleRetailers = (Object.keys(RETAILER_CATEGORIES) as Retailer[])
     .filter(r => RETAILER_CATEGORIES[r].includes(seed.category));
@@ -1072,7 +1444,7 @@ function buildVariants(seed: Seed): Product[] {
       id,
       productKey: key,
       title: seed.title,
-      image: seed.image,
+      image: smartImage(seed),
       price,
       currency: 'GBP',
       retailer,
