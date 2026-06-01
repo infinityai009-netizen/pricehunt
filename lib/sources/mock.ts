@@ -2099,7 +2099,9 @@ function buildVariants(seed: Seed): Product[] {
   // Fashion → always show major UK clothing retailers; shoes get shoe specialists.
   if (seed.category === 'fashion') {
     const isShoe = /trainer|sneaker|boot|heel|sandal|loafer|shoe|air max|air force|stan smith|gazelle|samba|chuck taylor|vans|new balance|dr\.\s*martens|ugg/i.test(seed.title);
-    const list = isShoe ? [...SHOE_PLATFORMS, ...FASHION_PLATFORMS] : FASHION_PLATFORMS;
+    const list = isShoe
+      ? [...SHOE_PLATFORMS, ...FASHION_PLATFORMS, 'tkmaxx' as const]
+      : [...FASHION_PLATFORMS, 'tkmaxx' as const, 'flannels' as const];
     for (const r of list) {
       if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
     }
