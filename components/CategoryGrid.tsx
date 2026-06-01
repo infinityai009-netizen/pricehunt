@@ -14,6 +14,10 @@ const CATEGORIES = [
   { slug: 'pet',         label: 'Pet',         emoji: '🐾' },
   { slug: 'cameras',     label: 'Cameras',     emoji: '📷' },
   { slug: 'food',        label: 'Food Delivery', emoji: '🍔' },
+  { slug: 'cars',        label: 'Used Cars',   emoji: '🚗' },
+  { slug: 'insurance',   label: 'Insurance',   emoji: '🛡️' },
+  { slug: 'broadband',   label: 'Broadband',   emoji: '📡' },
+  { slug: 'mobileplan',  label: 'Mobile Plans', emoji: '📞' },
 ];
 
 export default function CategoryGrid() {

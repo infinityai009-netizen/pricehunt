@@ -18,6 +18,17 @@ const RETAILER_NAME: Record<string, string> = {
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
   apple: 'Apple', facebook: 'Facebook Marketplace',
   ubereats: 'Uber Eats', deliveroo: 'Deliveroo', justeat: 'Just Eat',
+  autotrader: 'AutoTrader', motors: 'Motors', gumtree: 'Gumtree',
+  carwow: 'Carwow', cinch: 'Cinch', heycar: 'Heycar', arnoldclark: 'Arnold Clark',
+  comparethemarket: 'Compare the Market', moneysupermarket: 'MoneySuperMarket',
+  gocompare: 'GoCompare', confused: 'Confused.com', admiral: 'Admiral',
+  aviva: 'Aviva', directline: 'Direct Line', churchill: 'Churchill',
+  sky: 'Sky', bt: 'BT', virginmedia: 'Virgin Media', talktalk: 'TalkTalk',
+  nowbroadband: 'NOW Broadband', plusnet: 'Plusnet', hyperoptic: 'Hyperoptic',
+  ee: 'EE', vodafone: 'Vodafone', three: 'Three', o2: 'O2',
+  giffgaff: 'giffgaff', tescomobile: 'Tesco Mobile', skymobile: 'Sky Mobile',
+  voxi: 'VOXI', smarty: 'SMARTY', idmobile: 'iD Mobile',
+  carphonewarehouse: 'Carphone Warehouse',
 };
 
 interface PageProps {

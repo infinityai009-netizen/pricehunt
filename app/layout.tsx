@@ -28,6 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/category/grocery" className="hover:text-brand-600">Grocery</Link>
               <Link href="/category/gaming" className="hover:text-brand-600">Gaming</Link>
               <Link href="/category/food" className="hover:text-brand-600">Food</Link>
+              <Link href="/category/cars" className="hover:text-brand-600">Cars</Link>
+              <Link href="/category/insurance" className="hover:text-brand-600">Insurance</Link>
+              <Link href="/category/broadband" className="hover:text-brand-600">Broadband</Link>
+              <Link href="/category/mobileplan" className="hover:text-brand-600">Mobile</Link>
             </nav>
             <div className="ml-auto flex items-center gap-3">
               <WishlistLink />

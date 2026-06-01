@@ -1057,6 +1057,147 @@ const SEEDS: Seed[] = [
   { title: "Krispy Kreme Original Glazed 12 pack", category: 'food', basePrice: 14.95, image: '' },
   { title: "Cinnabon Classic Roll", category: 'food', basePrice: 4.95, image: '' },
 
+  // ─── Used cars (AutoTrader / Motors / Carwow style listings) ───────────────
+  { title: "Ford Fiesta 1.0 EcoBoost Zetec 2019 Used", category: 'cars', basePrice: 8995, image: '' },
+  { title: "Ford Fiesta ST-Line 2020 Used", category: 'cars', basePrice: 11495, image: '' },
+  { title: "Ford Focus Titanium 1.5 2020 Used", category: 'cars', basePrice: 13995, image: '' },
+  { title: "Ford Kuga ST-Line Hybrid 2021 SUV", category: 'cars', basePrice: 21995, image: '' },
+  { title: "Volkswagen Golf GTI 2020 Used", category: 'cars', basePrice: 18995, image: '' },
+  { title: "Volkswagen Polo Match 1.0 2020", category: 'cars', basePrice: 12495, image: '' },
+  { title: "BMW 3 Series 320d M Sport 2020 Used", category: 'cars', basePrice: 22495, image: '' },
+  { title: "BMW 1 Series 118i M Sport 2021", category: 'cars', basePrice: 19995, image: '' },
+  { title: "BMW X3 xDrive 30e M Sport 2022 SUV", category: 'cars', basePrice: 38995, image: '' },
+  { title: "Audi A3 Sportback 1.5 S Line 2021 Used", category: 'cars', basePrice: 21995, image: '' },
+  { title: "Audi A4 Avant 2.0 TFSI 2020 Used", category: 'cars', basePrice: 23995, image: '' },
+  { title: "Audi Q3 SUV 2.0 TFSI 2021", category: 'cars', basePrice: 27995, image: '' },
+  { title: "Mercedes-Benz A-Class A180 AMG Line 2020", category: 'cars', basePrice: 22495, image: '' },
+  { title: "Mercedes-Benz C-Class C220d AMG Line 2021", category: 'cars', basePrice: 28995, image: '' },
+  { title: "Mercedes-Benz GLA 200 AMG Line 2021 SUV", category: 'cars', basePrice: 27495, image: '' },
+  { title: "MINI Cooper S 3-Door 2020 Used", category: 'cars', basePrice: 17995, image: '' },
+  { title: "MINI Countryman Cooper Sport 2021", category: 'cars', basePrice: 21995, image: '' },
+  { title: "Vauxhall Corsa 1.2 SE Premium 2020", category: 'cars', basePrice: 9995, image: '' },
+  { title: "Vauxhall Astra SRi 1.4 2020", category: 'cars', basePrice: 12495, image: '' },
+  { title: "Toyota Yaris Hybrid Icon 2021", category: 'cars', basePrice: 14495, image: '' },
+  { title: "Toyota Corolla Hybrid Excel 2021", category: 'cars', basePrice: 17995, image: '' },
+  { title: "Toyota RAV4 Hybrid AWD 2021 SUV", category: 'cars', basePrice: 26995, image: '' },
+  { title: "Honda Civic 1.0 VTEC Turbo SR 2020", category: 'cars', basePrice: 15995, image: '' },
+  { title: "Honda HR-V SE Hybrid 2022 SUV", category: 'cars', basePrice: 23995, image: '' },
+  { title: "Nissan Qashqai N-Connecta 2020 SUV", category: 'cars', basePrice: 17995, image: '' },
+  { title: "Nissan Juke Tekna Manual 2021 SUV", category: 'cars', basePrice: 16995, image: '' },
+  { title: "Nissan Leaf Tekna 40kWh Electric 2021", category: 'cars', basePrice: 17995, image: '' },
+  { title: "Tesla Model 3 Long Range AWD 2022 Electric", category: 'cars', basePrice: 32995, image: '' },
+  { title: "Tesla Model Y Performance 2023 Electric SUV", category: 'cars', basePrice: 44995, image: '' },
+  { title: "Hyundai Tucson Premium Hybrid 2022 SUV", category: 'cars', basePrice: 23995, image: '' },
+  { title: "Hyundai i20 Premium 2021", category: 'cars', basePrice: 13495, image: '' },
+  { title: "Kia Sportage GT-Line 1.6 T-GDi 2021 SUV", category: 'cars', basePrice: 22995, image: '' },
+  { title: "Kia Niro EV 4 Long Range 2022 Electric SUV", category: 'cars', basePrice: 26995, image: '' },
+  { title: "Peugeot 208 GT Line 2020", category: 'cars', basePrice: 12495, image: '' },
+  { title: "Peugeot 3008 GT Premium 2021 SUV", category: 'cars', basePrice: 20995, image: '' },
+  { title: "Citroen C3 Shine Plus 2020", category: 'cars', basePrice: 10495, image: '' },
+  { title: "Renault Clio RS Line 2020", category: 'cars', basePrice: 11995, image: '' },
+  { title: "Renault Captur S Edition 2021 SUV", category: 'cars', basePrice: 14995, image: '' },
+  { title: "SEAT Leon FR 1.5 TSI 2021", category: 'cars', basePrice: 17995, image: '' },
+  { title: "Skoda Octavia SE Technology 2020", category: 'cars', basePrice: 15495, image: '' },
+  { title: "Mazda CX-5 Sport Nav+ AWD 2021 SUV", category: 'cars', basePrice: 23995, image: '' },
+  { title: "Mazda MX-5 Roadster GT Sport 2019", category: 'cars', basePrice: 21495, image: '' },
+  { title: "Range Rover Evoque R-Dynamic SE 2020 SUV", category: 'cars', basePrice: 29995, image: '' },
+  { title: "Land Rover Discovery Sport HSE 2021 SUV", category: 'cars', basePrice: 31995, image: '' },
+  { title: "Volvo XC40 Recharge T5 Hybrid 2022 SUV", category: 'cars', basePrice: 32995, image: '' },
+  { title: "Volvo XC60 Inscription D4 2020 SUV", category: 'cars', basePrice: 28495, image: '' },
+  { title: "Suzuki Swift Sport 1.4 Boosterjet 2019", category: 'cars', basePrice: 11995, image: '' },
+  { title: "Jaguar XE 2.0 S 2019 Used", category: 'cars', basePrice: 18995, image: '' },
+  { title: "Lexus IS 300h F Sport 2020", category: 'cars', basePrice: 24995, image: '' },
+  { title: "Polestar 2 Long Range Single Motor 2022 Electric", category: 'cars', basePrice: 34995, image: '' },
+
+  // ─── Insurance ─────────────────────────────────────────────────────────────
+  { title: "Car Insurance Comprehensive Annual Cover", category: 'insurance', basePrice: 580, image: '' },
+  { title: "Car Insurance Third Party Fire & Theft", category: 'insurance', basePrice: 380, image: '' },
+  { title: "Young Driver Car Insurance with Black Box", category: 'insurance', basePrice: 980, image: '' },
+  { title: "Multi-Car Insurance Family Policy", category: 'insurance', basePrice: 1290, image: '' },
+  { title: "Classic Car Insurance Comprehensive", category: 'insurance', basePrice: 420, image: '' },
+  { title: "Van Insurance Commercial Use Annual", category: 'insurance', basePrice: 740, image: '' },
+  { title: "Motorbike Insurance Comprehensive", category: 'insurance', basePrice: 320, image: '' },
+  { title: "Caravan Insurance Touring Annual", category: 'insurance', basePrice: 290, image: '' },
+  { title: "Home Buildings & Contents Insurance Annual", category: 'insurance', basePrice: 250, image: '' },
+  { title: "Home Contents Only Insurance", category: 'insurance', basePrice: 160, image: '' },
+  { title: "Home Emergency Cover Annual", category: 'insurance', basePrice: 110, image: '' },
+  { title: "Landlord Building Insurance Annual", category: 'insurance', basePrice: 320, image: '' },
+  { title: "Pet Insurance Lifetime Cover Dog", category: 'insurance', basePrice: 380, image: '' },
+  { title: "Pet Insurance Maximum Benefit Dog", category: 'insurance', basePrice: 280, image: '' },
+  { title: "Pet Insurance Accident Only Cat", category: 'insurance', basePrice: 110, image: '' },
+  { title: "Travel Insurance Worldwide Annual Multi-Trip", category: 'insurance', basePrice: 95, image: '' },
+  { title: "Travel Insurance Europe Single Trip 14 Days", category: 'insurance', basePrice: 28, image: '' },
+  { title: "Travel Insurance Backpacker 12 Month", category: 'insurance', basePrice: 180, image: '' },
+  { title: "Cruise Travel Insurance Single Trip", category: 'insurance', basePrice: 65, image: '' },
+  { title: "Life Insurance Level Term 20 Year £100k", category: 'insurance', basePrice: 110, image: '' },
+  { title: "Life Insurance Decreasing Term 25 Year", category: 'insurance', basePrice: 85, image: '' },
+  { title: "Whole of Life Insurance Over 50s", category: 'insurance', basePrice: 180, image: '' },
+  { title: "Private Health Insurance Family Plan", category: 'insurance', basePrice: 1290, image: '' },
+  { title: "Private Medical Insurance Individual", category: 'insurance', basePrice: 580, image: '' },
+  { title: "Critical Illness Cover 20 Year Level", category: 'insurance', basePrice: 240, image: '' },
+  { title: "Income Protection Insurance Long Term", category: 'insurance', basePrice: 290, image: '' },
+  { title: "Mortgage Protection Insurance", category: 'insurance', basePrice: 190, image: '' },
+  { title: "Dental Insurance Family Plan Annual", category: 'insurance', basePrice: 220, image: '' },
+  { title: "Gadget Insurance Phone & Laptop Cover", category: 'insurance', basePrice: 95, image: '' },
+  { title: "Wedding Insurance Standard Plan", category: 'insurance', basePrice: 45, image: '' },
+
+  // ─── Broadband ─────────────────────────────────────────────────────────────
+  { title: "Sky Stream Full Fibre 100Mb 18 Month Contract", category: 'broadband', basePrice: 25, image: '' },
+  { title: "Sky Stream Full Fibre 500Mb 18 Month", category: 'broadband', basePrice: 35, image: '' },
+  { title: "Sky Gigafast 1Gb Broadband 18 Month", category: 'broadband', basePrice: 45, image: '' },
+  { title: "Sky TV & Broadband Ultimate On Demand", category: 'broadband', basePrice: 49, image: '' },
+  { title: "BT Full Fibre 100Mb 24 Month Contract", category: 'broadband', basePrice: 27.99, image: '' },
+  { title: "BT Full Fibre 500Mb 24 Month", category: 'broadband', basePrice: 39.99, image: '' },
+  { title: "BT Full Fibre 900Mb Gig 24 Month", category: 'broadband', basePrice: 49.99, image: '' },
+  { title: "BT TV & Broadband Big Sport Bundle", category: 'broadband', basePrice: 55, image: '' },
+  { title: "Virgin Media M125 Fibre Broadband 18 Month", category: 'broadband', basePrice: 26, image: '' },
+  { title: "Virgin Media M250 Fibre Broadband 18 Month", category: 'broadband', basePrice: 32, image: '' },
+  { title: "Virgin Media M500 Gig 18 Month", category: 'broadband', basePrice: 36, image: '' },
+  { title: "Virgin Media Gig1 1.1Gb 18 Month", category: 'broadband', basePrice: 42, image: '' },
+  { title: "TalkTalk Fibre 65 Broadband 24 Month", category: 'broadband', basePrice: 23, image: '' },
+  { title: "TalkTalk Fibre 150 Broadband 24 Month", category: 'broadband', basePrice: 28, image: '' },
+  { title: "NOW Brilliant Broadband 11Mb Monthly", category: 'broadband', basePrice: 23, image: '' },
+  { title: "NOW Super Fibre Broadband 63Mb", category: 'broadband', basePrice: 26, image: '' },
+  { title: "NOW Fibre Plus Broadband 145Mb", category: 'broadband', basePrice: 31, image: '' },
+  { title: "Plusnet Full Fibre 74 Broadband 24 Month", category: 'broadband', basePrice: 25, image: '' },
+  { title: "Plusnet Full Fibre 145 Broadband 24 Month", category: 'broadband', basePrice: 28, image: '' },
+  { title: "Vodafone Pro II Full Fibre 100Mb 24 Month", category: 'broadband', basePrice: 26, image: '' },
+  { title: "Vodafone Gigafast 1Gb 24 Month", category: 'broadband', basePrice: 44, image: '' },
+  { title: "Hyperoptic 1Gb Symmetrical 24 Month", category: 'broadband', basePrice: 35, image: '' },
+  { title: "Hyperoptic 500Mb Symmetrical Fibre", category: 'broadband', basePrice: 30, image: '' },
+
+  // ─── Mobile plans (SIM only & contracts) ────────────────────────────────────
+  { title: "EE 100GB Smart SIM Only 24 Month 5G", category: 'mobileplan', basePrice: 18, image: '' },
+  { title: "EE Unlimited Data SIM Only 24 Month", category: 'mobileplan', basePrice: 28, image: '' },
+  { title: "EE Smart Plan iPhone 15 Pro 256GB Unlimited", category: 'mobileplan', basePrice: 75, image: '' },
+  { title: "EE iPhone 16 Pro Max Smart Plan 100GB", category: 'mobileplan', basePrice: 79, image: '' },
+  { title: "EE Samsung Galaxy S24 Ultra Plan 100GB", category: 'mobileplan', basePrice: 65, image: '' },
+  { title: "Vodafone Unlimited Lite SIM Only 24 Month", category: 'mobileplan', basePrice: 22, image: '' },
+  { title: "Vodafone Unlimited Max SIM Only", category: 'mobileplan', basePrice: 30, image: '' },
+  { title: "Vodafone Pay Monthly iPhone 16 Pro 100GB", category: 'mobileplan', basePrice: 68, image: '' },
+  { title: "Vodafone 100GB Pay Monthly SIM", category: 'mobileplan', basePrice: 20, image: '' },
+  { title: "Three Unlimited Data 5G SIM Only 24 Month", category: 'mobileplan', basePrice: 18, image: '' },
+  { title: "Three 100GB SIM Only 24 Month 5G", category: 'mobileplan', basePrice: 12, image: '' },
+  { title: "Three Pixel 9 Pro 100GB Pay Monthly", category: 'mobileplan', basePrice: 55, image: '' },
+  { title: "Three Unlimited SIM Only 1 Month Rolling", category: 'mobileplan', basePrice: 25, image: '' },
+  { title: "O2 100GB SIM Only 12 Month", category: 'mobileplan', basePrice: 15, image: '' },
+  { title: "O2 Unlimited SIM Only 12 Month", category: 'mobileplan', basePrice: 25, image: '' },
+  { title: "O2 Refresh iPhone 15 Pro 100GB", category: 'mobileplan', basePrice: 60, image: '' },
+  { title: "giffgaff 30GB Goody Bag Monthly", category: 'mobileplan', basePrice: 12, image: '' },
+  { title: "giffgaff Unlimited Goody Bag Monthly", category: 'mobileplan', basePrice: 20, image: '' },
+  { title: "giffgaff 80GB Goody Bag Monthly", category: 'mobileplan', basePrice: 15, image: '' },
+  { title: "Tesco Mobile 30GB SIM Only 12 Month", category: 'mobileplan', basePrice: 10, image: '' },
+  { title: "Tesco Mobile Unlimited SIM Only 12 Month", category: 'mobileplan', basePrice: 18, image: '' },
+  { title: "Sky Mobile Unlimited Data 12 Month", category: 'mobileplan', basePrice: 22, image: '' },
+  { title: "Sky Mobile 25GB Swap Unused Data", category: 'mobileplan', basePrice: 12, image: '' },
+  { title: "VOXI Unlimited Data SIM Monthly", category: 'mobileplan', basePrice: 20, image: '' },
+  { title: "VOXI 45GB Endless Social Media", category: 'mobileplan', basePrice: 15, image: '' },
+  { title: "Smarty 30GB SIM Only Monthly No Contract", category: 'mobileplan', basePrice: 10, image: '' },
+  { title: "Smarty Unlimited Data SIM Monthly", category: 'mobileplan', basePrice: 22, image: '' },
+  { title: "iD Mobile 100GB SIM Only 12 Month", category: 'mobileplan', basePrice: 9, image: '' },
+  { title: "iD Mobile Unlimited Data 24 Month", category: 'mobileplan', basePrice: 18, image: '' },
+  { title: "Carphone Warehouse iPhone 16 EE 100GB", category: 'mobileplan', basePrice: 60, image: '' },
+
   // Toys
   { title: 'LEGO Star Wars Millennium Falcon', category: 'toys', basePrice: 159, image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
   { title: 'LEGO Technic Bugatti Chiron', category: 'toys', basePrice: 329, image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
@@ -1108,10 +1249,47 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   'b&q':      ['home','outdoor','furniture'],
   walmart:    ['electronics','grocery','home','toys','beauty','fashion'],
   apple:      ['electronics','cameras'],
-  facebook:   ['electronics','fashion','home','furniture','toys','sports','outdoor','beauty','gaming','cameras'],
+  facebook:   ['electronics','fashion','home','furniture','toys','sports','outdoor','beauty','gaming','cameras','cars'],
   ubereats:   ['food','grocery'],
   deliveroo:  ['food','grocery'],
   justeat:    ['food'],
+  // Cars
+  autotrader:  ['cars'],
+  motors:      ['cars'],
+  gumtree:     ['cars','furniture','electronics'],
+  carwow:      ['cars'],
+  cinch:       ['cars'],
+  heycar:      ['cars'],
+  arnoldclark: ['cars'],
+  // Insurance comparison
+  comparethemarket: ['insurance'],
+  moneysupermarket: ['insurance','broadband','mobileplan'],
+  gocompare:        ['insurance'],
+  confused:         ['insurance'],
+  admiral:          ['insurance'],
+  aviva:            ['insurance'],
+  directline:       ['insurance'],
+  churchill:        ['insurance'],
+  // Broadband
+  sky:         ['broadband','mobileplan'],
+  bt:          ['broadband','mobileplan'],
+  virginmedia: ['broadband','mobileplan'],
+  talktalk:    ['broadband'],
+  nowbroadband:['broadband'],
+  plusnet:     ['broadband','mobileplan'],
+  hyperoptic:  ['broadband'],
+  // Mobile
+  ee:          ['mobileplan','electronics'],
+  vodafone:    ['mobileplan','broadband','electronics'],
+  three:       ['mobileplan','electronics'],
+  o2:          ['mobileplan','electronics'],
+  giffgaff:    ['mobileplan'],
+  tescomobile: ['mobileplan'],
+  skymobile:   ['mobileplan'],
+  voxi:        ['mobileplan'],
+  smarty:      ['mobileplan'],
+  idmobile:    ['mobileplan'],
+  carphonewarehouse: ['mobileplan','electronics'],
 };
 
 // Stable hash so the same retailer+title always produces the same price/rating
@@ -1125,6 +1303,11 @@ function hash(s: string): number {
 const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
 // Food delivery platforms — always show all 3 for any food item.
 const FOOD_PLATFORMS: Retailer[] = ['ubereats','deliveroo','justeat'];
+// Always show these category-specific comparison sites.
+const CAR_PLATFORMS: Retailer[] = ['autotrader','motors','carwow','heycar','cinch'];
+const INSURANCE_PLATFORMS: Retailer[] = ['comparethemarket','moneysupermarket','gocompare','confused'];
+const BROADBAND_PLATFORMS: Retailer[] = ['sky','bt','virginmedia','talktalk','plusnet'];
+const MOBILE_PLATFORMS: Retailer[] = ['ee','vodafone','three','o2','giffgaff','smarty'];
 
 // ─── Central image picker ───────────────────────────────────────────────────
 // Returns an image URL for a given seed. We use locally-rendered SVG
@@ -1144,6 +1327,10 @@ const CATEGORY_COLORS: Record<Category, { bg: string; accent: string }> = {
   pet:         { bg: '#a855f7', accent: '#6b21a8' },
   cameras:     { bg: '#475569', accent: '#1e293b' },
   food:        { bg: '#dc2626', accent: '#7f1d1d' },
+  cars:        { bg: '#1e3a8a', accent: '#172554' },
+  insurance:   { bg: '#0f766e', accent: '#134e4a' },
+  broadband:   { bg: '#9333ea', accent: '#581c87' },
+  mobileplan:  { bg: '#db2777', accent: '#831843' },
 };
 
 const CATEGORY_ICON: Record<Category, string> = {
@@ -1160,6 +1347,10 @@ const CATEGORY_ICON: Record<Category, string> = {
   pet:         '🐾',
   cameras:     '📷',
   food:        '🍔',
+  cars:        '🚗',
+  insurance:   '🛡️',
+  broadband:   '📡',
+  mobileplan:  '📞',
 };
 
 // Subcategory icons for specific product types — picks override category icon.
@@ -1304,6 +1495,28 @@ function productIcon(title: string, category: Category): string {
   if (/sausage\s*roll|greggs|pasty/.test(t)) return '🥐';
   if (/bubble\s*tea|boba|milkshake/.test(t)) return '🧋';
   if (/breakfast.*english|full.*english/.test(t)) return '🍳';
+  // Cars
+  if (/(suv|qashqai|sportage|range\s*rover|xc40|outlander|tucson|kuga)/.test(t)) return '🚙';
+  if (/(electric|tesla|ev|polestar|leaf|ioniq)/.test(t)) return '⚡';
+  if (/(van|transit|sprinter|caddy)/.test(t)) return '🚐';
+  if (/(motorbike|motorcycle|scooter)/.test(t)) return '🏍️';
+  if (/(bmw|audi|mercedes|porsche|jaguar|lexus)/.test(t)) return '🏎️';
+  if (/(car|fiesta|golf|corsa|polo|civic|focus|astra|mini\s*cooper|yaris|swift|clio|i30|leon|octavia|kia|hyundai|peugeot|citroen|renault|nissan|toyota|honda|ford|vauxhall|mazda|skoda|seat|suzuki|mitsubishi|volvo)/.test(t)) return '🚗';
+  // Insurance
+  if (/(car\s*insurance|motor\s*insurance|van\s*insurance|motorbike\s*insurance)/.test(t)) return '🚗';
+  if (/(home\s*insurance|buildings\s*insurance|contents\s*insurance)/.test(t)) return '🏠';
+  if (/(pet\s*insurance|dog\s*insurance|cat\s*insurance)/.test(t)) return '🐾';
+  if (/(travel\s*insurance|holiday\s*insurance)/.test(t)) return '✈️';
+  if (/(life\s*insurance|whole\s*of\s*life|term\s*life)/.test(t)) return '💼';
+  if (/(health\s*insurance|medical\s*insurance|dental\s*insurance|private\s*health)/.test(t)) return '🏥';
+  if (/(critical\s*illness|income\s*protection|mortgage\s*protection)/.test(t)) return '🛡️';
+  if (/(gadget\s*insurance|phone\s*insurance)/.test(t)) return '📱';
+  if (/(wedding\s*insurance|caravan\s*insurance)/.test(t)) return '🛡️';
+  if (/insurance/.test(t)) return '🛡️';
+  // Broadband
+  if (/(full\s*fibre|fibre|fiber|gigafast|hyperoptic|broadband|mb\b|gb\b\s*broadband|gig\s*broadband)/.test(t)) return '📡';
+  // Mobile plans
+  if (/(sim\s*only|sim\s*card|goody\s*bag|mobile\s*plan|mobile\s*contract|unlimited\s*data|gb\s*sim|gb\s*plan)/.test(t)) return '📞';
   return CATEGORY_ICON[category];
 }
 
@@ -1728,9 +1941,35 @@ function buildVariants(seed: Seed): Product[] {
   // For food category — always include Uber Eats, Deliveroo, Just Eat.
   if (seed.category === 'food') {
     for (const r of FOOD_PLATFORMS) {
-      if (eligibleRetailers.includes(r) && !chosen.includes(r)) {
-        chosen.push(r);
-      }
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
+  // For cars — always include AutoTrader, Motors, Carwow, Heycar, Cinch.
+  if (seed.category === 'cars') {
+    for (const r of CAR_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+    // Also Facebook Marketplace and Gumtree are great for cars
+    if (!chosen.includes('facebook')) chosen.push('facebook');
+    if (!chosen.includes('gumtree')) chosen.push('gumtree');
+    if (!chosen.includes('arnoldclark')) chosen.push('arnoldclark');
+  }
+  // For insurance — always include the big 4 comparison sites.
+  if (seed.category === 'insurance') {
+    for (const r of INSURANCE_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
+  // For broadband — always include Sky, BT, Virgin Media, TalkTalk, Plusnet.
+  if (seed.category === 'broadband') {
+    for (const r of BROADBAND_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
+  // For mobile plans — always include all the major UK networks.
+  if (seed.category === 'mobileplan') {
+    for (const r of MOBILE_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
     }
   }
 
@@ -1795,6 +2034,43 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'ubereats':   return `https://www.ubereats.com/gb/search?q=${q}`;
     case 'deliveroo':  return `https://deliveroo.co.uk/search?q=${q}`;
     case 'justeat':    return `https://www.just-eat.co.uk/search?q=${q}`;
+    // Cars
+    case 'autotrader':  return `https://www.autotrader.co.uk/car-search?keywords=${q}`;
+    case 'motors':      return `https://www.motors.co.uk/search/car/?keywords=${q}`;
+    case 'gumtree':     return `https://www.gumtree.com/cars/uk?q=${q}`;
+    case 'carwow':      return `https://www.carwow.co.uk/used-cars/search?keywords=${q}`;
+    case 'cinch':       return `https://www.cinch.co.uk/used-cars?keywords=${q}`;
+    case 'heycar':      return `https://heycar.co.uk/results?keywords=${q}`;
+    case 'arnoldclark': return `https://www.arnoldclark.com/used-cars?searchQuery=${q}`;
+    // Insurance
+    case 'comparethemarket': return `https://www.comparethemarket.com/search-results?searchTerm=${q}`;
+    case 'moneysupermarket': return `https://www.moneysupermarket.com/search?q=${q}`;
+    case 'gocompare':        return `https://www.gocompare.com/search?q=${q}`;
+    case 'confused':         return `https://www.confused.com/search?q=${q}`;
+    case 'admiral':          return `https://www.admiral.com/search?q=${q}`;
+    case 'aviva':            return `https://www.aviva.co.uk/search-results/?searchTerm=${q}`;
+    case 'directline':       return `https://www.directline.com/search?q=${q}`;
+    case 'churchill':        return `https://www.churchill.com/search?q=${q}`;
+    // Broadband
+    case 'sky':          return `https://www.sky.com/shop/broadband-talk/`;
+    case 'bt':           return `https://www.bt.com/broadband/deals`;
+    case 'virginmedia':  return `https://www.virginmedia.com/broadband/deals`;
+    case 'talktalk':     return `https://www.talktalk.co.uk/shop/fibre-broadband`;
+    case 'nowbroadband': return `https://www.nowtv.com/broadband`;
+    case 'plusnet':      return `https://www.plus.net/broadband-deals/`;
+    case 'hyperoptic':   return `https://www.hyperoptic.com/broadband`;
+    // Mobile networks
+    case 'ee':           return `https://shop.ee.co.uk/sim-only-deals`;
+    case 'vodafone':     return `https://www.vodafone.co.uk/mobile/sim-only`;
+    case 'three':        return `https://www.three.co.uk/store/sim-only`;
+    case 'o2':           return `https://www.o2.co.uk/shop/sim-cards`;
+    case 'giffgaff':     return `https://www.giffgaff.com/orders/affiliate/goodybags`;
+    case 'tescomobile':  return `https://www.tescomobile.com/sim-only`;
+    case 'skymobile':    return `https://www.sky.com/shop/mobile`;
+    case 'voxi':         return `https://www.voxi.co.uk/plans`;
+    case 'smarty':       return `https://smarty.co.uk/plans`;
+    case 'idmobile':     return `https://www.idmobile.co.uk/sim-only-deals`;
+    case 'carphonewarehouse': return `https://www.carphonewarehouse.com/sim-free.html`;
   }
 }
 
@@ -1865,6 +2141,26 @@ const SYNONYMS: Record<string, string[]> = {
   microwave:  ['microwave','combination microwave'],
   dishwasher: ['dishwasher'],
   kitchen:    ['fridge','washer','dishwasher','oven','microwave','cooker','hob','kettle','toaster','airfryer','air fryer','blender','coffee'],
+  // Cars
+  car:        ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','mini cooper','yaris','swift','clio','i30','leon','octavia','tesla','range rover','tucson','sportage','qashqai','juke','sentra','passat','accord','xc40','xc60','x3','m sport','amg','rs line','st-line','sport','hybrid','electric'],
+  cars:       ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','tesla','range rover','tucson','sportage','qashqai','xc40','xc60','x3','hybrid','electric','m sport'],
+  used:       ['used','second','pre-owned','2019','2020','2021','2022'],
+  electric:   ['fridge','washer','washing','dryer','oven','microwave','fan','heater','kettle','iron','vacuum','airfryer','air fryer','tesla','model 3','model y','ev','leaf','ioniq','polestar','electric'],
+  ev:         ['ev','electric','tesla','model 3','model y','leaf','ioniq','polestar','niro ev'],
+  // Insurance
+  insurance:  ['insurance','cover','policy','protection'],
+  policy:     ['insurance','cover','policy'],
+  // Broadband
+  broadband:  ['broadband','fibre','fiber','full fibre','mb','gb','gigafast','gigabit','sky','bt','virgin media','talktalk','plusnet','hyperoptic','vodafone'],
+  internet:   ['broadband','fibre','fiber','mb','gb','wifi'],
+  fibre:      ['fibre','fiber','broadband','full fibre','gigafast','mb','gb'],
+  wifi:       ['broadband','fibre','wifi','router','wireless'],
+  // Mobile plans
+  sim:        ['sim','sim only','goody bag','100gb','unlimited','smart plan'],
+  contract:   ['contract','24 month','12 month','pay monthly','smart plan','refresh','swap'],
+  plan:       ['sim','plan','contract','pay monthly','goody bag','smart plan'],
+  unlimited:  ['unlimited','no limit','infinite data'],
+  '5g':       ['5g','five g'],
 };
 
 export async function searchMock(params: SearchParams): Promise<Product[]> {

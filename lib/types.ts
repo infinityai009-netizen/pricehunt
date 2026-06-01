@@ -26,7 +26,44 @@ export type Retailer =
   | 'facebook'
   | 'ubereats'
   | 'deliveroo'
-  | 'justeat';
+  | 'justeat'
+  // Cars
+  | 'autotrader'
+  | 'motors'
+  | 'gumtree'
+  | 'carwow'
+  | 'cinch'
+  | 'heycar'
+  | 'arnoldclark'
+  // Insurance comparison
+  | 'comparethemarket'
+  | 'moneysupermarket'
+  | 'gocompare'
+  | 'confused'
+  | 'admiral'
+  | 'aviva'
+  | 'directline'
+  | 'churchill'
+  // Broadband
+  | 'sky'
+  | 'bt'
+  | 'virginmedia'
+  | 'talktalk'
+  | 'nowbroadband'
+  | 'plusnet'
+  | 'hyperoptic'
+  // Mobile networks
+  | 'ee'
+  | 'vodafone'
+  | 'three'
+  | 'o2'
+  | 'giffgaff'
+  | 'tescomobile'
+  | 'skymobile'
+  | 'voxi'
+  | 'smarty'
+  | 'idmobile'
+  | 'carphonewarehouse';
 
 export type Category =
   | 'electronics'
@@ -41,7 +78,11 @@ export type Category =
   | 'outdoor'
   | 'pet'
   | 'cameras'
-  | 'food';
+  | 'food'
+  | 'cars'
+  | 'insurance'
+  | 'broadband'
+  | 'mobileplan';
 
 export interface Product {
   id: string;            // unique per offer (retailer + product)

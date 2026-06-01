@@ -13,6 +13,10 @@ const RETAILERS = [
   'Tesco','ASDA',"Sainsbury's",'Morrisons','Waitrose','Aldi','Lidl','Iceland','Ocado','Co-op','M&S',
   'Temu','Shein','AliExpress','Wayfair','IKEA','B&Q','Walmart',
   'Apple','Facebook Marketplace','Uber Eats','Deliveroo','Just Eat',
+  'AutoTrader','Motors','Gumtree','Carwow','Cinch','Heycar','Arnold Clark',
+  'Compare the Market','MoneySuperMarket','GoCompare','Confused.com',
+  'Sky','BT','Virgin Media','TalkTalk','NOW Broadband','Plusnet','Hyperoptic',
+  'EE','Vodafone','Three','O2','giffgaff','Tesco Mobile','VOXI','SMARTY','iD Mobile','Carphone Warehouse',
 ];
 
 export default function HomePage() {
