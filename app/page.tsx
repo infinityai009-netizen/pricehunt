@@ -20,6 +20,9 @@ const RETAILERS = [
   'B&M','Home Bargains','Poundland','Wilko',
   'Zara','H&M','Office','ASOS','Next','Primark','JD Sports','Schuh','Sports Direct',
   'PrettyLittleThing','Boohoo','River Island','New Look','Clarks','Mango','Selfridges','FatFace','Uniqlo',
+  'TK Maxx','HomeSense','Watch Shop','Watches of Switzerland','Goldsmiths','Beaverbrooks','Ernest Jones','H. Samuel',
+  'Fossil','TAG Heuer','Casio','Tommy Hilfiger','BOSS','Ralph Lauren','Calvin Klein','Boden','Joules',
+  'White Stuff','Mountain Warehouse','Cotswold Outdoor','Footasylum','size?','Flannels',
 ];
 
 export default function HomePage() {

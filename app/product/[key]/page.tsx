@@ -36,6 +36,16 @@ const RETAILER_NAME: Record<string, string> = {
   boohoo: 'Boohoo', riverisland: 'River Island', newlook: 'New Look',
   clarks: 'Clarks', mango: 'Mango', selfridges: 'Selfridges',
   fatface: 'FatFace', uniqlo: 'Uniqlo',
+  tkmaxx: 'TK Maxx', homesense: 'HomeSense',
+  watchshop: 'Watch Shop', watchesofswitzerland: 'Watches of Switzerland',
+  goldsmiths: 'Goldsmiths', beaverbrooks: 'Beaverbrooks',
+  ernestjones: 'Ernest Jones', hsamuel: 'H. Samuel',
+  fossil: 'Fossil', tagheuer: 'TAG Heuer', casioshop: 'Casio',
+  tommyhilfiger: 'Tommy Hilfiger', hugoboss: 'BOSS', ralphlauren: 'Ralph Lauren',
+  calvinklein: 'Calvin Klein', boden: 'Boden', joules: 'Joules',
+  whitestuff: 'White Stuff', mountainwarehouse: 'Mountain Warehouse',
+  cotswoldoutdoor: 'Cotswold Outdoor', footasylum: 'Footasylum',
+  size: 'size?', flannels: 'Flannels',
 };
 
 interface PageProps {

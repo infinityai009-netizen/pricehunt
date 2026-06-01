@@ -87,7 +87,33 @@ export type Retailer =
   | 'mango'
   | 'selfridges'
   | 'fatface'
-  | 'uniqlo';
+  | 'uniqlo'
+  // Discount fashion / homeware
+  | 'tkmaxx'
+  | 'homesense'
+  // Watch retailers & brands
+  | 'watchshop'
+  | 'watchesofswitzerland'
+  | 'goldsmiths'
+  | 'beaverbrooks'
+  | 'ernestjones'
+  | 'hsamuel'
+  | 'fossil'
+  | 'tagheuer'
+  | 'casioshop'
+  // Premium / outdoor / branded clothing
+  | 'tommyhilfiger'
+  | 'hugoboss'
+  | 'ralphlauren'
+  | 'calvinklein'
+  | 'boden'
+  | 'joules'
+  | 'whitestuff'
+  | 'mountainwarehouse'
+  | 'cotswoldoutdoor'
+  | 'footasylum'
+  | 'size'
+  | 'flannels';
 
 export type Category =
   | 'electronics'

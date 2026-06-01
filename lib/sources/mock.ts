@@ -14,7 +14,7 @@ interface Seed {
   image: string;
 }
 
-const SEEDS: Seed[] = [
+const SEEDS_RAW: any[] = [
   // Phones
   { title: 'Apple iPhone 11 64GB', category: 'electronics', basePrice: 329, image: 'https://images.unsplash.com/photo-1574755393849-623942496936?w=400' },
   { title: 'Apple iPhone 12 128GB', category: 'electronics', basePrice: 449, image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400' },
@@ -130,6 +130,70 @@ const SEEDS: Seed[] = [
   { title: 'TicWatch Pro 5 Enduro', category: 'electronics', basePrice: 349, image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400' },
   { title: 'Withings ScanWatch 2', category: 'electronics', basePrice: 349, image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400' },
   { title: 'OnePlus Watch 2', category: 'electronics', basePrice: 299, image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400' },
+
+  // ─── Branded watches (Fossil, Casio, Tissot, Seiko, Tag, Daniel Wellington…)
+  { title: 'Fossil Gen 6 Smartwatch 44mm Black', category: 'electronics', basePrice: 279, image: '' },
+  { title: 'Fossil Gen 6 Hybrid Smartwatch', category: 'electronics', basePrice: 199, image: '' },
+  { title: 'Fossil Townsman Chronograph Brown Leather Watch', category: 'electronics', basePrice: 159, image: '' },
+  { title: 'Fossil Q Explorist HR Gold-Tone Watch', category: 'electronics', basePrice: 219, image: '' },
+  { title: 'Fossil Neutra Chronograph Black Watch', category: 'electronics', basePrice: 129, image: '' },
+  { title: 'Fossil Carlie Mini Rose Gold Watch', category: 'electronics', basePrice: 119, image: '' },
+  { title: 'Fossil Jacqueline Three-Hand Watch', category: 'electronics', basePrice: 95, image: '' },
+  { title: 'Casio G-Shock GA-2100-1AER', category: 'electronics', basePrice: 99, image: '' },
+  { title: 'Casio G-Shock GBD-200-1ER Bluetooth', category: 'electronics', basePrice: 129, image: '' },
+  { title: 'Casio G-Shock Mudmaster GG-B100', category: 'electronics', basePrice: 269, image: '' },
+  { title: 'Casio Edifice EFR-526L Chronograph', category: 'electronics', basePrice: 119, image: '' },
+  { title: 'Casio Pro Trek PRG-330 Tough Solar', category: 'electronics', basePrice: 199, image: '' },
+  { title: 'Casio F-91W Classic Digital Watch', category: 'electronics', basePrice: 13, image: '' },
+  { title: 'Casio A158WA Vintage Stainless Steel', category: 'electronics', basePrice: 25, image: '' },
+  { title: 'Casio Vintage A168WA Gold Watch', category: 'electronics', basePrice: 45, image: '' },
+  { title: 'Tissot PRX Powermatic 80 Watch', category: 'electronics', basePrice: 575, image: '' },
+  { title: 'Tissot Le Locle Powermatic 80 Watch', category: 'electronics', basePrice: 475, image: '' },
+  { title: 'Tissot Seastar 1000 Powermatic 80', category: 'electronics', basePrice: 725, image: '' },
+  { title: 'Tissot Gentleman Powermatic 80 Silicium', category: 'electronics', basePrice: 685, image: '' },
+  { title: 'Seiko 5 Sports SRPD55K1 Automatic', category: 'electronics', basePrice: 249, image: '' },
+  { title: 'Seiko Presage Cocktail Time SRPB41J1', category: 'electronics', basePrice: 419, image: '' },
+  { title: 'Seiko Prospex Diver SPB143J1', category: 'electronics', basePrice: 1099, image: '' },
+  { title: 'Seiko Solar SUP858P1 Two-Tone', category: 'electronics', basePrice: 199, image: '' },
+  { title: 'Citizen Eco-Drive Bullhead Chronograph', category: 'electronics', basePrice: 379, image: '' },
+  { title: 'Citizen Promaster Diver BN0150', category: 'electronics', basePrice: 295, image: '' },
+  { title: 'Citizen Tsuyosa Automatic NJ0151', category: 'electronics', basePrice: 320, image: '' },
+  { title: 'TAG Heuer Aquaracer Professional 300', category: 'electronics', basePrice: 2900, image: '' },
+  { title: 'TAG Heuer Carrera Chronograph Calibre 16', category: 'electronics', basePrice: 3450, image: '' },
+  { title: 'TAG Heuer Formula 1 Chronograph 43mm', category: 'electronics', basePrice: 1550, image: '' },
+  { title: 'Hamilton Khaki Field Mechanical 38mm', category: 'electronics', basePrice: 525, image: '' },
+  { title: 'Hamilton Khaki Field Auto 42mm', category: 'electronics', basePrice: 625, image: '' },
+  { title: 'Tudor Black Bay 58 Burgundy', category: 'electronics', basePrice: 3380, image: '' },
+  { title: 'Tudor Black Bay 41 Steel', category: 'electronics', basePrice: 3370, image: '' },
+  { title: 'Omega Seamaster Diver 300M Co-Axial', category: 'electronics', basePrice: 5300, image: '' },
+  { title: 'Omega Speedmaster Professional Moonwatch', category: 'electronics', basePrice: 6600, image: '' },
+  { title: 'Rolex Submariner Date 41mm Black', category: 'electronics', basePrice: 9100, image: '' },
+  { title: 'Rolex Oyster Perpetual 41 Silver Dial', category: 'electronics', basePrice: 6300, image: '' },
+  { title: 'Rolex Datejust 41 Two-Tone Wimbledon', category: 'electronics', basePrice: 12500, image: '' },
+  { title: 'Daniel Wellington Classic Petite Sterling', category: 'electronics', basePrice: 159, image: '' },
+  { title: 'Daniel Wellington Iconic Link Watch', category: 'electronics', basePrice: 199, image: '' },
+  { title: 'Daniel Wellington Petite Melrose Rose Gold', category: 'electronics', basePrice: 149, image: '' },
+  { title: 'Olivia Burton Floral Bee Mesh Watch', category: 'electronics', basePrice: 89, image: '' },
+  { title: 'Olivia Burton 3D Bee Mesh Rose Gold', category: 'electronics', basePrice: 99, image: '' },
+  { title: 'Cluse Minuit Rose Gold White Watch', category: 'electronics', basePrice: 89, image: '' },
+  { title: 'Cluse Triomphe Mesh Gold Watch', category: 'electronics', basePrice: 109, image: '' },
+  { title: 'Skagen Holst Stainless Steel Black Watch', category: 'electronics', basePrice: 145, image: '' },
+  { title: 'Skagen Aaren Kulor Black Resin Watch', category: 'electronics', basePrice: 89, image: '' },
+  { title: 'Michael Kors Bradshaw Chronograph Rose Gold', category: 'electronics', basePrice: 249, image: '' },
+  { title: 'Michael Kors Lexington Three-Hand Watch', category: 'electronics', basePrice: 219, image: '' },
+  { title: 'Armani Exchange Hampton Black Leather', category: 'electronics', basePrice: 159, image: '' },
+  { title: 'Hugo Boss Champion Chronograph Watch', category: 'electronics', basePrice: 299, image: '' },
+  { title: 'Hugo Boss Centre Court Chronograph', category: 'electronics', basePrice: 229, image: '' },
+  { title: 'Tommy Hilfiger Decker Multi-Function', category: 'electronics', basePrice: 159, image: '' },
+  { title: 'Tommy Hilfiger Theo Black Silicon Strap', category: 'electronics', basePrice: 99, image: '' },
+  { title: 'Calvin Klein Minimal Round Mesh Watch', category: 'electronics', basePrice: 139, image: '' },
+  { title: 'Sekonda Classic Day-Date Stainless Steel', category: 'electronics', basePrice: 49, image: '' },
+  { title: 'Timex Marlin Hand-Wound 34mm', category: 'electronics', basePrice: 199, image: '' },
+  { title: 'Timex Weekender 38mm Classic Watch', category: 'electronics', basePrice: 79, image: '' },
+  { title: 'Bulova Lunar Pilot Chronograph Watch', category: 'electronics', basePrice: 595, image: '' },
+  { title: 'Orient Bambino Version II Automatic', category: 'electronics', basePrice: 175, image: '' },
+  { title: 'Swatch Big Bold White Bioceramic', category: 'electronics', basePrice: 105, image: '' },
+  { title: 'Swatch x Omega MoonSwatch Mission to Moon', category: 'electronics', basePrice: 250, image: '' },
 
   // ─── Headphones — Over-ear (wireless) ──────────────────────────────────────
   { title: 'Sony WH-1000XM5 Wireless Headphones', category: 'electronics', basePrice: 299, image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400' },
@@ -1223,6 +1287,8 @@ const SEEDS: Seed[] = [
   { title: 'DJI Osmo Pocket 3', category: 'cameras', basePrice: 489, image: 'https://images.unsplash.com/photo-1606983340075-3a5cf7d3d57c?w=400' },
 ];
 
+const SEEDS: Seed[] = SEEDS_RAW as Seed[];
+
 // Which retailers stock which categories (broadly true for UK market)
 const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   amazon:     ['electronics','fashion','beauty','home','gaming','sports','toys','outdoor','pet','cameras','grocery','furniture'],
@@ -1314,6 +1380,32 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   selfridges:  ['fashion','beauty','home','furniture'],
   fatface:     ['fashion'],
   uniqlo:      ['fashion'],
+  // Discount fashion / homeware
+  tkmaxx:      ['fashion','beauty','home','toys','sports'],
+  homesense:   ['home','furniture','beauty'],
+  // Watch retailers
+  watchshop:           ['fashion','electronics'],
+  watchesofswitzerland:['fashion','electronics'],
+  goldsmiths:          ['fashion','electronics'],
+  beaverbrooks:        ['fashion','electronics'],
+  ernestjones:         ['fashion','electronics'],
+  hsamuel:             ['fashion','electronics'],
+  fossil:              ['fashion','electronics'],
+  tagheuer:            ['fashion','electronics'],
+  casioshop:           ['electronics','fashion'],
+  // Premium / outdoor branded clothing
+  tommyhilfiger: ['fashion'],
+  hugoboss:      ['fashion','beauty'],
+  ralphlauren:   ['fashion'],
+  calvinklein:   ['fashion','beauty'],
+  boden:         ['fashion'],
+  joules:        ['fashion'],
+  whitestuff:    ['fashion','home'],
+  mountainwarehouse: ['fashion','outdoor','sports'],
+  cotswoldoutdoor:   ['fashion','outdoor','sports'],
+  footasylum:        ['fashion','sports'],
+  size:              ['fashion','sports'],
+  flannels:          ['fashion','beauty'],
 };
 
 // Stable hash so the same retailer+title always produces the same price/rating
@@ -1330,7 +1422,9 @@ const FASHION_PLATFORMS: Retailer[] = ['asos','zara','hm','next','primark','newl
 // Shoe specialists for fashion footwear.
 const SHOE_PLATFORMS: Retailer[] = ['office','schuh','jdsports','clarks','sportsdirect'];
 // Discount stores boost on home/grocery.
-const DISCOUNT_PLATFORMS: Retailer[] = ['bm','homebargains','poundland','wilko'];
+const DISCOUNT_PLATFORMS: Retailer[] = ['bm','homebargains','poundland','wilko','tkmaxx','homesense'];
+// Watch specialist retailers — boost on any watch product.
+const WATCH_PLATFORMS: Retailer[] = ['watchshop','watchesofswitzerland','goldsmiths','beaverbrooks','ernestjones','hsamuel','fossil'];
 // Food delivery platforms — always show all 3 for any food item.
 const FOOD_PLATFORMS: Retailer[] = ['ubereats','deliveroo','justeat'];
 // Always show these category-specific comparison sites.
@@ -2016,6 +2110,13 @@ function buildVariants(seed: Seed): Product[] {
       if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
     }
   }
+  // Watch products → watch specialists join the lineup.
+  const isWatch = /\bwatch\b|fitbit|garmin|smartwatch|g-shock|casio|fossil|tissot|seiko|citizen|tag heuer|daniel wellington|olivia burton|skagen|michael kors|amazfit|huawei watch/i.test(seed.title);
+  if (isWatch) {
+    for (const r of WATCH_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
 
   return chosen.map((retailer): Product => {
     const h = hash(seed.title + retailer);
@@ -2139,6 +2240,32 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'selfridges':   return `https://www.selfridges.com/GB/en/search?query=${q}`;
     case 'fatface':      return `https://www.fatface.com/search?q=${q}`;
     case 'uniqlo':       return `https://www.uniqlo.com/uk/en/search/?q=${q}`;
+    // Discount fashion / homeware
+    case 'tkmaxx':       return `https://www.tkmaxx.com/uk/en/search?text=${q}`;
+    case 'homesense':    return `https://www.homesense.com/uk/en/search?text=${q}`;
+    // Watch retailers / brands
+    case 'watchshop':            return `https://www.watchshop.com/search?q=${q}`;
+    case 'watchesofswitzerland': return `https://www.watches-of-switzerland.co.uk/search?q=${q}`;
+    case 'goldsmiths':           return `https://www.goldsmiths.co.uk/search?q=${q}`;
+    case 'beaverbrooks':         return `https://www.beaverbrooks.co.uk/search?q=${q}`;
+    case 'ernestjones':          return `https://www.ernestjones.co.uk/search?q=${q}`;
+    case 'hsamuel':              return `https://www.hsamuel.co.uk/search?q=${q}`;
+    case 'fossil':               return `https://www.fossil.com/en-gb/search?q=${q}`;
+    case 'tagheuer':             return `https://www.tagheuer.com/gb/en/search.html?q=${q}`;
+    case 'casioshop':            return `https://www.casio.co.uk/search?q=${q}`;
+    // Premium branded clothing
+    case 'tommyhilfiger':    return `https://uk.tommy.com/search?q=${q}`;
+    case 'hugoboss':         return `https://www.hugoboss.com/uk/search?q=${q}`;
+    case 'ralphlauren':      return `https://www.ralphlauren.co.uk/en/search?q=${q}`;
+    case 'calvinklein':      return `https://www.calvinklein.co.uk/search?q=${q}`;
+    case 'boden':            return `https://www.boden.co.uk/en-gb/search/?q=${q}`;
+    case 'joules':           return `https://www.joules.com/search?q=${q}`;
+    case 'whitestuff':       return `https://www.whitestuff.com/search?q=${q}`;
+    case 'mountainwarehouse':return `https://www.mountainwarehouse.com/search/?q=${q}`;
+    case 'cotswoldoutdoor':  return `https://www.cotswoldoutdoor.com/search?q=${q}`;
+    case 'footasylum':       return `https://www.footasylum.com/search/?q=${q}`;
+    case 'size':             return `https://www.size.co.uk/search/?q=${q}`;
+    case 'flannels':         return `https://www.flannels.com/search?searchText=${q}`;
   }
 }
 
