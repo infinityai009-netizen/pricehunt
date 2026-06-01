@@ -2,6 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import WishlistLink from '@/components/WishlistLink';
+import NotificationBell from '@/components/NotificationBell';
+import UserMenu from '@/components/UserMenu';
+import AuthModal from '@/components/AuthModal';
 
 export const metadata: Metadata = {
   title: 'PriceHunt — Compare prices across 20+ UK retailers',
@@ -13,20 +16,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <header className="border-b bg-white">
+        <header className="border-b bg-white sticky top-0 z-20">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
             <Link href="/" className="text-xl font-bold text-brand-600">
               PriceHunt
             </Link>
-            <nav className="ml-auto hidden md:flex gap-6 text-sm text-slate-600 items-center">
+            <nav className="ml-2 hidden md:flex gap-6 text-sm text-slate-600 items-center">
               <Link href="/category/electronics" className="hover:text-brand-600">Electronics</Link>
               <Link href="/category/fashion" className="hover:text-brand-600">Fashion</Link>
               <Link href="/category/home" className="hover:text-brand-600">Home</Link>
               <Link href="/category/grocery" className="hover:text-brand-600">Grocery</Link>
               <Link href="/category/gaming" className="hover:text-brand-600">Gaming</Link>
             </nav>
-            <div className="ml-auto md:ml-6">
+            <div className="ml-auto flex items-center gap-3">
               <WishlistLink />
+              <NotificationBell />
+              <UserMenu />
             </div>
           </div>
         </header>
@@ -37,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span>Prices accurate at time of indexing.</span>
           </div>
         </footer>
+        <AuthModal />
       </body>
     </html>
   );

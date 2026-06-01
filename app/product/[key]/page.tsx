@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import SearchBar from '@/components/SearchBar';
 import WishlistButton from '@/components/WishlistButton';
 import PriceHistoryChart from '@/components/PriceHistoryChart';
+import RetailerLink from '@/components/RetailerLink';
 import { findProductByKey } from '@/lib/aggregator';
 import { fakePriceHistory } from '@/lib/priceHistory';
 
@@ -67,14 +68,12 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
           )}
 
-          <a
+          <RetailerLink
             href={main.url}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
             className="block text-center px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-medium rounded-lg"
           >
             Go to {RETAILER_NAME[main.retailer] ?? main.retailer} →
-          </a>
+          </RetailerLink>
 
           <div className="text-sm text-slate-500">
             Compared across <strong>{offers.length}</strong> retailers · Lowest: £{lowestEver.toFixed(2)} · Highest: £{highestPrice.toFixed(2)}
@@ -111,14 +110,12 @@ export default async function ProductPage({ params }: PageProps) {
                     {o.inStock ? <span className="text-green-700">In stock</span> : <span className="text-rose-600">Out</span>}
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <a
+                    <RetailerLink
                       href={o.url}
-                      target="_blank"
-                      rel="sponsored noopener noreferrer"
                       className="inline-block px-3 py-1.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-medium"
                     >
                       Visit →
-                    </a>
+                    </RetailerLink>
                   </td>
                 </tr>
               ))}
