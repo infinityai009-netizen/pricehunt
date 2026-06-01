@@ -184,6 +184,22 @@ export default function ProductCard({ p }: { p: Product }) {
           <span className="text-lg font-bold text-slate-900">£{p.price.toFixed(2)}</span>
           {!p.inStock && <span className="text-xs text-rose-600">Out of stock</span>}
         </div>
+        <div className="text-[10px] text-slate-500 flex items-center gap-1.5 pt-0.5">
+          {p.inStoreOnly ? (
+            <span className="text-amber-700">🏪 In store only</span>
+          ) : p.deliveryOnly ? (
+            <span>🚚 Delivery £{p.deliveryFee?.toFixed(2) ?? '—'}</span>
+          ) : (
+            <>
+              {p.deliveryFee === 0 ? (
+                <span className="text-green-700">🚚 Free delivery</span>
+              ) : p.deliveryFee != null ? (
+                <span>🚚 £{p.deliveryFee.toFixed(2)}{p.freeDeliveryOver ? ` (free over £${p.freeDeliveryOver})` : ''}</span>
+              ) : null}
+              {p.clickCollect && <span className="text-slate-500">· 📦 C&C</span>}
+            </>
+          )}
+        </div>
       </div>
     </Link>
   );

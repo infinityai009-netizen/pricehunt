@@ -119,36 +119,63 @@ export default async function ProductPage({ params }: PageProps) {
             <thead className="bg-slate-50 text-left">
               <tr>
                 <th className="px-4 py-3">Retailer</th>
-                <th className="px-4 py-3">Price</th>
-                <th className="px-4 py-3 hidden sm:table-cell">Rating</th>
-                <th className="px-4 py-3 hidden md:table-cell">Stock</th>
+                <th className="px-4 py-3">In-store / Online</th>
+                <th className="px-4 py-3 hidden sm:table-cell">Delivery</th>
+                <th className="px-4 py-3 hidden md:table-cell">Total delivered</th>
                 <th className="px-4 py-3 text-right">Go to store</th>
               </tr>
             </thead>
             <tbody>
-              {offers.map((o, i) => (
-                <tr key={o.id} className="border-t hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium">
-                    {RETAILER_NAME[o.retailer] ?? o.retailer}
-                    {i === 0 && <span className="ml-2 text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Best price</span>}
-                  </td>
-                  <td className="px-4 py-3 font-bold">£{o.price.toFixed(2)}</td>
-                  <td className="px-4 py-3 hidden sm:table-cell text-amber-600">
-                    {o.rating != null ? <>★ {o.rating} <span className="text-slate-400 text-xs">({o.reviews})</span></> : '—'}
-                  </td>
-                  <td className="px-4 py-3 hidden md:table-cell">
-                    {o.inStock ? <span className="text-green-700">In stock</span> : <span className="text-rose-600">Out</span>}
-                  </td>
-                  <td className="px-4 py-3 text-right">
-                    <RetailerLink
-                      href={o.url}
-                      className="inline-block px-3 py-1.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-medium"
-                    >
-                      Visit →
-                    </RetailerLink>
-                  </td>
-                </tr>
-              ))}
+              {offers.map((o, i) => {
+                const fee = o.deliveryFee ?? 0;
+                const totalDelivered = o.inStoreOnly ? null : o.price + fee;
+                return (
+                  <tr key={o.id} className="border-t hover:bg-slate-50">
+                    <td className="px-4 py-3 font-medium">
+                      <div>{RETAILER_NAME[o.retailer] ?? o.retailer}</div>
+                      {i === 0 && <span className="inline-block mt-0.5 text-[10px] bg-green-100 text-green-800 px-2 py-0.5 rounded-full">Best price</span>}
+                      {!o.inStock && <div className="text-[10px] text-rose-600 mt-0.5">Out of stock</div>}
+                    </td>
+                    <td className="px-4 py-3 font-bold text-slate-900">£{o.price.toFixed(2)}</td>
+                    <td className="px-4 py-3 hidden sm:table-cell text-xs">
+                      {o.inStoreOnly ? (
+                        <span className="text-amber-700">🏪 In-store only</span>
+                      ) : o.deliveryOnly ? (
+                        <span>🚚 £{(o.deliveryFee ?? 0).toFixed(2)} delivery</span>
+                      ) : (
+                        <div className="space-y-0.5">
+                          <div>
+                            {o.deliveryFee === 0 ? (
+                              <span className="text-green-700">🚚 Free delivery</span>
+                            ) : (
+                              <span>🚚 £{(o.deliveryFee ?? 0).toFixed(2)}</span>
+                            )}
+                          </div>
+                          {o.freeDeliveryOver != null && o.freeDeliveryOver > 0 && (
+                            <div className="text-[10px] text-slate-500">Free over £{o.freeDeliveryOver}</div>
+                          )}
+                          {o.clickCollect && <div className="text-[10px] text-slate-500">📦 Click & Collect</div>}
+                        </div>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 hidden md:table-cell">
+                      {totalDelivered == null ? (
+                        <span className="text-slate-400">—</span>
+                      ) : (
+                        <span className="font-semibold">£{totalDelivered.toFixed(2)}</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <RetailerLink
+                        href={o.url}
+                        className="inline-block px-3 py-1.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-medium whitespace-nowrap"
+                      >
+                        Visit →
+                      </RetailerLink>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

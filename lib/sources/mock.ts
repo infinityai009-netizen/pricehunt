@@ -1041,6 +1041,154 @@ const SEEDS_RAW: any[] = [
   { title: "Colgate Total Toothpaste 75ml", category: 'grocery', basePrice: 2.5, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400' },
   { title: "Head & Shoulders Classic Clean Shampoo 500ml", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400' },
   { title: "Pampers Baby Dry Size 4 Nappies 50 pack", category: 'grocery', basePrice: 9, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
+  { title: "Pampers Baby Dry Size 1 Newborn 88 pack", category: 'grocery', basePrice: 12, image: '' },
+  { title: "Pampers Baby Dry Size 2 Mini 96 pack", category: 'grocery', basePrice: 13, image: '' },
+  { title: "Pampers Baby Dry Size 3 Midi 90 pack", category: 'grocery', basePrice: 13, image: '' },
+  { title: "Pampers Baby Dry Size 5 Junior 44 pack", category: 'grocery', basePrice: 11, image: '' },
+  { title: "Pampers Baby Dry Size 6 Extra Large 39 pack", category: 'grocery', basePrice: 11, image: '' },
+  { title: "Pampers Pure Protection Size 4", category: 'grocery', basePrice: 14, image: '' },
+  { title: "Huggies Pull-Ups Boys Size 5-7", category: 'grocery', basePrice: 12, image: '' },
+  { title: "Huggies Little Movers Size 4", category: 'grocery', basePrice: 10, image: '' },
+  { title: "Aldi Mamia Newborn Nappies Size 1", category: 'grocery', basePrice: 3, image: '' },
+
+  // ─── Baby food & formula ───────────────────────────────────────────────────
+  { title: "SMA Pro First Infant Milk Stage 1 800g", category: 'grocery', basePrice: 13.50, image: '' },
+  { title: "SMA Pro Follow-on Milk Stage 2 800g", category: 'grocery', basePrice: 13.50, image: '' },
+  { title: "Aptamil First Infant Milk Stage 1 800g", category: 'grocery', basePrice: 14, image: '' },
+  { title: "Aptamil Profutura First Milk 800g", category: 'grocery', basePrice: 18, image: '' },
+  { title: "Cow & Gate First Infant Milk 800g", category: 'grocery', basePrice: 11, image: '' },
+  { title: "Cow & Gate Follow-on Milk 800g", category: 'grocery', basePrice: 11, image: '' },
+  { title: "HiPP Organic Combiotic First Milk 800g", category: 'grocery', basePrice: 13, image: '' },
+  { title: "Kendamil Organic First Infant Milk 800g", category: 'grocery', basePrice: 16, image: '' },
+  { title: "Ella's Kitchen Stage 1 Pouch Variety Pack", category: 'grocery', basePrice: 4.50, image: '' },
+  { title: "Ella's Kitchen The Yellow One Smoothie Pouch", category: 'grocery', basePrice: 1.20, image: '' },
+  { title: "Ella's Kitchen Spaghetti Bolognese Pouch", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "Heinz By Nature Pear & Apple Jar 4+ months", category: 'grocery', basePrice: 0.85, image: '' },
+  { title: "Heinz First Steps Baby Rice 125g", category: 'grocery', basePrice: 1.30, image: '' },
+  { title: "Plum Baby Stage 2 Organic Pouch", category: 'grocery', basePrice: 1.40, image: '' },
+  { title: "Organix Stage 1 Apple Pure Pouch", category: 'grocery', basePrice: 1.20, image: '' },
+  { title: "Organix Baby Banana Rice Cakes", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "Cow & Gate Cereal Baby Porridge", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Nestle Cerelac Wheat Cereal", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Hipp Organic Strawberry Yoghurt Stage 2", category: 'grocery', basePrice: 0.95, image: '' },
+  { title: "Petits Filous Strawberry & Banana Yoghurt 6 pack", category: 'grocery', basePrice: 2.30, image: '' },
+  { title: "Aptamil Toddler Growing Up Milk 1L", category: 'grocery', basePrice: 2, image: '' },
+  { title: "Heinz Toddler Pasta Meal Jar", category: 'grocery', basePrice: 1, image: '' },
+
+  // ─── Baby accessories ──────────────────────────────────────────────────────
+  { title: "Tommee Tippee Closer to Nature Bottle 260ml", category: 'grocery', basePrice: 8, image: '' },
+  { title: "Tommee Tippee Anti-Colic Bottle Set", category: 'grocery', basePrice: 25, image: '' },
+  { title: "MAM Easy Start Anti-Colic Bottle 260ml", category: 'grocery', basePrice: 9, image: '' },
+  { title: "MAM Original Soothing Sleep Soother", category: 'grocery', basePrice: 5.50, image: '' },
+  { title: "Avent Natural Response Baby Bottle 260ml", category: 'grocery', basePrice: 9, image: '' },
+  { title: "Cussons Baby Wipes Fragrance Free 12 pack", category: 'grocery', basePrice: 12, image: '' },
+  { title: "WaterWipes Sensitive Baby Wipes 12 pack", category: 'grocery', basePrice: 18, image: '' },
+  { title: "Pampers Aqua Pure Wipes 12 pack", category: 'grocery', basePrice: 12, image: '' },
+  { title: "Johnson's Baby Shampoo 500ml", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Johnson's Baby Bath 500ml", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Aveeno Baby Daily Care Lotion 250ml", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Sudocrem Antiseptic Healing Cream 250g", category: 'grocery', basePrice: 5.50, image: '' },
+  { title: "Bepanthen Nappy Care Ointment 100g", category: 'grocery', basePrice: 6.50, image: '' },
+  { title: "Calpol Infant Suspension Strawberry 200ml", category: 'grocery', basePrice: 5, image: '' },
+  { title: "Tommee Tippee Steam Steriliser", category: 'home', basePrice: 35, image: '' },
+
+  // ─── Kitchen products ──────────────────────────────────────────────────────
+  { title: "Stainless Steel Knife Set 6 piece with Block", category: 'home', basePrice: 35, image: '' },
+  { title: "Wusthof Classic 20cm Chef's Knife", category: 'home', basePrice: 99, image: '' },
+  { title: "Bamboo Chopping Board Large", category: 'home', basePrice: 12, image: '' },
+  { title: "Plastic Chopping Board Set 3 piece", category: 'home', basePrice: 8, image: '' },
+  { title: "Tefal Non-Stick Frying Pan 28cm", category: 'home', basePrice: 22, image: '' },
+  { title: "Tefal Ingenio 8 piece Pan Set", category: 'home', basePrice: 95, image: '' },
+  { title: "Stainless Steel Saucepan Set 5 piece", category: 'home', basePrice: 75, image: '' },
+  { title: "Le Creuset Signature Casserole 24cm", category: 'home', basePrice: 285, image: '' },
+  { title: "Pyrex Glass Casserole Dish with Lid 2.5L", category: 'home', basePrice: 18, image: '' },
+  { title: "Cooking Utensil Set 12 piece Silicone", category: 'home', basePrice: 16, image: '' },
+  { title: "Stainless Steel Mixing Bowls Set 3 piece", category: 'home', basePrice: 14, image: '' },
+  { title: "Joseph Joseph Nest Measuring Cups Set", category: 'home', basePrice: 18, image: '' },
+  { title: "Kitchen Tea Towels Cotton 6 pack", category: 'home', basePrice: 6, image: '' },
+  { title: "Heat Resistant Silicone Oven Gloves Pair", category: 'home', basePrice: 8, image: '' },
+  { title: "Cotton Apron with Pocket Adjustable", category: 'home', basePrice: 8, image: '' },
+  { title: "Rotating Spice Rack with 16 Glass Jars", category: 'home', basePrice: 28, image: '' },
+  { title: "Bread Bin Stainless Steel Large", category: 'home', basePrice: 24, image: '' },
+  { title: "Mug Tree Holder 6 hooks", category: 'home', basePrice: 12, image: '' },
+  { title: "Denby Halo 16 piece Dinner Set", category: 'home', basePrice: 169, image: '' },
+  { title: "Bormioli Rocco Tumblers 6 pack", category: 'home', basePrice: 14, image: '' },
+  { title: "Riedel Vinum Cabernet Wine Glass Set of 2", category: 'home', basePrice: 65, image: '' },
+  { title: "Springform Cake Tin 23cm Non-stick", category: 'home', basePrice: 9, image: '' },
+  { title: "Baking Tray Heavy Duty Non-stick 3 pack", category: 'home', basePrice: 14, image: '' },
+  { title: "Salter Digital Kitchen Scales", category: 'home', basePrice: 18, image: '' },
+  { title: "Kenwood KMix Stand Mixer KMX750", category: 'home', basePrice: 299, image: '' },
+  { title: "KitchenAid Artisan Stand Mixer 4.8L", category: 'home', basePrice: 499, image: '' },
+  { title: "Magimix 5200XL Food Processor", category: 'home', basePrice: 449, image: '' },
+  { title: "NutriBullet 600 Series Blender", category: 'home', basePrice: 79, image: '' },
+  { title: "Russell Hobbs Inspire Toaster 4 Slice", category: 'home', basePrice: 39, image: '' },
+  { title: "Bosch Tassimo Style Coffee Pod Machine", category: 'home', basePrice: 55, image: '' },
+
+  // ─── More cleaning products ────────────────────────────────────────────────
+  { title: "Dettol Mould & Mildew Remover Spray 750ml", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Dettol All-in-One Disinfectant Spray", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Mr Muscle Drain Unblocker Gel 500ml", category: 'grocery', basePrice: 3.50, image: '' },
+  { title: "Mr Muscle Oven Cleaner Spray", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Cif Cream Original 500ml", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "Cif Power & Shine Spray 700ml", category: 'grocery', basePrice: 2, image: '' },
+  { title: "Method Multi-Surface Spray Grapefruit 828ml", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Method Glass Cleaner 828ml", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Astonish Cream Cleaner 500g", category: 'grocery', basePrice: 1.20, image: '' },
+  { title: "Stardrops The Pink Stuff Paste 500g", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "The Pink Stuff Multi-Purpose Spray 850ml", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Flash Cleaning Wipes Lemon 60 pack", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Flash All Purpose Cleaner Lemon 1L", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "Domestos Original Thick Bleach 750ml", category: 'grocery', basePrice: 1.20, image: '' },
+  { title: "Toilet Duck Fresh Discs Lavender", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Windowlene Original 500ml", category: 'grocery', basePrice: 2, image: '' },
+  { title: "Mr Sheen Multi-Surface Polish 250ml", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Pledge Furniture Polish Spray 250ml", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Heavy Duty Bin Bags 50L 100 pack", category: 'grocery', basePrice: 8, image: '' },
+  { title: "Tie Top Kitchen Bin Bags 30L 100 pack", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Scotch-Brite Heavy Duty Sponges 10 pack", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Microfibre Cloths 10 pack Multi Colour", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Yellow Dusters Cotton 10 pack", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Marigold Extra Life Rubber Gloves Medium", category: 'grocery', basePrice: 1.80, image: '' },
+  { title: "Viakal Limescale Remover 750ml", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Calgon Water Softener Tabs 75 pack", category: 'grocery', basePrice: 9, image: '' },
+  { title: "Lenor Tumble Dryer Sheets Spring Awakening", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Bold All-in-1 Pods Lavender & Camomile 24 pack", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Surf Tropical Lily Washing Powder 65 wash", category: 'grocery', basePrice: 7, image: '' },
+  { title: "Vanish Gold Oxi Action Stain Remover Powder", category: 'grocery', basePrice: 7, image: '' },
+
+  // ─── More chocolate ────────────────────────────────────────────────────────
+  { title: "Cadbury Wispa Multipack 8 bars", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Cadbury Twirl Multipack 5 bars", category: 'grocery', basePrice: 2, image: '' },
+  { title: "Cadbury Flake Multipack 6 bars", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Cadbury Crunchie Multipack 4 bars", category: 'grocery', basePrice: 1.50, image: '' },
+  { title: "Cadbury Curly Wurly Multipack 5 bars", category: 'grocery', basePrice: 1.20, image: '' },
+  { title: "Cadbury Heroes Tub 600g", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Cadbury Roses Tub 600g", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Quality Street Tub 600g", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Celebrations Chocolate Tub 600g", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Lindt Lindor Milk Chocolate 200g", category: 'grocery', basePrice: 5, image: '' },
+  { title: "Lindt Excellence 70% Dark Chocolate 100g", category: 'grocery', basePrice: 2, image: '' },
+  { title: "Ferrero Rocher 24 pack Boxed", category: 'grocery', basePrice: 9, image: '' },
+  { title: "Toblerone Milk Chocolate 360g", category: 'grocery', basePrice: 5, image: '' },
+  { title: "Reese's Peanut Butter Cups 4 pack", category: 'grocery', basePrice: 2.50, image: '' },
+  { title: "Hershey's Cookies & Creme Bar 43g", category: 'grocery', basePrice: 1, image: '' },
+  { title: "Twirl Orange Multipack 5 bars", category: 'grocery', basePrice: 2, image: '' },
+
+  // ─── More water & soft drinks ──────────────────────────────────────────────
+  { title: "Buxton Still Mineral Water 12x500ml", category: 'grocery', basePrice: 5, image: '' },
+  { title: "Buxton Sparkling Water 12x500ml", category: 'grocery', basePrice: 5, image: '' },
+  { title: "Volvic Touch of Strawberry 6x500ml", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Volvic Original Still Water 8x1.5L", category: 'grocery', basePrice: 6, image: '' },
+  { title: "San Pellegrino Sparkling 6x500ml", category: 'grocery', basePrice: 4.50, image: '' },
+  { title: "Perrier Sparkling Mineral Water 10x330ml", category: 'grocery', basePrice: 6, image: '' },
+  { title: "Belu Still Glass Bottle 6x330ml", category: 'grocery', basePrice: 8, image: '' },
+  { title: "Vita Coco Coconut Water 1L", category: 'grocery', basePrice: 3, image: '' },
+  { title: "Fanta Orange 24x330ml", category: 'grocery', basePrice: 12, image: '' },
+  { title: "Sprite Lemon Lime 24x330ml", category: 'grocery', basePrice: 12, image: '' },
+  { title: "7UP Free 24x330ml", category: 'grocery', basePrice: 11, image: '' },
+  { title: "Dr Pepper 24x330ml", category: 'grocery', basePrice: 13, image: '' },
+  { title: "Schweppes Slimline Tonic Water 8x150ml", category: 'grocery', basePrice: 4, image: '' },
+  { title: "Fever-Tree Premium Indian Tonic 8x500ml", category: 'grocery', basePrice: 6, image: '' },
 
   // ─── Food delivery (Uber Eats / Deliveroo / Just Eat) ──────────────────────
   // Pizza
@@ -1413,6 +1561,90 @@ function hash(s: string): number {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
   return Math.abs(h);
+}
+
+// ─── Delivery / fulfilment info per retailer ────────────────────────────────
+// Returns realistic UK delivery fees, free-over thresholds, and click & collect.
+function deliveryInfo(retailer: Retailer, category: Category): {
+  deliveryFee?: number;
+  freeDeliveryOver?: number;
+  clickCollect?: boolean;
+  inStoreOnly?: boolean;
+  deliveryOnly?: boolean;
+} {
+  // Food delivery — always per-order fee, no collection
+  if (retailer === 'ubereats')  return { deliveryFee: 3.99, deliveryOnly: true };
+  if (retailer === 'deliveroo') return { deliveryFee: 2.99, deliveryOnly: true };
+  if (retailer === 'justeat')   return { deliveryFee: 2.49, deliveryOnly: true };
+
+  // Online-only grocery
+  if (retailer === 'ocado')         return { deliveryFee: 5.99, freeDeliveryOver: 75, deliveryOnly: true };
+  if (retailer === 'amazon')        return { deliveryFee: 0, freeDeliveryOver: 25, clickCollect: true };
+
+  // UK supermarkets — both delivery and click & collect (varies)
+  if (retailer === 'tesco')         return { deliveryFee: 4.50, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'sainsburys')    return { deliveryFee: 4.50, freeDeliveryOver: 40, clickCollect: true };
+  if (retailer === 'asda')          return { deliveryFee: 4.50, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'morrisons')     return { deliveryFee: 4.50, freeDeliveryOver: 40, clickCollect: true };
+  if (retailer === 'waitrose')      return { deliveryFee: 5.00, freeDeliveryOver: 60, clickCollect: true };
+  if (retailer === 'iceland')       return { deliveryFee: 0, freeDeliveryOver: 25, clickCollect: false };
+  if (retailer === 'coop')          return { deliveryFee: 5.00, freeDeliveryOver: 35, clickCollect: false };
+  if (retailer === 'marksandspencer') return { deliveryFee: 4.95, freeDeliveryOver: 50, clickCollect: true };
+
+  // Budget grocers — mostly in-store only for now
+  if (retailer === 'aldi')          return { inStoreOnly: true, clickCollect: false };
+  if (retailer === 'lidl')          return { inStoreOnly: true, clickCollect: false };
+
+  // Big electronics / home
+  if (retailer === 'currys')        return { deliveryFee: 6.99, freeDeliveryOver: 30, clickCollect: true };
+  if (retailer === 'argos')         return { deliveryFee: 4.95, freeDeliveryOver: 0, clickCollect: true };
+  if (retailer === 'johnlewis')     return { deliveryFee: 3.50, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'apple')         return { deliveryFee: 0, freeDeliveryOver: 0, clickCollect: true };
+
+  // Fashion stores (typically £3.95–4.95 delivery, free over £50)
+  if (retailer === 'asos')          return { deliveryFee: 4.50, freeDeliveryOver: 35, clickCollect: false };
+  if (retailer === 'zara')          return { deliveryFee: 3.95, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'hm')            return { deliveryFee: 3.99, freeDeliveryOver: 40, clickCollect: true };
+  if (retailer === 'next')          return { deliveryFee: 4.99, freeDeliveryOver: 0, clickCollect: true };
+  if (retailer === 'primark')       return { deliveryFee: 0, inStoreOnly: true, clickCollect: false };
+  if (retailer === 'jdsports')      return { deliveryFee: 3.99, freeDeliveryOver: 70, clickCollect: true };
+  if (retailer === 'schuh')         return { deliveryFee: 3.95, freeDeliveryOver: 80, clickCollect: true };
+  if (retailer === 'sportsdirect')  return { deliveryFee: 4.99, freeDeliveryOver: 79, clickCollect: true };
+  if (retailer === 'prettylittlething') return { deliveryFee: 3.99, freeDeliveryOver: 50 };
+  if (retailer === 'boohoo')        return { deliveryFee: 4.99, freeDeliveryOver: 0 };
+  if (retailer === 'riverisland')   return { deliveryFee: 4.50, freeDeliveryOver: 65, clickCollect: true };
+  if (retailer === 'newlook')       return { deliveryFee: 3.99, freeDeliveryOver: 60, clickCollect: true };
+  if (retailer === 'clarks')        return { deliveryFee: 4.95, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'mango')         return { deliveryFee: 4.95, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'office')        return { deliveryFee: 4.99, freeDeliveryOver: 0, clickCollect: false };
+  if (retailer === 'selfridges')    return { deliveryFee: 8.95, freeDeliveryOver: 100, clickCollect: true };
+  if (retailer === 'fatface')       return { deliveryFee: 4.95, freeDeliveryOver: 60, clickCollect: true };
+  if (retailer === 'uniqlo')        return { deliveryFee: 3.95, freeDeliveryOver: 50, clickCollect: true };
+  if (retailer === 'tkmaxx')        return { deliveryFee: 4.99, freeDeliveryOver: 40, clickCollect: true };
+  if (retailer === 'homesense')     return { deliveryFee: 0, inStoreOnly: true };
+
+  // Discount homewares
+  if (retailer === 'bm')            return { deliveryFee: 0, inStoreOnly: true };
+  if (retailer === 'homebargains')  return { deliveryFee: 0, inStoreOnly: true };
+  if (retailer === 'poundland')     return { deliveryFee: 0, inStoreOnly: true };
+  if (retailer === 'wilko')         return { deliveryFee: 4.95, freeDeliveryOver: 30 };
+
+  // Marketplaces
+  if (retailer === 'ebay')          return { deliveryFee: 0, freeDeliveryOver: 0 }; // usually free
+  if (retailer === 'temu')          return { deliveryFee: 0, freeDeliveryOver: 0 }; // free shipping
+  if (retailer === 'shein')         return { deliveryFee: 3.99, freeDeliveryOver: 35 };
+  if (retailer === 'aliexpress')    return { deliveryFee: 0, freeDeliveryOver: 0 };
+  if (retailer === 'walmart')       return { deliveryFee: 5.99, freeDeliveryOver: 35 };
+  if (retailer === 'facebook')      return { inStoreOnly: true, deliveryOnly: false };
+
+  // DIY / furniture
+  if (retailer === 'b&q')           return { deliveryFee: 5.00, freeDeliveryOver: 75, clickCollect: true };
+  if (retailer === 'ikea')          return { deliveryFee: 25, freeDeliveryOver: 0, clickCollect: true };
+  if (retailer === 'wayfair')       return { deliveryFee: 0, freeDeliveryOver: 40 };
+  if (retailer === 'gumtree')       return { inStoreOnly: true };
+
+  // Cars / insurance / broadband / mobile — n/a really
+  return {};
 }
 
 // Marketplace retailers we want to surface heavily — they stock almost everything cheap.
@@ -2130,6 +2362,7 @@ function buildVariants(seed: Seed): Product[] {
     const key = productKey(seed.title);
     const id = `${retailer}-${hash(seed.title)}`;
 
+    const delivery = deliveryInfo(retailer, seed.category);
     return {
       id,
       productKey: key,
@@ -2144,6 +2377,7 @@ function buildVariants(seed: Seed): Product[] {
       category: seed.category,
       inStock: (h % 17) !== 0, // ~6% out of stock
       source: 'mock',
+      ...delivery,
     };
   });
 }

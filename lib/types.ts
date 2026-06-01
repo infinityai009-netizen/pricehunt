@@ -140,7 +140,7 @@ export interface Product {
   title: string;
   description?: string;
   image: string;
-  price: number;         // GBP
+  price: number;         // GBP — shelf / in-store / online price
   currency: 'GBP';
   retailer: Retailer;
   url: string;           // affiliate-wrapped URL
@@ -149,6 +149,12 @@ export interface Product {
   category: Category;
   inStock: boolean;
   source: 'ebay' | 'amazon' | 'awin' | 'mock';
+  // Fulfilment details
+  deliveryFee?: number;       // GBP delivery fee. 0 = free. undefined = no delivery.
+  freeDeliveryOver?: number;  // GBP basket threshold for free delivery
+  clickCollect?: boolean;     // available for click & collect
+  inStoreOnly?: boolean;      // only available in physical store
+  deliveryOnly?: boolean;     // online-only / delivery-only retailer
 }
 
 export interface SearchParams {
