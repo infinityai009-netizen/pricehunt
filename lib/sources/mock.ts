@@ -2129,7 +2129,7 @@ const SYNONYMS: Record<string, string[]> = {
   dryer:      ['dryer','tumble','heat pump','condenser','vented'],
   appliance:  ['fridge','washer','washing','dryer','oven','microwave','dishwasher','cooker','hob','fan','freezer'],
   appliances: ['fridge','washer','washing','dryer','oven','microwave','dishwasher','cooker','hob','fan','freezer'],
-  electric:   ['fridge','washer','washing','dryer','oven','microwave','fan','heater','kettle','iron','vacuum','airfryer','air fryer'],
+  electric:   ['fridge','washer','washing','dryer','oven','microwave','fan','heater','kettle','iron','vacuum','airfryer','air fryer','tesla','model 3','model y','ev','leaf','ioniq','polestar','niro ev'],
   electrical: ['fridge','washer','washing','dryer','oven','microwave','fan','heater','kettle','iron','vacuum','airfryer','air fryer'],
   white:      ['fridge','washer','washing','dryer','dishwasher','freezer','cooker','oven'],
   goods:      ['fridge','washer','washing','dryer','dishwasher','freezer','cooker','oven'],
@@ -2145,7 +2145,6 @@ const SYNONYMS: Record<string, string[]> = {
   car:        ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','mini cooper','yaris','swift','clio','i30','leon','octavia','tesla','range rover','tucson','sportage','qashqai','juke','sentra','passat','accord','xc40','xc60','x3','m sport','amg','rs line','st-line','sport','hybrid','electric'],
   cars:       ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','tesla','range rover','tucson','sportage','qashqai','xc40','xc60','x3','hybrid','electric','m sport'],
   used:       ['used','second','pre-owned','2019','2020','2021','2022'],
-  electric:   ['fridge','washer','washing','dryer','oven','microwave','fan','heater','kettle','iron','vacuum','airfryer','air fryer','tesla','model 3','model y','ev','leaf','ioniq','polestar','electric'],
   ev:         ['ev','electric','tesla','model 3','model y','leaf','ioniq','polestar','niro ev'],
   // Insurance
   insurance:  ['insurance','cover','policy','protection'],
