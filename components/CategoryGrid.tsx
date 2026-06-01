@@ -13,6 +13,7 @@ const CATEGORIES = [
   { slug: 'outdoor',     label: 'Outdoor',     emoji: '🏕️' },
   { slug: 'pet',         label: 'Pet',         emoji: '🐾' },
   { slug: 'cameras',     label: 'Cameras',     emoji: '📷' },
+  { slug: 'food',        label: 'Food Delivery', emoji: '🍔' },
 ];
 
 export default function CategoryGrid() {

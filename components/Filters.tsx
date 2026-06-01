@@ -6,6 +6,7 @@ const RETAILERS = [
   'amazon','ebay','argos','currys','johnlewis',
   'tesco','asda','sainsburys','morrisons','waitrose','aldi','lidl','iceland','ocado','coop','marksandspencer',
   'temu','shein','aliexpress','wayfair','ikea','b&q','walmart',
+  'apple','facebook','ubereats','deliveroo','justeat',
 ];
 const SORTS = [
   { value: 'relevance',  label: 'Relevance' },

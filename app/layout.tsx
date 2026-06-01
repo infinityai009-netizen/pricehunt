@@ -27,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/category/home" className="hover:text-brand-600">Home</Link>
               <Link href="/category/grocery" className="hover:text-brand-600">Grocery</Link>
               <Link href="/category/gaming" className="hover:text-brand-600">Gaming</Link>
+              <Link href="/category/food" className="hover:text-brand-600">Food</Link>
             </nav>
             <div className="ml-auto flex items-center gap-3">
               <WishlistLink />

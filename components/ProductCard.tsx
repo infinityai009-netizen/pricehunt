@@ -9,6 +9,8 @@ const RETAILER_NAME: Record<string, string> = {
   iceland: 'Iceland', ocado: 'Ocado', coop: 'Co-op', marksandspencer: 'M&S',
   temu: 'Temu', shein: 'Shein', aliexpress: 'AliExpress', wayfair: 'Wayfair',
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
+  apple: 'Apple', facebook: 'Facebook Marketplace',
+  ubereats: 'Uber Eats', deliveroo: 'Deliveroo', justeat: 'Just Eat',
 };
 
 const RETAILER_COLOR: Record<string, string> = {
@@ -35,6 +37,11 @@ const RETAILER_COLOR: Record<string, string> = {
   ikea: 'bg-blue-100 text-blue-800',
   'b&q': 'bg-orange-100 text-orange-700',
   walmart: 'bg-blue-100 text-blue-700',
+  apple: 'bg-slate-900 text-white',
+  facebook: 'bg-blue-600 text-white',
+  ubereats: 'bg-emerald-100 text-emerald-800',
+  deliveroo: 'bg-teal-100 text-teal-800',
+  justeat: 'bg-orange-100 text-orange-700',
 };
 
 export default function ProductCard({ p }: { p: Product }) {

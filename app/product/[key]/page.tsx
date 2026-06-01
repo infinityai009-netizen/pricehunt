@@ -16,6 +16,8 @@ const RETAILER_NAME: Record<string, string> = {
   iceland: 'Iceland', ocado: 'Ocado', coop: 'Co-op', marksandspencer: 'M&S',
   temu: 'Temu', shein: 'Shein', aliexpress: 'AliExpress', wayfair: 'Wayfair',
   ikea: 'IKEA', 'b&q': 'B&Q', walmart: 'Walmart',
+  apple: 'Apple', facebook: 'Facebook Marketplace',
+  ubereats: 'Uber Eats', deliveroo: 'Deliveroo', justeat: 'Just Eat',
 };
 
 interface PageProps {

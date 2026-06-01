@@ -978,6 +978,85 @@ const SEEDS: Seed[] = [
   { title: "Head & Shoulders Classic Clean Shampoo 500ml", category: 'grocery', basePrice: 4, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400' },
   { title: "Pampers Baby Dry Size 4 Nappies 50 pack", category: 'grocery', basePrice: 9, image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400' },
 
+  // ─── Food delivery (Uber Eats / Deliveroo / Just Eat) ──────────────────────
+  // Pizza
+  { title: "Domino's Pepperoni Passion Large", category: 'food', basePrice: 18.99, image: '' },
+  { title: "Domino's Mighty Meaty Medium", category: 'food', basePrice: 15.99, image: '' },
+  { title: "Domino's Vegi Sizzler Large", category: 'food', basePrice: 17.99, image: '' },
+  { title: "Pizza Hut Margherita Medium", category: 'food', basePrice: 13.99, image: '' },
+  { title: "Pizza Hut Meat Feast Large", category: 'food', basePrice: 19.99, image: '' },
+  { title: "Papa John's Hot Pepper Passion Large", category: 'food', basePrice: 16.99, image: '' },
+  { title: "Franco Manca Sourdough Pizza No 4", category: 'food', basePrice: 9.95, image: '' },
+
+  // Burgers
+  { title: "McDonald's Big Mac Meal Large", category: 'food', basePrice: 8.49, image: '' },
+  { title: "McDonald's Quarter Pounder with Cheese Meal", category: 'food', basePrice: 8.99, image: '' },
+  { title: "McDonald's Chicken Big Mac Meal", category: 'food', basePrice: 8.49, image: '' },
+  { title: "Burger King Whopper Meal", category: 'food', basePrice: 9.49, image: '' },
+  { title: "Burger King Bacon Double Cheeseburger Meal", category: 'food', basePrice: 9.99, image: '' },
+  { title: "Five Guys Cheeseburger with Fries", category: 'food', basePrice: 14.95, image: '' },
+  { title: "Honest Burgers Tribute Burger", category: 'food', basePrice: 13.50, image: '' },
+  { title: "GBK Classic Cheese Burger", category: 'food', basePrice: 12.95, image: '' },
+  { title: "Shake Shack ShackBurger Meal", category: 'food', basePrice: 13.95, image: '' },
+
+  // Chicken
+  { title: "KFC Bargain Bucket 10 Piece", category: 'food', basePrice: 22.99, image: '' },
+  { title: "KFC Boneless Banquet for One", category: 'food', basePrice: 7.99, image: '' },
+  { title: "KFC Zinger Tower Burger Meal", category: 'food', basePrice: 8.99, image: '' },
+  { title: "Nando's Half Chicken PERi-PERi", category: 'food', basePrice: 11.50, image: '' },
+  { title: "Nando's Chicken Pitta with Two Sides", category: 'food', basePrice: 12.95, image: '' },
+  { title: "Wingstop 10 Wings Combo", category: 'food', basePrice: 13.99, image: '' },
+
+  // Indian / Curry
+  { title: "Dishoom Chicken Ruby Curry", category: 'food', basePrice: 16.50, image: '' },
+  { title: "Indian Tikka Masala Set Meal for Two", category: 'food', basePrice: 24.99, image: '' },
+  { title: "Lamb Biryani with Raita", category: 'food', basePrice: 13.99, image: '' },
+  { title: "Veg Thali Indian Platter", category: 'food', basePrice: 14.99, image: '' },
+
+  // Asian / Sushi
+  { title: "Wagamama Chicken Katsu Curry", category: 'food', basePrice: 13.50, image: '' },
+  { title: "Wagamama Yaki Soba", category: 'food', basePrice: 12.95, image: '' },
+  { title: "Itsu Salmon Teriyaki Bento", category: 'food', basePrice: 9.95, image: '' },
+  { title: "Yo Sushi Mixed Sushi Platter", category: 'food', basePrice: 18.95, image: '' },
+  { title: "Wasabi Chicken Katsu Curry", category: 'food', basePrice: 8.95, image: '' },
+  { title: "Ramen Noodle Bowl Tonkotsu", category: 'food', basePrice: 12.50, image: '' },
+  { title: "Pho Vietnamese Beef Noodle Soup", category: 'food', basePrice: 11.95, image: '' },
+
+  // Mexican
+  { title: "Chipotle Chicken Burrito Bowl", category: 'food', basePrice: 9.95, image: '' },
+  { title: "Taco Bell Crunchwrap Supreme Meal", category: 'food', basePrice: 8.99, image: '' },
+
+  // Sandwiches / Salads
+  { title: "Subway Italian B.M.T. Footlong Meal", category: 'food', basePrice: 9.49, image: '' },
+  { title: "Subway Chicken Teriyaki 6 inch", category: 'food', basePrice: 5.49, image: '' },
+  { title: "Pret a Manger Chicken Avocado Baguette", category: 'food', basePrice: 5.95, image: '' },
+  { title: "Pret a Manger Tuna Cucumber Baguette", category: 'food', basePrice: 4.85, image: '' },
+  { title: "Leon Sweet Potato Falafel Hot Box", category: 'food', basePrice: 9.45, image: '' },
+  { title: "Caesar Salad with Grilled Chicken", category: 'food', basePrice: 10.95, image: '' },
+
+  // Greek / Mediterranean
+  { title: "Doner Kebab with Salad & Chilli Sauce", category: 'food', basePrice: 8.50, image: '' },
+  { title: "Halloumi Wrap with Chips", category: 'food', basePrice: 9.95, image: '' },
+  { title: "Lamb Shawarma Plate", category: 'food', basePrice: 12.99, image: '' },
+
+  // Breakfast / Bakery
+  { title: "Greggs Sausage Roll", category: 'food', basePrice: 1.30, image: '' },
+  { title: "Greggs Steak Bake", category: 'food', basePrice: 2.00, image: '' },
+  { title: "Greggs Breakfast Roll Bacon", category: 'food', basePrice: 2.85, image: '' },
+  { title: "Full English Breakfast Plate", category: 'food', basePrice: 11.50, image: '' },
+  { title: "Eggs Benedict with Smoked Salmon", category: 'food', basePrice: 12.95, image: '' },
+
+  // Coffee / Drinks
+  { title: "Starbucks Caramel Macchiato Grande", category: 'food', basePrice: 4.45, image: '' },
+  { title: "Costa Coffee Flat White Medium", category: 'food', basePrice: 3.75, image: '' },
+  { title: "Caffe Nero Cappuccino Regular", category: 'food', basePrice: 3.65, image: '' },
+  { title: "Pret a Manger Latte", category: 'food', basePrice: 3.45, image: '' },
+  { title: "Bubble Tea Brown Sugar Boba", category: 'food', basePrice: 5.50, image: '' },
+
+  // Desserts
+  { title: "Krispy Kreme Original Glazed 12 pack", category: 'food', basePrice: 14.95, image: '' },
+  { title: "Cinnabon Classic Roll", category: 'food', basePrice: 4.95, image: '' },
+
   // Toys
   { title: 'LEGO Star Wars Millennium Falcon', category: 'toys', basePrice: 159, image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
   { title: 'LEGO Technic Bugatti Chiron', category: 'toys', basePrice: 329, image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=400' },
@@ -1028,6 +1107,11 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   ikea:       ['furniture','home','toys'],
   'b&q':      ['home','outdoor','furniture'],
   walmart:    ['electronics','grocery','home','toys','beauty','fashion'],
+  apple:      ['electronics','cameras'],
+  facebook:   ['electronics','fashion','home','furniture','toys','sports','outdoor','beauty','gaming','cameras'],
+  ubereats:   ['food','grocery'],
+  deliveroo:  ['food','grocery'],
+  justeat:    ['food'],
 };
 
 // Stable hash so the same retailer+title always produces the same price/rating
@@ -1039,6 +1123,8 @@ function hash(s: string): number {
 
 // Marketplace retailers we want to surface heavily — they stock almost everything cheap.
 const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
+// Food delivery platforms — always show all 3 for any food item.
+const FOOD_PLATFORMS: Retailer[] = ['ubereats','deliveroo','justeat'];
 
 // ─── Central image picker ───────────────────────────────────────────────────
 // Returns an image URL for a given seed. We use locally-rendered SVG
@@ -1057,6 +1143,7 @@ const CATEGORY_COLORS: Record<Category, { bg: string; accent: string }> = {
   outdoor:     { bg: '#65a30d', accent: '#365314' },
   pet:         { bg: '#a855f7', accent: '#6b21a8' },
   cameras:     { bg: '#475569', accent: '#1e293b' },
+  food:        { bg: '#dc2626', accent: '#7f1d1d' },
 };
 
 const CATEGORY_ICON: Record<Category, string> = {
@@ -1072,6 +1159,7 @@ const CATEGORY_ICON: Record<Category, string> = {
   outdoor:     '🏕️',
   pet:         '🐾',
   cameras:     '📷',
+  food:        '🍔',
 };
 
 // Subcategory icons for specific product types — picks override category icon.
@@ -1197,6 +1285,25 @@ function productIcon(title: string, category: Category): string {
   if (/water\s*bottle|tumbler|stanley|insulated/.test(t)) return '🍶';
   if (/tent|camping|lantern/.test(t)) return '🏕️';
   if (/dog\s*food|cat\s*food|pedigree|whiskas|pet\s*fountain|pet\s*bowl|lint\s*roller|cat\s*brush|cat\s*laser/.test(t)) return '🐾';
+  // Restaurant / takeaway / food delivery
+  if (/burger|big\s*mac|whopper|five\s*guys|gbk|honest\s*burgers/.test(t)) return '🍔';
+  if (/pizza|domino|papa\s*john|pizza\s*hut/.test(t)) return '🍕';
+  if (/sushi|wasabi|yo\s*sushi|itsu|maki|sashimi/.test(t)) return '🍣';
+  if (/(curry|tikka|masala|biryani|naan\s*set|indian\s*meal|dishoom|wagamama|katsu)/.test(t)) return '🍛';
+  if (/chinese|wok|noodle|ramen|chow\s*mein|peri.peri|nando|chicken/.test(t)) return '🍜';
+  if (/taco|burrito|nachos|chipotle|mexican/.test(t)) return '🌮';
+  if (/kebab|shawarma|donner|wrap/.test(t)) return '🌯';
+  if (/fries|chips\s*&\s*gravy/.test(t)) return '🍟';
+  if (/sandwich|sub|pret|subway|breakfast\s*sandwich/.test(t)) return '🥪';
+  if (/salad|caesar|leon|bowl/.test(t)) return '🥗';
+  if (/soup|ramen|pho/.test(t)) return '🍲';
+  if (/donut|krispy/.test(t)) return '🍩';
+  if (/cake|bakery|cheesecake/.test(t)) return '🍰';
+  if (/coffee|costa|starbucks|caffe\s*nero|latte|cappuccino|mocha/.test(t)) return '☕';
+  if (/wings|kfc|hot\s*wings|bargain\s*bucket/.test(t)) return '🍗';
+  if (/sausage\s*roll|greggs|pasty/.test(t)) return '🥐';
+  if (/bubble\s*tea|boba|milkshake/.test(t)) return '🧋';
+  if (/breakfast.*english|full.*english/.test(t)) return '🍳';
   return CATEGORY_ICON[category];
 }
 
@@ -1618,6 +1725,14 @@ function buildVariants(seed: Seed): Product[] {
       chosen.push(r);
     }
   }
+  // For food category — always include Uber Eats, Deliveroo, Just Eat.
+  if (seed.category === 'food') {
+    for (const r of FOOD_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) {
+        chosen.push(r);
+      }
+    }
+  }
 
   return chosen.map((retailer): Product => {
     const h = hash(seed.title + retailer);
@@ -1675,6 +1790,11 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'ikea':       return `https://www.ikea.com/gb/en/search/?q=${q}`;
     case 'b&q':        return `https://www.diy.com/search?term=${q}`;
     case 'walmart':    return `https://www.walmart.com/search?q=${q}`;
+    case 'apple':      return `https://www.apple.com/uk/search/${q}`;
+    case 'facebook':   return `https://www.facebook.com/marketplace/search/?query=${q}`;
+    case 'ubereats':   return `https://www.ubereats.com/gb/search?q=${q}`;
+    case 'deliveroo':  return `https://deliveroo.co.uk/search?q=${q}`;
+    case 'justeat':    return `https://www.just-eat.co.uk/search?q=${q}`;
   }
 }
 

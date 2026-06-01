@@ -21,7 +21,12 @@ export type Retailer =
   | 'wayfair'
   | 'ikea'
   | 'b&q'
-  | 'walmart';
+  | 'walmart'
+  | 'apple'
+  | 'facebook'
+  | 'ubereats'
+  | 'deliveroo'
+  | 'justeat';
 
 export type Category =
   | 'electronics'
@@ -35,7 +40,8 @@ export type Category =
   | 'toys'
   | 'outdoor'
   | 'pet'
-  | 'cameras';
+  | 'cameras'
+  | 'food';
 
 export interface Product {
   id: string;            // unique per offer (retailer + product)

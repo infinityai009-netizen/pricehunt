@@ -12,6 +12,7 @@ const RETAILERS = [
   'Amazon','eBay','Argos','Currys','John Lewis',
   'Tesco','ASDA',"Sainsbury's",'Morrisons','Waitrose','Aldi','Lidl','Iceland','Ocado','Co-op','M&S',
   'Temu','Shein','AliExpress','Wayfair','IKEA','B&Q','Walmart',
+  'Apple','Facebook Marketplace','Uber Eats','Deliveroo','Just Eat',
 ];
 
 export default function HomePage() {
