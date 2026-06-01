@@ -29,6 +29,13 @@ const RETAILER_NAME: Record<string, string> = {
   giffgaff: 'giffgaff', tescomobile: 'Tesco Mobile', skymobile: 'Sky Mobile',
   voxi: 'VOXI', smarty: 'SMARTY', idmobile: 'iD Mobile',
   carphonewarehouse: 'Carphone Warehouse',
+  bm: 'B&M', homebargains: 'Home Bargains', poundland: 'Poundland', wilko: 'Wilko',
+  zara: 'Zara', hm: 'H&M', office: 'Office', asos: 'ASOS', next: 'Next',
+  primark: 'Primark', jdsports: 'JD Sports', schuh: 'Schuh',
+  sportsdirect: 'Sports Direct', prettylittlething: 'PrettyLittleThing',
+  boohoo: 'Boohoo', riverisland: 'River Island', newlook: 'New Look',
+  clarks: 'Clarks', mango: 'Mango', selfridges: 'Selfridges',
+  fatface: 'FatFace', uniqlo: 'Uniqlo',
 };
 
 interface PageProps {

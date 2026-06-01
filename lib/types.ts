@@ -63,7 +63,31 @@ export type Retailer =
   | 'voxi'
   | 'smarty'
   | 'idmobile'
-  | 'carphonewarehouse';
+  | 'carphonewarehouse'
+  // Discount stores
+  | 'bm'
+  | 'homebargains'
+  | 'poundland'
+  | 'wilko'
+  // Clothing & shoes
+  | 'zara'
+  | 'hm'
+  | 'office'
+  | 'asos'
+  | 'next'
+  | 'primark'
+  | 'jdsports'
+  | 'schuh'
+  | 'sportsdirect'
+  | 'prettylittlething'
+  | 'boohoo'
+  | 'riverisland'
+  | 'newlook'
+  | 'clarks'
+  | 'mango'
+  | 'selfridges'
+  | 'fatface'
+  | 'uniqlo';
 
 export type Category =
   | 'electronics'

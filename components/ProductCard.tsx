@@ -22,6 +22,13 @@ const RETAILER_NAME: Record<string, string> = {
   giffgaff: 'giffgaff', tescomobile: 'Tesco Mobile', skymobile: 'Sky Mobile',
   voxi: 'VOXI', smarty: 'SMARTY', idmobile: 'iD Mobile',
   carphonewarehouse: 'Carphone Warehouse',
+  bm: 'B&M', homebargains: 'Home Bargains', poundland: 'Poundland', wilko: 'Wilko',
+  zara: 'Zara', hm: 'H&M', office: 'Office', asos: 'ASOS', next: 'Next',
+  primark: 'Primark', jdsports: 'JD Sports', schuh: 'Schuh',
+  sportsdirect: 'Sports Direct', prettylittlething: 'PrettyLittleThing',
+  boohoo: 'Boohoo', riverisland: 'River Island', newlook: 'New Look',
+  clarks: 'Clarks', mango: 'Mango', selfridges: 'Selfridges',
+  fatface: 'FatFace', uniqlo: 'Uniqlo',
 };
 
 const RETAILER_COLOR: Record<string, string> = {
@@ -86,6 +93,28 @@ const RETAILER_COLOR: Record<string, string> = {
   smarty: 'bg-amber-100 text-amber-700',
   idmobile: 'bg-indigo-100 text-indigo-700',
   carphonewarehouse: 'bg-red-100 text-red-700',
+  bm: 'bg-blue-100 text-blue-800',
+  homebargains: 'bg-red-100 text-red-700',
+  poundland: 'bg-yellow-100 text-yellow-800',
+  wilko: 'bg-rose-100 text-rose-700',
+  zara: 'bg-slate-900 text-white',
+  hm: 'bg-rose-100 text-rose-700',
+  office: 'bg-slate-900 text-white',
+  asos: 'bg-slate-900 text-white',
+  next: 'bg-slate-100 text-slate-800',
+  primark: 'bg-blue-100 text-blue-800',
+  jdsports: 'bg-slate-900 text-white',
+  schuh: 'bg-slate-900 text-white',
+  sportsdirect: 'bg-blue-100 text-blue-800',
+  prettylittlething: 'bg-pink-100 text-pink-700',
+  boohoo: 'bg-rose-100 text-rose-700',
+  riverisland: 'bg-amber-100 text-amber-700',
+  newlook: 'bg-yellow-100 text-yellow-800',
+  clarks: 'bg-blue-100 text-blue-700',
+  mango: 'bg-amber-100 text-amber-800',
+  selfridges: 'bg-yellow-100 text-yellow-800',
+  fatface: 'bg-blue-100 text-blue-700',
+  uniqlo: 'bg-red-100 text-red-700',
 };
 
 export default function ProductCard({ p }: { p: Product }) {

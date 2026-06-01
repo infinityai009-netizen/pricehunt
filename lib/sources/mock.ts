@@ -1290,6 +1290,30 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   smarty:      ['mobileplan'],
   idmobile:    ['mobileplan'],
   carphonewarehouse: ['mobileplan','electronics'],
+  // Discount stores
+  bm:          ['home','furniture','toys','beauty','pet','outdoor','grocery','fashion'],
+  homebargains:['home','toys','beauty','pet','grocery'],
+  poundland:   ['home','beauty','toys','grocery'],
+  wilko:       ['home','furniture','toys','outdoor','pet','beauty'],
+  // Clothing & shoes
+  zara:        ['fashion','beauty'],
+  hm:          ['fashion','beauty','home'],
+  office:      ['fashion'],
+  asos:        ['fashion','beauty'],
+  next:        ['fashion','home','beauty','furniture','toys'],
+  primark:     ['fashion','beauty','home'],
+  jdsports:    ['fashion','sports'],
+  schuh:       ['fashion'],
+  sportsdirect:['fashion','sports','outdoor'],
+  prettylittlething: ['fashion','beauty'],
+  boohoo:      ['fashion','beauty'],
+  riverisland: ['fashion'],
+  newlook:     ['fashion','beauty'],
+  clarks:      ['fashion'],
+  mango:       ['fashion','beauty'],
+  selfridges:  ['fashion','beauty','home','furniture'],
+  fatface:     ['fashion'],
+  uniqlo:      ['fashion'],
 };
 
 // Stable hash so the same retailer+title always produces the same price/rating
@@ -1301,6 +1325,12 @@ function hash(s: string): number {
 
 // Marketplace retailers we want to surface heavily — they stock almost everything cheap.
 const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
+// Major UK clothing stores — surfaced on all fashion items.
+const FASHION_PLATFORMS: Retailer[] = ['asos','zara','hm','next','primark','newlook','prettylittlething','boohoo','riverisland','uniqlo'];
+// Shoe specialists for fashion footwear.
+const SHOE_PLATFORMS: Retailer[] = ['office','schuh','jdsports','clarks','sportsdirect'];
+// Discount stores boost on home/grocery.
+const DISCOUNT_PLATFORMS: Retailer[] = ['bm','homebargains','poundland','wilko'];
 // Food delivery platforms — always show all 3 for any food item.
 const FOOD_PLATFORMS: Retailer[] = ['ubereats','deliveroo','justeat'];
 // Always show these category-specific comparison sites.
@@ -1972,6 +2002,20 @@ function buildVariants(seed: Seed): Product[] {
       if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
     }
   }
+  // Fashion → always show major UK clothing retailers; shoes get shoe specialists.
+  if (seed.category === 'fashion') {
+    const isShoe = /trainer|sneaker|boot|heel|sandal|loafer|shoe|air max|air force|stan smith|gazelle|samba|chuck taylor|vans|new balance|dr\.\s*martens|ugg/i.test(seed.title);
+    const list = isShoe ? [...SHOE_PLATFORMS, ...FASHION_PLATFORMS] : FASHION_PLATFORMS;
+    for (const r of list) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
+  // Home / grocery → discount stores join the lineup.
+  if (seed.category === 'home' || seed.category === 'grocery') {
+    for (const r of DISCOUNT_PLATFORMS) {
+      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+  }
 
   return chosen.map((retailer): Product => {
     const h = hash(seed.title + retailer);
@@ -2071,6 +2115,30 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'smarty':       return `https://smarty.co.uk/plans`;
     case 'idmobile':     return `https://www.idmobile.co.uk/sim-only-deals`;
     case 'carphonewarehouse': return `https://www.carphonewarehouse.com/sim-free.html`;
+    // Discount stores
+    case 'bm':           return `https://www.bmstores.co.uk/search?q=${q}`;
+    case 'homebargains': return `https://www.homebargains.co.uk/search?q=${q}`;
+    case 'poundland':    return `https://www.poundland.co.uk/search?q=${q}`;
+    case 'wilko':        return `https://www.wilko.com/en-uk/search?q=${q}`;
+    // Clothing & shoes
+    case 'zara':         return `https://www.zara.com/uk/en/search?searchTerm=${q}`;
+    case 'hm':           return `https://www2.hm.com/en_gb/search-results.html?q=${q}`;
+    case 'office':       return `https://www.office.co.uk/search?w=${q}`;
+    case 'asos':         return `https://www.asos.com/search/?q=${q}`;
+    case 'next':         return `https://www.next.co.uk/search?w=${q}`;
+    case 'primark':      return `https://www.primark.com/en-gb/search?q=${q}`;
+    case 'jdsports':     return `https://www.jdsports.co.uk/search/?text=${q}`;
+    case 'schuh':        return `https://www.schuh.co.uk/search?w=${q}`;
+    case 'sportsdirect': return `https://www.sportsdirect.com/searchresults?searchText=${q}`;
+    case 'prettylittlething': return `https://www.prettylittlething.com/search/?qs=${q}`;
+    case 'boohoo':       return `https://www.boohoo.com/search?q=${q}`;
+    case 'riverisland':  return `https://www.riverisland.com/c/search?query=${q}`;
+    case 'newlook':      return `https://www.newlook.com/uk/search?q=${q}`;
+    case 'clarks':       return `https://www.clarks.co.uk/c/search?q=${q}`;
+    case 'mango':        return `https://shop.mango.com/gb/search?kw=${q}`;
+    case 'selfridges':   return `https://www.selfridges.com/GB/en/search?query=${q}`;
+    case 'fatface':      return `https://www.fatface.com/search?q=${q}`;
+    case 'uniqlo':       return `https://www.uniqlo.com/uk/en/search/?q=${q}`;
   }
 }
 

@@ -17,6 +17,9 @@ const RETAILERS = [
   'Compare the Market','MoneySuperMarket','GoCompare','Confused.com',
   'Sky','BT','Virgin Media','TalkTalk','NOW Broadband','Plusnet','Hyperoptic',
   'EE','Vodafone','Three','O2','giffgaff','Tesco Mobile','VOXI','SMARTY','iD Mobile','Carphone Warehouse',
+  'B&M','Home Bargains','Poundland','Wilko',
+  'Zara','H&M','Office','ASOS','Next','Primark','JD Sports','Schuh','Sports Direct',
+  'PrettyLittleThing','Boohoo','River Island','New Look','Clarks','Mango','Selfridges','FatFace','Uniqlo',
 ];
 
 export default function HomePage() {
