@@ -458,6 +458,107 @@ const SEEDS: Seed[] = [
   { title: "Cashmere Scarf Long", category: 'fashion', basePrice: 22, image: 'https://loremflickr.com/400/400/cashmere,scarf,long' },
   { title: "Sheer Tights Black 60 Denier", category: 'fashion', basePrice: 6, image: 'https://loremflickr.com/400/400/tights,sheer,women' },
 
+  // ─── Temu/Shein-style viral home gadgets & decor ───────────────────────────
+  { title: "Electric Mini Hand Vacuum Cleaner USB", category: 'home', basePrice: 9, image: 'https://loremflickr.com/400/400/mini,vacuum,usb' },
+  { title: "Silicone Drain Plug Hair Catcher", category: 'home', basePrice: 4, image: 'https://loremflickr.com/400/400/drain,plug,silicone' },
+  { title: "Magnetic Refrigerator Side Storage Rack", category: 'home', basePrice: 8, image: 'https://loremflickr.com/400/400/fridge,rack,magnetic' },
+  { title: "Stainless Steel Garlic Press Mincer", category: 'home', basePrice: 5, image: 'https://loremflickr.com/400/400/garlic,press,mincer' },
+  { title: "Multifunctional Vegetable Slicer Chopper", category: 'home', basePrice: 12, image: 'https://loremflickr.com/400/400/vegetable,slicer,chopper' },
+  { title: "Egg Slicer Cutter Stainless Steel", category: 'home', basePrice: 4, image: 'https://loremflickr.com/400/400/egg,slicer,kitchen' },
+  { title: "Silicone Stretch Lids Set of 6", category: 'home', basePrice: 6, image: 'https://loremflickr.com/400/400/silicone,lids,kitchen' },
+  { title: "Adjustable Drawer Dividers 4-pack", category: 'home', basePrice: 9, image: 'https://loremflickr.com/400/400/drawer,divider,organizer' },
+  { title: "Under-shelf Hanging Storage Basket", category: 'home', basePrice: 8, image: 'https://loremflickr.com/400/400/storage,basket,shelf' },
+  { title: "Acrylic Makeup Organiser 7 Drawers", category: 'home', basePrice: 19, image: 'https://loremflickr.com/400/400/makeup,organiser,acrylic' },
+  { title: "Bedside Caddy Hanging Pocket Organiser", category: 'home', basePrice: 7, image: 'https://loremflickr.com/400/400/bedside,caddy,organiser' },
+  { title: "Spinning Lazy Susan Turntable", category: 'home', basePrice: 11, image: 'https://loremflickr.com/400/400/lazy,susan,turntable' },
+  { title: "Cordless Sweeper Mop", category: 'home', basePrice: 24, image: 'https://loremflickr.com/400/400/cordless,sweeper,mop' },
+  { title: "Self-Adhesive Wall Hooks 20-pack", category: 'home', basePrice: 5, image: 'https://loremflickr.com/400/400/wall,hooks,adhesive' },
+  { title: "Bedroom Fairy String Lights 10m USB", category: 'home', basePrice: 6, image: 'https://loremflickr.com/400/400/fairy,lights,bedroom' },
+  { title: "Galaxy Star Projector Night Light", category: 'home', basePrice: 22, image: 'https://loremflickr.com/400/400/galaxy,projector,night,light' },
+  { title: "Sunset Lamp Projector", category: 'home', basePrice: 14, image: 'https://loremflickr.com/400/400/sunset,lamp,projector' },
+  { title: "Bluetooth LED Light Strip 5m", category: 'home', basePrice: 11, image: 'https://loremflickr.com/400/400/led,strip,bluetooth' },
+  { title: "RGB LED Light Strip 10m Music Sync", category: 'home', basePrice: 17, image: 'https://loremflickr.com/400/400/rgb,led,strip' },
+  { title: "Aesthetic Moon Lamp 3D LED", category: 'home', basePrice: 16, image: 'https://loremflickr.com/400/400/moon,lamp,led' },
+  { title: "Aromatherapy Diffuser Wood Grain 300ml", category: 'home', basePrice: 18, image: 'https://loremflickr.com/400/400/diffuser,aromatherapy,wood' },
+  { title: "Soy Wax Scented Candle 200g", category: 'home', basePrice: 9, image: 'https://loremflickr.com/400/400/soy,candle,scented' },
+  { title: "Faux Plants Set of 3", category: 'home', basePrice: 14, image: 'https://loremflickr.com/400/400/fake,plants,artificial' },
+  { title: "Hanging Macrame Plant Holder 2-pack", category: 'home', basePrice: 10, image: 'https://loremflickr.com/400/400/macrame,plant,holder' },
+  { title: "Boho Tufted Round Cushion", category: 'home', basePrice: 13, image: 'https://loremflickr.com/400/400/boho,cushion,tufted' },
+  { title: "Memory Foam Bath Mat Non-Slip", category: 'home', basePrice: 12, image: 'https://loremflickr.com/400/400/memory,foam,bath,mat' },
+  { title: "Tufted Area Rug 80x150cm", category: 'home', basePrice: 26, image: 'https://loremflickr.com/400/400/tufted,area,rug' },
+  { title: "Pet Hair Lint Roller Reusable", category: 'pet', basePrice: 7, image: 'https://loremflickr.com/400/400/lint,roller,pet' },
+  { title: "Self-Cleaning Cat Brush", category: 'pet', basePrice: 9, image: 'https://loremflickr.com/400/400/cat,brush,grooming' },
+  { title: "Slow Feeder Dog Bowl", category: 'pet', basePrice: 11, image: 'https://loremflickr.com/400/400/slow,feeder,dog' },
+  { title: "Interactive Cat Laser Toy Automatic", category: 'pet', basePrice: 13, image: 'https://loremflickr.com/400/400/cat,laser,toy' },
+
+  // ─── Shein/Temu beauty & viral grooming ────────────────────────────────────
+  { title: "Heatless Hair Curling Ribbon Rod", category: 'beauty', basePrice: 7, image: 'https://loremflickr.com/400/400/heatless,curler,hair' },
+  { title: "Bamboo Hair Brush Detangling Wet/Dry", category: 'beauty', basePrice: 5, image: 'https://loremflickr.com/400/400/bamboo,hair,brush' },
+  { title: "Hair Wax Stick Slick Edges", category: 'beauty', basePrice: 4, image: 'https://loremflickr.com/400/400/hair,wax,stick' },
+  { title: "Silicone Hair Scalp Massager", category: 'beauty', basePrice: 5, image: 'https://loremflickr.com/400/400/scalp,massager,silicone' },
+  { title: "Jade Roller and Gua Sha Set", category: 'beauty', basePrice: 9, image: 'https://loremflickr.com/400/400/jade,roller,gua,sha' },
+  { title: "Ice Roller for Face & Eyes", category: 'beauty', basePrice: 7, image: 'https://loremflickr.com/400/400/ice,roller,face' },
+  { title: "Cleansing Brush Silicone Face Scrubber", category: 'beauty', basePrice: 8, image: 'https://loremflickr.com/400/400/silicone,face,brush' },
+  { title: "Makeup Sponge Blender Set of 4", category: 'beauty', basePrice: 6, image: 'https://loremflickr.com/400/400/makeup,sponge,blender' },
+  { title: "Eyelash Curler Heated USB", category: 'beauty', basePrice: 9, image: 'https://loremflickr.com/400/400/heated,eyelash,curler' },
+  { title: "False Eyelashes 10 Pairs Natural", category: 'beauty', basePrice: 5, image: 'https://loremflickr.com/400/400/false,eyelashes,natural' },
+  { title: "Magnetic Eyeliner with Lashes Kit", category: 'beauty', basePrice: 11, image: 'https://loremflickr.com/400/400/magnetic,eyeliner,lashes' },
+  { title: "Lip Plumper Gloss Clear", category: 'beauty', basePrice: 6, image: 'https://loremflickr.com/400/400/lip,plumper,gloss' },
+  { title: "Press On Nails 24-pack Almond Shape", category: 'beauty', basePrice: 5, image: 'https://loremflickr.com/400/400/press,on,nails' },
+  { title: "Nail Polish Set 12 Colours", category: 'beauty', basePrice: 9, image: 'https://loremflickr.com/400/400/nail,polish,set' },
+  { title: "Vanity Mirror with LED Lights", category: 'beauty', basePrice: 22, image: 'https://loremflickr.com/400/400/vanity,mirror,lights' },
+  { title: "Vegan Lip Balm Set of 5", category: 'beauty', basePrice: 6, image: 'https://loremflickr.com/400/400/lip,balm,vegan' },
+  { title: "Sheet Mask Variety Pack 20-piece", category: 'beauty', basePrice: 11, image: 'https://loremflickr.com/400/400/sheet,mask,korean' },
+  { title: "Pimple Patches Acne 36-pack", category: 'beauty', basePrice: 7, image: 'https://loremflickr.com/400/400/pimple,patches,acne' },
+  { title: "Self-Tanning Mousse 200ml", category: 'beauty', basePrice: 9, image: 'https://loremflickr.com/400/400/self,tanning,mousse' },
+  { title: "Hair Removal Cream 100ml", category: 'beauty', basePrice: 5, image: 'https://loremflickr.com/400/400/hair,removal,cream' },
+
+  // ─── Shein/Temu accessories & viral fashion items ──────────────────────────
+  { title: "Y2K Butterfly Hair Clips 20-pack", category: 'fashion', basePrice: 5, image: 'https://loremflickr.com/400/400/y2k,butterfly,clips' },
+  { title: "Tinted Trendy Square Sunglasses", category: 'fashion', basePrice: 8, image: 'https://loremflickr.com/400/400/sunglasses,tinted,trendy' },
+  { title: "Cargo Crossbody Bag with Multiple Pockets", category: 'fashion', basePrice: 17, image: 'https://loremflickr.com/400/400/cargo,crossbody,bag' },
+  { title: "Mini Pearl Beaded Handbag", category: 'fashion', basePrice: 19, image: 'https://loremflickr.com/400/400/pearl,handbag,mini' },
+  { title: "Fluffy Faux Fur Tote Bag", category: 'fashion', basePrice: 18, image: 'https://loremflickr.com/400/400/fur,tote,fluffy' },
+  { title: "Knitted Beanie Hat Slouchy", category: 'fashion', basePrice: 7, image: 'https://loremflickr.com/400/400/beanie,slouchy,knit' },
+  { title: "Trendy Phone Strap Pearl Beaded", category: 'fashion', basePrice: 6, image: 'https://loremflickr.com/400/400/phone,strap,pearl' },
+  { title: "Coquette Bow Hair Ribbons 5-pack", category: 'fashion', basePrice: 4, image: 'https://loremflickr.com/400/400/coquette,bow,ribbons' },
+  { title: "Anklet Bracelet Set Gold 5-pack", category: 'fashion', basePrice: 8, image: 'https://loremflickr.com/400/400/anklet,gold,bracelet' },
+  { title: "Body Chain Layered Belly Necklace", category: 'fashion', basePrice: 9, image: 'https://loremflickr.com/400/400/body,chain,belly' },
+  { title: "Toe Rings Set Silver 6 pcs", category: 'fashion', basePrice: 5, image: 'https://loremflickr.com/400/400/toe,rings,silver' },
+  { title: "Hair Scrunchies Velvet 12-pack", category: 'fashion', basePrice: 6, image: 'https://loremflickr.com/400/400/scrunchies,velvet,pack' },
+  { title: "Statement Drop Crystal Earrings", category: 'fashion', basePrice: 7, image: 'https://loremflickr.com/400/400/crystal,drop,earrings' },
+  { title: "Aesthetic Ring Set Vintage 16-pack", category: 'fashion', basePrice: 7, image: 'https://loremflickr.com/400/400/aesthetic,rings,vintage' },
+  { title: "Leg Warmers Knitted Y2K", category: 'fashion', basePrice: 10, image: 'https://loremflickr.com/400/400/leg,warmers,y2k' },
+  { title: "Fishnet Tights Patterned", category: 'fashion', basePrice: 6, image: 'https://loremflickr.com/400/400/fishnet,tights,pattern' },
+  { title: "Faux Leather Belt Y2K Studded", category: 'fashion', basePrice: 9, image: 'https://loremflickr.com/400/400/leather,belt,studded' },
+  { title: "Cosplay Maid Costume Set", category: 'fashion', basePrice: 18, image: 'https://loremflickr.com/400/400/cosplay,maid,outfit' },
+  { title: "Cosy Hoodie Blanket Oversized", category: 'fashion', basePrice: 24, image: 'https://loremflickr.com/400/400/hoodie,blanket,oversized' },
+  { title: "Animal Onesie Pyjamas Unisex", category: 'fashion', basePrice: 22, image: 'https://loremflickr.com/400/400/animal,onesie,pyjamas' },
+
+  // ─── Temu-style toys & gadgets ─────────────────────────────────────────────
+  { title: "Magnetic Building Blocks 100 Pieces", category: 'toys', basePrice: 24, image: 'https://loremflickr.com/400/400/magnetic,building,blocks' },
+  { title: "Pop It Fidget Toy Tie Dye", category: 'toys', basePrice: 5, image: 'https://loremflickr.com/400/400/pop,it,fidget' },
+  { title: "Fidget Spinner Stress Relief Set", category: 'toys', basePrice: 6, image: 'https://loremflickr.com/400/400/fidget,spinner,toy' },
+  { title: "Magic Sand Kinetic 1kg", category: 'toys', basePrice: 11, image: 'https://loremflickr.com/400/400/kinetic,sand,magic' },
+  { title: "Slime Making Kit DIY", category: 'toys', basePrice: 9, image: 'https://loremflickr.com/400/400/slime,kit,diy' },
+  { title: "Bubble Machine Automatic", category: 'toys', basePrice: 14, image: 'https://loremflickr.com/400/400/bubble,machine,toy' },
+  { title: "Plushie Cute Kawaii 30cm", category: 'toys', basePrice: 12, image: 'https://loremflickr.com/400/400/plushie,kawaii,cute' },
+  { title: "Squishmallow-style Plush 20cm", category: 'toys', basePrice: 15, image: 'https://loremflickr.com/400/400/squishmallow,plush,soft' },
+  { title: "Remote Control Mini Car Drift", category: 'toys', basePrice: 18, image: 'https://loremflickr.com/400/400/rc,car,mini' },
+  { title: "RC Drone Mini Quadcopter", category: 'toys', basePrice: 32, image: 'https://loremflickr.com/400/400/drone,mini,rc' },
+
+  // ─── Outdoor/sports cheap items ────────────────────────────────────────────
+  { title: "Resistance Bands Set with Handles", category: 'sports', basePrice: 12, image: 'https://loremflickr.com/400/400/resistance,bands,fitness' },
+  { title: "Yoga Mat Non-slip 6mm", category: 'sports', basePrice: 15, image: 'https://loremflickr.com/400/400/yoga,mat,nonslip' },
+  { title: "Foam Roller Deep Tissue", category: 'sports', basePrice: 13, image: 'https://loremflickr.com/400/400/foam,roller,fitness' },
+  { title: "Insulated Water Bottle 1L Stainless Steel", category: 'sports', basePrice: 14, image: 'https://loremflickr.com/400/400/water,bottle,insulated' },
+  { title: "Stanley-style Tumbler 40oz with Straw", category: 'sports', basePrice: 18, image: 'https://loremflickr.com/400/400/stanley,tumbler,straw' },
+  { title: "Skipping Rope Adjustable Speed", category: 'sports', basePrice: 7, image: 'https://loremflickr.com/400/400/skipping,rope,speed' },
+  { title: "Mini Stepper with Resistance Bands", category: 'sports', basePrice: 39, image: 'https://loremflickr.com/400/400/mini,stepper,workout' },
+  { title: "Camping LED Lantern Rechargeable", category: 'outdoor', basePrice: 16, image: 'https://loremflickr.com/400/400/camping,lantern,led' },
+  { title: "Travel Vacuum Storage Bags 10-pack", category: 'outdoor', basePrice: 12, image: 'https://loremflickr.com/400/400/vacuum,bags,travel' },
+  { title: "Inflatable Beach Lounger Air Sofa", category: 'outdoor', basePrice: 18, image: 'https://loremflickr.com/400/400/inflatable,lounger,air' },
+
   // Furniture / Home
   { title: 'IKEA MALM Bed Frame Double', category: 'furniture', basePrice: 179, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400' },
   { title: 'IKEA POÄNG Armchair', category: 'furniture', basePrice: 89, image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400' },
@@ -817,16 +918,26 @@ function hash(s: string): number {
   return Math.abs(h);
 }
 
+// Marketplace retailers we want to surface heavily — they stock almost everything cheap.
+const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
+
 function buildVariants(seed: Seed): Product[] {
   const eligibleRetailers = (Object.keys(RETAILER_CATEGORIES) as Retailer[])
     .filter(r => RETAILER_CATEGORIES[r].includes(seed.category));
 
   // Each product appears at 4–8 retailers (deterministic)
   const count = 4 + (hash(seed.title) % 5);
-  const chosen = eligibleRetailers
+  let chosen = eligibleRetailers
     .slice() // copy
     .sort((a, b) => hash(seed.title + a) - hash(seed.title + b))
     .slice(0, count);
+
+  // Always include Temu, Shein and AliExpress when they're eligible for this category.
+  for (const r of MUST_INCLUDE) {
+    if (eligibleRetailers.includes(r) && !chosen.includes(r)) {
+      chosen.push(r);
+    }
+  }
 
   return chosen.map((retailer): Product => {
     const h = hash(seed.title + retailer);
