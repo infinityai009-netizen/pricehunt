@@ -1041,10 +1041,199 @@ function hash(s: string): number {
 const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
 
 // ─── Central image picker ───────────────────────────────────────────────────
-// Single source of truth for product photos. Maps the product TITLE
-// to known-good keywords (no brand names) so LoremFlickr returns the
-// right kind of image. If no rule matches, falls back to category.
+// Returns an image URL for a given seed. We use locally-rendered SVG
+// placeholders so every product always shows a correct, readable label
+// — no more random Flickr photos that don't match the product.
+const CATEGORY_COLORS: Record<Category, { bg: string; accent: string }> = {
+  electronics: { bg: '#0ea5e9', accent: '#0369a1' },
+  fashion:     { bg: '#ec4899', accent: '#9d174d' },
+  beauty:      { bg: '#f43f5e', accent: '#9f1239' },
+  grocery:     { bg: '#16a34a', accent: '#14532d' },
+  home:        { bg: '#f97316', accent: '#9a3412' },
+  furniture:   { bg: '#a16207', accent: '#713f12' },
+  gaming:      { bg: '#8b5cf6', accent: '#5b21b6' },
+  sports:      { bg: '#14b8a6', accent: '#115e59' },
+  toys:        { bg: '#f59e0b', accent: '#92400e' },
+  outdoor:     { bg: '#65a30d', accent: '#365314' },
+  pet:         { bg: '#a855f7', accent: '#6b21a8' },
+  cameras:     { bg: '#475569', accent: '#1e293b' },
+};
+
+const CATEGORY_ICON: Record<Category, string> = {
+  electronics: '📱',
+  fashion:     '👗',
+  beauty:      '💄',
+  grocery:     '🛒',
+  home:        '🏠',
+  furniture:   '🛋️',
+  gaming:      '🎮',
+  sports:      '⚽',
+  toys:        '🧸',
+  outdoor:     '🏕️',
+  pet:         '🐾',
+  cameras:     '📷',
+};
+
+// Subcategory icons for specific product types — picks override category icon.
+function productIcon(title: string, category: Category): string {
+  const t = title.toLowerCase();
+  if (/iphone|galaxy|pixel|smartphone|oneplus|xiaomi|nothing\s*phone|motorola|nokia|honor|oppo|redmi/.test(t)) return '📱';
+  if (/ipad|tablet|galaxy\s*tab/.test(t)) return '📱';
+  if (/macbook|laptop|xps|thinkpad|pavilion|notebook/.test(t)) return '💻';
+  if (/\btv\b|television|qled|oled/.test(t)) return '📺';
+  if (/airpods|earbuds|in-ear|buds|nothing\s*ear/.test(t)) return '🎧';
+  if (/headphone|over-ear|wh-1000|quietcomfort|momentum|gaming\s*headset|kraken|arctis|cloud\s*iii/.test(t)) return '🎧';
+  if (/watch|fitbit|garmin|smartwatch|g-shock|casio|amazfit/.test(t)) return '⌚';
+  if (/camera|gopro|alpha|mirrorless|canon|nikon/.test(t)) return '📷';
+  if (/playstation|ps5|xbox|nintendo|switch|steam\s*deck|quest\s*3/.test(t)) return '🎮';
+  if (/echo|alexa|homepod|nest|sonos|jbl|bose\s*soundlink/.test(t)) return '🔊';
+  if (/fire\s*tv|chromecast|roku|apple\s*tv/.test(t)) return '📺';
+  if (/case|cover|protector|screen\s*protector/.test(t)) return '📱';
+  if (/charger|adapter|magsafe|power\s*bank|powercore/.test(t)) return '🔌';
+  if (/cable|cord|hdmi|lightning|usb-c|usbc|thunderbolt|ethernet/.test(t)) return '🔗';
+  if (/fridge|refrigerator|freezer/.test(t)) return '🧊';
+  if (/washing\s*machine|washer|laundry\s*machine|washer\s*dryer/.test(t)) return '🌀';
+  if (/dryer|tumble/.test(t)) return '🌀';
+  if (/dishwasher/.test(t)) return '🧽';
+  if (/microwave/.test(t)) return '🍱';
+  if (/oven|cooker|hob|range\s*cooker/.test(t)) return '🍳';
+  if (/air\s*fryer|airfryer/.test(t)) return '🍟';
+  if (/vacuum/.test(t)) return '🧹';
+  if (/coffee|nespresso|espresso/.test(t)) return '☕';
+  if (/kettle/.test(t)) return '☕';
+  if (/fan|cooling|air\s*conditioner|bladeless|tower\s*fan|pedestal/.test(t)) return '💨';
+  if (/milk/.test(t)) return '🥛';
+  if (/cheese|cheddar|babybel|mozzarella|halloumi/.test(t)) return '🧀';
+  if (/butter|yoghurt|yogurt/.test(t)) return '🥛';
+  if (/eggs/.test(t)) return '🥚';
+  if (/banana/.test(t)) return '🍌';
+  if (/apple|gala|pink\s*lady/.test(t) && /\d+\s*pack|kg/.test(t)) return '🍎';
+  if (/strawberr/.test(t)) return '🍓';
+  if (/blueberr|raspberr|berries/.test(t)) return '🫐';
+  if (/grape/.test(t)) return '🍇';
+  if (/lemon|orange|satsuma/.test(t)) return '🍋';
+  if (/pineapple/.test(t)) return '🍍';
+  if (/watermelon/.test(t)) return '🍉';
+  if (/mango/.test(t)) return '🥭';
+  if (/avocado/.test(t)) return '🥑';
+  if (/carrot/.test(t)) return '🥕';
+  if (/potato|sweet\s*potato/.test(t)) return '🥔';
+  if (/onion/.test(t)) return '🧅';
+  if (/garlic/.test(t)) return '🧄';
+  if (/tomato/.test(t)) return '🍅';
+  if (/broccoli|cauliflower/.test(t)) return '🥦';
+  if (/pepper|aubergine|courgette|cucumber/.test(t)) return '🥒';
+  if (/mushroom/.test(t)) return '🍄';
+  if (/spinach|lettuce|salad|cabbage/.test(t)) return '🥬';
+  if (/ginger|spring\s*onion/.test(t)) return '🌿';
+  if (/chicken|beef|pork|lamb|sausage|bacon|steak/.test(t)) return '🥩';
+  if (/salmon|cod|prawn|tuna|fish|seafood/.test(t)) return '🐟';
+  if (/pizza/.test(t)) return '🍕';
+  if (/fish\s*finger/.test(t)) return '🐟';
+  if (/ice\s*cream|magnum|cornetto|haagen|ben.*jerry/.test(t)) return '🍦';
+  if (/peas|sweetcorn|frozen\s*berries|frozen\s*mixed/.test(t)) return '🧊';
+  if (/chips|crisps|pringles|walkers|doritos|hula|quavers|wotsits|monster\s*munch|frazzles|kettle\s*chips/.test(t)) return '🍿';
+  if (/chocolate|dairy\s*milk|cadbury|galaxy|kit\s*kat|maltesers/.test(t)) return '🍫';
+  if (/biscuit|digestive|jaffa\s*cakes|belvita/.test(t)) return '🍪';
+  if (/haribo|gummy|sweets/.test(t)) return '🍬';
+  if (/loaf|bread|kingsmill|hovis|warburtons|bagel|brioche|tortilla|burger\s*bun/.test(t)) return '🍞';
+  if (/croissant|pain\s*au\s*chocolat|crumpet|english\s*muffin|pancake/.test(t)) return '🥐';
+  if (/cereal|weetabix|cornflake|coco\s*pops|frosties|krispies|crunchy\s*nut|cheerios|shreddies|special\s*k|muesli|alpen|dorset|oats|porridge|granola|bran\s*flake/.test(t)) return '🥣';
+  if (/honey/.test(t)) return '🍯';
+  if (/jam|nutella|spread|maple\s*syrup/.test(t)) return '🍯';
+  if (/baked\s*beans|tinned|tomato\s*soup/.test(t)) return '🥫';
+  if (/pasta|penne|spaghetti|noodle/.test(t)) return '🍝';
+  if (/rice|basmati|long\s*grain|chana|lentil|dal/.test(t)) return '🍚';
+  if (/naan|tikka|korma|curry/.test(t)) return '🍛';
+  if (/sauce|ketchup|mayonnaise|pickle|chutney|sriracha|soy\s*sauce/.test(t)) return '🍶';
+  if (/oil|olive\s*oil|filippo\s*berio/.test(t)) return '🫒';
+  if (/sugar|salt/.test(t)) return '🧂';
+  if (/tea|yorkshire|pg\s*tips/.test(t)) return '🍵';
+  if (/coffee|nescaf|lavazza/.test(t)) return '☕';
+  if (/cola|coke|pepsi|fizzy|coca/.test(t)) return '🥤';
+  if (/juice|tropicana|innocent|smoothie/.test(t)) return '🧃';
+  if (/water|evian|highland\s*spring|bottled/.test(t)) return '💧';
+  if (/red\s*bull|lucozade|energy/.test(t)) return '⚡';
+  if (/beer|lager|ipa|stella|carling|heineken|corona|peroni|guinness|stout|ale/.test(t)) return '🍺';
+  if (/cider|strongbow|kopparberg|magners|rekorderlig/.test(t)) return '🍻';
+  if (/wine|chardonnay|merlot|shiraz|rosé|rose|prosecco|cava|sparkling/.test(t)) return '🍷';
+  if (/whisky|whiskey|jack\s*daniel|jameson|grouse/.test(t)) return '🥃';
+  if (/vodka|gin|rum|spirit|smirnoff|absolut|bombay|gordon|bacardi|captain\s*morgan/.test(t)) return '🍸';
+  if (/toilet\s*roll|andrex|plenty|kitchen\s*roll/.test(t)) return '🧻';
+  if (/detergent|fairy|persil|comfort|washing.up|cif|cleaner/.test(t)) return '🧴';
+  if (/toothpaste|colgate|shampoo|head\s*shoulders/.test(t)) return '🪥';
+  if (/nappies|pampers/.test(t)) return '👶';
+  if (/dress|skirt|maxi|midi|bodycon|satin\s*slip|cottagecore/.test(t)) return '👗';
+  if (/top|crop|tank|tee|t.shirt|bralette|hoodie|sweatshirt|cardigan|polo/.test(t)) return '👕';
+  if (/jeans|denim|trouser|chino|cargo\s*pants|jogger|legging|short/.test(t)) return '👖';
+  if (/jacket|coat|trench|puffer|blazer|bomber|nuptse/.test(t)) return '🧥';
+  if (/bikini|swimsuit|kaftan/.test(t)) return '👙';
+  if (/pyjama|onesie|lounge\s*set/.test(t)) return '🩱';
+  if (/sock|boxer|brief|underwear/.test(t)) return '🧦';
+  if (/sneaker|trainer|air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|new\s*balance/.test(t)) return '👟';
+  if (/boot|dr\.\s*martens|ugg/.test(t)) return '🥾';
+  if (/heel|court\s*shoe|stiletto/.test(t)) return '👠';
+  if (/sandal|loafer|flip.flop/.test(t)) return '👡';
+  if (/bag|tote|crossbody|backpack|handbag|shoulder\s*bag/.test(t)) return '👜';
+  if (/wallet/.test(t)) return '👛';
+  if (/sunglasses|wayfarer|aviator/.test(t)) return '🕶️';
+  if (/hat|beanie|cap|bucket/.test(t)) return '🧢';
+  if (/scarf/.test(t)) return '🧣';
+  if (/belt/.test(t)) return '👔';
+  if (/ring|earring|necklace|bracelet|jewell?ery|anklet|hoop|pendant|pearl/.test(t)) return '💍';
+  if (/perfume|fragrance/.test(t)) return '🌸';
+  if (/lipstick|lip\s*balm|lip\s*plumper/.test(t)) return '💄';
+  if (/mascara|eyeliner|eyelash|makeup|nail\s*polish|press\s*on\s*nails/.test(t)) return '💅';
+  if (/hair\s*dryer|airwrap|supersonic|ghd|hair\s*curling/.test(t)) return '💇';
+  if (/cream|moisturiser|serum|skincare|niacinamide|olaplex|magic\s*cream|sheet\s*mask|pimple\s*patch/.test(t)) return '🧴';
+  if (/sofa|armchair|chair|table|bed|bookcase|wardrobe/.test(t)) return '🛋️';
+  if (/rug|carpet|mat/.test(t)) return '🛋️';
+  if (/candle|diffuser|fairy\s*light|string\s*light|led\s*strip|moon\s*lamp|sunset\s*lamp|galaxy\s*projector|star\s*projector/.test(t)) return '💡';
+  if (/plant|macrame/.test(t)) return '🪴';
+  if (/cushion|pillow/.test(t)) return '🛏️';
+  if (/storage|drawer\s*divider|organiser|caddy|lazy\s*susan|wall\s*hook/.test(t)) return '📦';
+  if (/lego|barbie|hot\s*wheels|building\s*block|pop\s*it|fidget|slime|kinetic\s*sand|plushie|squishmallow|bubble\s*machine|rc\s|drone|toy/.test(t)) return '🧸';
+  if (/yoga|fitness|resistance|foam\s*roller|stepper|gym/.test(t)) return '🧘';
+  if (/water\s*bottle|tumbler|stanley|insulated/.test(t)) return '🍶';
+  if (/tent|camping|lantern/.test(t)) return '🏕️';
+  if (/dog\s*food|cat\s*food|pedigree|whiskas|pet\s*fountain|pet\s*bowl|lint\s*roller|cat\s*brush|cat\s*laser/.test(t)) return '🐾';
+  return CATEGORY_ICON[category];
+}
+
+// SVG generator — returns a data: URL with a beautifully styled product card.
+function svgPlaceholder(seed: Seed): string {
+  const colors = CATEGORY_COLORS[seed.category] ?? { bg: '#64748b', accent: '#334155' };
+  const icon = productIcon(seed.title, seed.category);
+  // Wrap long titles onto 3 lines
+  const title = seed.title.length > 60 ? seed.title.slice(0, 57) + '…' : seed.title;
+  const words = title.split(' ');
+  const lines: string[] = [];
+  let cur = '';
+  for (const w of words) {
+    if ((cur + ' ' + w).trim().length > 22) { if (cur) lines.push(cur); cur = w; }
+    else cur = (cur ? cur + ' ' : '') + w;
+    if (lines.length === 3) break;
+  }
+  if (cur && lines.length < 3) lines.push(cur);
+  // Build text tspans (centered)
+  const startY = 290 - (lines.length - 1) * 14;
+  const tspans = lines
+    .map((line, i) => {
+      const safe = line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      return `<tspan x="200" y="${startY + i * 28}">${safe}</tspan>`;
+    })
+    .join('');
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${colors.bg}"/><stop offset="1" stop-color="${colors.accent}"/></linearGradient></defs><rect width="400" height="400" fill="url(#g)"/><text x="200" y="170" font-size="120" text-anchor="middle" dominant-baseline="central">${icon}</text><text x="200" y="280" font-family="system-ui,-apple-system,sans-serif" font-size="20" font-weight="600" fill="white" text-anchor="middle">${tspans}</text></svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
 function smartImage(seed: Seed): string {
+  return svgPlaceholder(seed);
+}
+
+// (Old loremflickr rules removed — kept only for reference in git history.)
+function _legacyLoremflickrPicker(seed: Seed): string {
   const t = seed.title.toLowerCase();
   const lf = (kw: string) => `https://loremflickr.com/400/400/${kw}`;
 
