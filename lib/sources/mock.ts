@@ -2592,7 +2592,7 @@ const SYNONYMS: Record<string, string[]> = {
   unlimited:  ['unlimited','no limit','infinite data'],
   '5g':       ['5g','five g'],
   // Baby / kids
-  baby:       ['baby','infant','toddler','aptamil','sma','cow & gate','hipp','kendamil','ella','heinz baby','sudocrem','cussons','johnson','aveeno baby','tommee tippee','mam','avent','waterwipes','calpol','bepanthen','pampers','huggies','nappies','nappy','wipes','formula','rusk','cerelac','petits filous','organix','plum baby'],
+  baby:       ['baby','infant','toddler','aptamil','sma','cow & gate','hipp','kendamil','ella','heinz baby','heinz by nature','sudocrem','cussons','johnson','aveeno baby','tommee tippee','mam','avent','waterwipes','calpol','bepanthen','pampers','huggies','nappies','nappy','wipes','formula','rusk','cerelac','petits filous','organix','plum','porridge','step'],
   infant:     ['infant','baby','aptamil','sma','cow & gate','hipp','formula','first milk','follow-on'],
   toddler:    ['toddler','baby','growing up milk','pasta meal'],
   formula:    ['formula','first milk','infant milk','follow-on milk','growing up milk','aptamil','sma','cow & gate','hipp','kendamil'],
@@ -2617,19 +2617,50 @@ const SYNONYMS: Record<string, string[]> = {
   fresh:      ['fresh','produce','vegetable','fruit','salad'],
 };
 
+// Multi-word phrases that map to a set of expansion terms —
+// searched as a single unit rather than split into tokens.
+const PHRASE_SYNONYMS: Record<string, string[]> = {
+  'baby food':      ['baby','ella','heinz by nature','organix','plum','cow & gate','hipp','porridge','stage 1','stage 2','pouch','jar','rusk'],
+  'baby wipes':     ['wipes','waterwipes','cussons','pampers'],
+  'baby formula':   ['formula','aptamil','sma','cow & gate','hipp','kendamil','first milk','follow-on'],
+  'infant formula': ['formula','aptamil','sma','cow & gate','hipp','kendamil','first milk'],
+  'baby milk':      ['aptamil','sma','cow & gate','hipp','kendamil','first milk','follow-on','growing up milk'],
+  'baby nappies':   ['pampers','huggies','nappies','pull-ups'],
+  'in store':       ['tesco','asda','sainsburys','morrisons','waitrose','aldi','lidl','coop'],
+  'cleaning products': ['dettol','cif','mr muscle','method','astonish','pink stuff','flash','domestos','bleach'],
+  'kitchen products':  ['knife','pan','saucepan','frying','casserole','utensil','mixing bowl','baking','scales','stand mixer'],
+  'frozen food':    ['frozen','birds eye','mccain','aunt bessies','chicago town','goodfellas','quorn','ice cream'],
+  'frozen items':   ['frozen','birds eye','mccain','aunt bessies','chicago town','goodfellas','quorn','ice cream'],
+  'soft drinks':    ['cola','coke','pepsi','fanta','sprite','7up','dr pepper','lucozade','squash'],
+  'hot drinks':     ['tea','coffee','nescaf','lavazza','yorkshire','pg tips','costa'],
+  'fresh veg':      ['carrot','potato','onion','tomato','spinach','lettuce','cucumber','pepper','broccoli'],
+  'fresh fruit':    ['banana','apple','strawberr','blueberr','grape','lemon','mango'],
+};
+
 export async function searchMock(params: SearchParams): Promise<Product[]> {
   const q = (params.q || '').toLowerCase().trim();
   let items = catalog();
 
   if (q) {
-    const tokens = q.split(/\s+/).filter(Boolean);
-    items = items.filter(p => {
-      const hay = p.title.toLowerCase();
-      return tokens.every(token => {
-        const expansions = SYNONYMS[token] ?? [token];
-        return expansions.some(exp => hay.includes(exp));
+    // First try full-phrase match
+    const phraseKey = Object.keys(PHRASE_SYNONYMS).find(p => q === p || q.startsWith(p) || p.startsWith(q));
+    if (phraseKey) {
+      const exps = PHRASE_SYNONYMS[phraseKey];
+      items = items.filter(p => {
+        const hay = p.title.toLowerCase();
+        return exps.some(exp => hay.includes(exp));
       });
-    });
+    } else {
+      // Token-by-token AND matching with synonym expansion
+      const tokens = q.split(/\s+/).filter(Boolean);
+      items = items.filter(p => {
+        const hay = p.title.toLowerCase();
+        return tokens.every(token => {
+          const expansions = SYNONYMS[token] ?? [token];
+          return expansions.some(exp => hay.includes(exp));
+        });
+      });
+    }
   }
   if (params.category)  items = items.filter(p => p.category === params.category);
   if (params.retailer)  items = items.filter(p => p.retailer === params.retailer);
