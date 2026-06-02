@@ -1,3 +1,4 @@
+import InnerShell from '@/components/InnerShell';
 import SearchBar from '@/components/SearchBar';
 import Filters from '@/components/Filters';
 import ProductCard from '@/components/ProductCard';
@@ -27,6 +28,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
   const products = await aggregateSearch(search);
 
   return (
+    <InnerShell>
     <div className="max-w-6xl mx-auto px-4 py-6">
       <SearchBar />
       <h1 className="mt-6 text-2xl font-bold capitalize">{slug}</h1>
@@ -43,5 +45,6 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
         </div>
       </div>
     </div>
+    </InnerShell>
   );
 }

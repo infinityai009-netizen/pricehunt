@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import InnerShell from '@/components/InnerShell';
 import SearchBar from '@/components/SearchBar';
 import WishlistButton from '@/components/WishlistButton';
 import PriceHistoryChart from '@/components/PriceHistoryChart';
@@ -64,6 +65,7 @@ export default async function ProductPage({ params }: PageProps) {
   const history = fakePriceHistory(main.productKey, main.price);
 
   return (
+    <InnerShell>
     <div className="max-w-6xl mx-auto px-4 py-6">
       <SearchBar />
 
@@ -189,5 +191,6 @@ export default async function ProductPage({ params }: PageProps) {
         </p>
       </section>
     </div>
+    </InnerShell>
   );
 }

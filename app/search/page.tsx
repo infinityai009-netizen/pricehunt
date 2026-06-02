@@ -1,3 +1,4 @@
+import InnerShell from '@/components/InnerShell';
 import SearchBar from '@/components/SearchBar';
 import Filters from '@/components/Filters';
 import ProductCard from '@/components/ProductCard';
@@ -37,6 +38,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
   });
 
   return (
+    <InnerShell>
     <div className="max-w-6xl mx-auto px-4 py-6">
       <SearchBar initial={params.q} />
 
@@ -65,5 +67,6 @@ export default async function SearchPage({ searchParams }: PageProps) {
         </div>
       </div>
     </div>
+    </InnerShell>
   );
 }
