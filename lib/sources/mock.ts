@@ -2571,7 +2571,7 @@ const SYNONYMS: Record<string, string[]> = {
   cooker:     ['cooker','oven','range','hob'],
   microwave:  ['microwave','combination microwave'],
   dishwasher: ['dishwasher'],
-  kitchen:    ['fridge','washer','dishwasher','oven','microwave','cooker','hob','kettle','toaster','airfryer','air fryer','blender','coffee'],
+  kitchen:    ['fridge','washer','dishwasher','oven','microwave','cooker','hob','kettle','toaster','airfryer','air fryer','blender','coffee','knife','chopping board','pan','frying','saucepan','casserole','utensil','mixing bowl','measuring','tea towel','oven gloves','apron','spice rack','bread bin','mug','plate','tumbler','wine glass','cake tin','baking','scales','stand mixer','food processor'],
   // Cars
   car:        ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','mini cooper','yaris','swift','clio','i30','leon','octavia','tesla','range rover','tucson','sportage','qashqai','juke','sentra','passat','accord','xc40','xc60','x3','m sport','amg','rs line','st-line','sport','hybrid','electric'],
   cars:       ['car','suv','fiesta','golf','focus','corsa','polo','civic','astra','tesla','range rover','tucson','sportage','qashqai','xc40','xc60','x3','hybrid','electric','m sport'],
@@ -2591,6 +2591,30 @@ const SYNONYMS: Record<string, string[]> = {
   plan:       ['sim','plan','contract','pay monthly','goody bag','smart plan'],
   unlimited:  ['unlimited','no limit','infinite data'],
   '5g':       ['5g','five g'],
+  // Baby / kids
+  baby:       ['baby','infant','toddler','aptamil','sma','cow & gate','hipp','kendamil','ella','heinz baby','sudocrem','cussons','johnson','aveeno baby','tommee tippee','mam','avent','waterwipes','calpol','bepanthen','pampers','huggies','nappies','nappy','wipes','formula','rusk','cerelac','petits filous','organix','plum baby'],
+  infant:     ['infant','baby','aptamil','sma','cow & gate','hipp','formula','first milk','follow-on'],
+  toddler:    ['toddler','baby','growing up milk','pasta meal'],
+  formula:    ['formula','first milk','infant milk','follow-on milk','growing up milk','aptamil','sma','cow & gate','hipp','kendamil'],
+  nappies:    ['nappies','nappy','pampers','huggies','pull-ups','mamia'],
+  // Kitchen (extra — merged with the kitchen key above in the synonyms map)
+  cookware:   ['pan','saucepan','frying','casserole','tefal','le creuset','pyrex','wok'],
+  utensil:    ['utensil','spatula','spoon','whisk','tongs'],
+  kitchenware:['knife','chopping board','pan','frying','saucepan','casserole','utensil','mixing bowl','measuring','tea towel','oven gloves','apron','spice rack','bread bin','mug','plate','tumbler','wine glass','cake tin','baking','scales','stand mixer','food processor','blender','toaster','coffee machine'],
+  // Cleaning
+  cleaning:   ['cleaning','cleaner','dettol','cif','mr muscle','method','astonish','pink stuff','flash','domestos','bleach','windolene','furniture polish','bin bags','sponge','microfibre','duster','rubber gloves','viakal','limescale','calgon','lenor','detergent','washing powder','washing liquid','vanish','stain remover','bold','surf','fabric conditioner','dishwasher tablets'],
+  cleaner:    ['cleaner','spray','wipes','disinfectant','antibacterial'],
+  bleach:     ['bleach','domestos','toilet duck'],
+  // Chocolate / candy
+  chocolate:  ['chocolate','cadbury','galaxy','kit kat','wispa','twirl','flake','crunchie','curly wurly','heroes','roses','quality street','celebrations','lindt','toblerone','ferrero','rocher','reese','hershey','milkybar'],
+  candy:      ['chocolate','sweets','haribo','jelly babies','rolo','aero'],
+  sweets:     ['sweets','haribo','candy','rolo','chocolate'],
+  // Water / drinks
+  water:      ['water','evian','buxton','volvic','san pellegrino','perrier','belu','vita coco','sparkling','still','tonic'],
+  fizzy:      ['fizzy','cola','coke','pepsi','fanta','sprite','7up','dr pepper','sparkling'],
+  // Vegetables / fruit (extend existing)
+  produce:    ['carrot','potato','onion','tomato','spinach','lettuce','cucumber','pepper','broccoli','cauliflower','mushroom','aubergine','courgette','avocado','ginger','banana','apple','strawberr','blueberr','grape','lemon','mango','pineapple','watermelon','satsuma'],
+  fresh:      ['fresh','produce','vegetable','fruit','salad'],
 };
 
 export async function searchMock(params: SearchParams): Promise<Product[]> {
