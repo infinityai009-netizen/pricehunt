@@ -1462,7 +1462,7 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   ikea:       ['furniture','home','toys'],
   'b&q':      ['home','outdoor','furniture'],
   walmart:    ['electronics','grocery','home','toys','beauty','fashion'],
-  apple:      ['electronics','cameras'],
+  apple:      ['electronics'],
   facebook:   ['electronics','fashion','home','furniture','toys','sports','outdoor','beauty','gaming','cameras','cars'],
   ubereats:   ['food','grocery'],
   deliveroo:  ['food','grocery'],
@@ -1531,16 +1531,19 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   // Discount fashion / homeware
   tkmaxx:      ['fashion','beauty','home','toys','sports'],
   homesense:   ['home','furniture','beauty'],
-  // Watch retailers
-  watchshop:           ['fashion','electronics'],
-  watchesofswitzerland:['fashion','electronics'],
-  goldsmiths:          ['fashion','electronics'],
-  beaverbrooks:        ['fashion','electronics'],
-  ernestjones:         ['fashion','electronics'],
-  hsamuel:             ['fashion','electronics'],
-  fossil:              ['fashion','electronics'],
-  tagheuer:            ['fashion','electronics'],
-  casioshop:           ['electronics','fashion'],
+  // Watch retailers — kept narrow on purpose. They're force-included on watch
+  // products via the WATCH_PLATFORMS boost below, so they only appear where
+  // they make sense (Apple Watch, Tag Heuer, Fossil, etc.) and never on
+  // iPhones, TVs, laptops, headphones.
+  watchshop:           ['fashion'],
+  watchesofswitzerland:['fashion'],
+  goldsmiths:          ['fashion'],
+  beaverbrooks:        ['fashion'],
+  ernestjones:         ['fashion'],
+  hsamuel:             ['fashion'],
+  fossil:              ['fashion'],
+  tagheuer:            ['fashion'],
+  casioshop:           ['fashion'],
   // Premium / outdoor branded clothing
   tommyhilfiger: ['fashion'],
   hugoboss:      ['fashion','beauty'],
@@ -2345,11 +2348,18 @@ function buildVariants(seed: Seed): Product[] {
     }
   }
   // Watch products → watch specialists join the lineup.
-  const isWatch = /\bwatch\b|fitbit|garmin|smartwatch|g-shock|casio|fossil|tissot|seiko|citizen|tag heuer|daniel wellington|olivia burton|skagen|michael kors|amazfit|huawei watch/i.test(seed.title);
+  // Note: watch retailers are only listed under 'fashion' category in
+  // RETAILER_CATEGORIES, so this boost intentionally BYPASSES the eligibility
+  // check — that way they appear on actual watch products (which are
+  // category 'electronics') but never on iPhones, TVs, etc.
+  const isWatch = /\bwatch\b|fitbit|garmin|smartwatch|g-shock|casio|fossil|tissot|seiko|citizen|tag heuer|daniel wellington|olivia burton|skagen|michael kors|amazfit|huawei watch|swatch|omega|rolex|tudor|hamilton|sekonda|timex|bulova|cluse|orient/i.test(seed.title);
   if (isWatch) {
     for (const r of WATCH_PLATFORMS) {
-      if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+      if (!chosen.includes(r)) chosen.push(r);
     }
+    // Also include TAG Heuer and Casio direct stores when relevant
+    if (/tag heuer/i.test(seed.title) && !chosen.includes('tagheuer')) chosen.push('tagheuer');
+    if (/casio|g-shock/i.test(seed.title) && !chosen.includes('casioshop')) chosen.push('casioshop');
   }
 
   return chosen.map((retailer): Product => {
