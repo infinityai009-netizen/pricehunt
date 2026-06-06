@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Product } from '@/lib/types';
 import WishlistButton from './WishlistButton';
+import ProductImage from './ProductImage';
 
 const RETAILER_NAME: Record<string, string> = {
   amazon: 'Amazon', ebay: 'eBay', argos: 'Argos', currys: 'Currys',
@@ -158,17 +159,13 @@ export default function ProductCard({ p }: { p: Product }) {
     >
       <WishlistButton product={p} className="absolute top-2 right-2 z-10" />
       <div className="aspect-square bg-slate-100 overflow-hidden">
-        {p.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={p.image}
-            alt={p.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition"
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full grid place-items-center text-slate-400 text-xs">No image</div>
-        )}
+        <ProductImage
+          src={p.image}
+          alt={p.title}
+          fallbackTitle={p.title}
+          fallbackCategory={p.category}
+          className="w-full h-full object-cover group-hover:scale-105 transition"
+        />
       </div>
       <div className="p-3 space-y-2">
         <div className="flex items-center justify-between">

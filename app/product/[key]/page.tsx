@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import InnerShell from '@/components/InnerShell';
 import SearchBar from '@/components/SearchBar';
+import ProductImage from '@/components/ProductImage';
 import WishlistButton from '@/components/WishlistButton';
 import PriceHistoryChart from '@/components/PriceHistoryChart';
 import RetailerLink from '@/components/RetailerLink';
@@ -81,8 +82,13 @@ export default async function ProductPage({ params }: PageProps) {
         {/* Image */}
         <div className="bg-white border rounded-lg overflow-hidden relative">
           <WishlistButton product={main} className="absolute top-3 right-3 z-10 w-10 h-10" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={main.image} alt={main.title} className="w-full h-full object-cover aspect-square" />
+          <ProductImage
+            src={main.image}
+            alt={main.title}
+            fallbackTitle={main.title}
+            fallbackCategory={main.category}
+            className="w-full h-full object-cover aspect-square"
+          />
         </div>
 
         {/* Summary */}

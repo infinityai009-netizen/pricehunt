@@ -271,6 +271,15 @@ const SEEDS_RAW: any[] = [
   { title: 'Sony Pulse 3D Wireless Headset', category: 'gaming', basePrice: 89, image: 'https://images.unsplash.com/photo-1599669454699-248893623440?w=400' },
 
   // ─── More smartphones ──────────────────────────────────────────────────────
+  // iPhone 17 series (2025)
+  { title: 'Apple iPhone 17 128GB', category: 'electronics', basePrice: 799, image: '' },
+  { title: 'Apple iPhone 17 256GB', category: 'electronics', basePrice: 899, image: '' },
+  { title: 'Apple iPhone 17 Pro 256GB', category: 'electronics', basePrice: 1099, image: '' },
+  { title: 'Apple iPhone 17 Pro 512GB', category: 'electronics', basePrice: 1299, image: '' },
+  { title: 'Apple iPhone 17 Pro Max 256GB', category: 'electronics', basePrice: 1199, image: '' },
+  { title: 'Apple iPhone 17 Pro Max 512GB', category: 'electronics', basePrice: 1399, image: '' },
+  { title: 'Apple iPhone 17 Pro Max 1TB', category: 'electronics', basePrice: 1599, image: '' },
+  { title: 'Apple iPhone 17 Air 256GB', category: 'electronics', basePrice: 999, image: '' },
   { title: 'Apple iPhone 16 128GB', category: 'electronics', basePrice: 799, image: 'https://images.unsplash.com/photo-1696446702183-be9605d2e7fe?w=400' },
   { title: 'Apple iPhone 16 Pro 256GB', category: 'electronics', basePrice: 1099, image: 'https://images.unsplash.com/photo-1696446702183-be9605d2e7fe?w=400' },
   { title: 'Apple iPhone 16 Pro Max 256GB', category: 'electronics', basePrice: 1199, image: 'https://images.unsplash.com/photo-1696446702183-be9605d2e7fe?w=400' },
@@ -1907,7 +1916,241 @@ function svgPlaceholder(seed: Seed): string {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }
 
+// ─── Curated REAL product photos (Unsplash) for top-searched items ──────────
+// These are hand-picked stable photo IDs. ProductCard has an onError fallback
+// so if any URL 404s, the SVG placeholder takes over automatically — meaning
+// users always see SOMETHING, but they'll usually see a real photo.
+const u = (id: string) => `https://images.unsplash.com/${id}?w=500&q=80&auto=format&fit=crop`;
+
+interface PhotoRule { re: RegExp; url: string }
+const PHOTO_RULES: PhotoRule[] = [
+  // ── iPhones ─────────────────────────────────
+  { re: /iphone\s*17\s*pro\s*max/i,   url: u('photo-1592286927505-1def25115881') },
+  { re: /iphone\s*17\s*pro/i,         url: u('photo-1695048133083-04d6c79e8e0c') },
+  { re: /iphone\s*17\s*air/i,         url: u('photo-1592286927505-1def25115881') },
+  { re: /iphone\s*17/i,               url: u('photo-1695048079622-d9e4f0d97c5e') },
+  { re: /iphone\s*16\s*pro\s*max/i,   url: u('photo-1695048133083-04d6c79e8e0c') },
+  { re: /iphone\s*16\s*pro/i,         url: u('photo-1695048133083-04d6c79e8e0c') },
+  { re: /iphone\s*16e/i,              url: u('photo-1532465473312-3aff6724415c') },
+  { re: /iphone\s*16/i,               url: u('photo-1695048079622-d9e4f0d97c5e') },
+  { re: /iphone\s*15\s*pro\s*max/i,   url: u('photo-1696446702183-be9605d2e7fe') },
+  { re: /iphone\s*15\s*pro/i,         url: u('photo-1696446702183-be9605d2e7fe') },
+  { re: /iphone\s*15/i,               url: u('photo-1592750475338-74b7b21085ab') },
+  { re: /iphone\s*14\s*pro/i,         url: u('photo-1678685888221-cda773a3dcdb') },
+  { re: /iphone\s*14/i,               url: u('photo-1663781292073-079e6b3c5b71') },
+  { re: /iphone\s*13/i,               url: u('photo-1632661674596-df8be070a5c5') },
+  { re: /iphone\s*12/i,               url: u('photo-1605236453806-6ff36851218e') },
+  { re: /iphone\s*11/i,               url: u('photo-1574755393849-623942496936') },
+  { re: /iphone\s*se/i,               url: u('photo-1511707171634-5f897ff02aa9') },
+
+  // ── Samsung phones ───────────────────────────
+  { re: /galaxy\s*s2[45]\s*ultra/i,   url: u('photo-1675953935267-e039f13d4b91') },
+  { re: /galaxy\s*s2[45]/i,           url: u('photo-1610945415295-d9bbf067e59c') },
+  { re: /galaxy\s*z\s*flip/i,         url: u('photo-1610945265064-0e34e5519bbf') },
+  { re: /galaxy\s*z\s*fold/i,         url: u('photo-1610792516775-01de03eae630') },
+  { re: /galaxy\s*a[3-5]/i,           url: u('photo-1610792516775-01de03eae630') },
+  { re: /galaxy/i,                    url: u('photo-1610792516775-01de03eae630') },
+
+  // ── Other phones ────────────────────────────
+  { re: /pixel\s*9\s*pro|pixel\s*8\s*pro/i, url: u('photo-1598327105666-5b89351aff97') },
+  { re: /pixel/i,                     url: u('photo-1598327105666-5b89351aff97') },
+  { re: /(oneplus|nothing\s*phone|motorola|moto\s|oppo|honor|xiaomi|redmi|nokia)/i, url: u('photo-1511707171634-5f897ff02aa9') },
+
+  // ── Laptops ─────────────────────────────────
+  { re: /macbook\s*air/i,             url: u('photo-1517336714731-489689fd1ca8') },
+  { re: /macbook\s*pro/i,             url: u('photo-1611186871348-b1ce696e52c9') },
+  { re: /macbook/i,                   url: u('photo-1517336714731-489689fd1ca8') },
+  { re: /xps/i,                       url: u('photo-1593642632559-0c6d3fc62b89') },
+  { re: /thinkpad/i,                  url: u('photo-1588872657578-7efd1f1555ed') },
+  { re: /(laptop|pavilion|notebook)/i, url: u('photo-1496181133206-80ce9b88a853') },
+
+  // ── Tablets ─────────────────────────────────
+  { re: /ipad\s*pro/i,                url: u('photo-1561154464-82e9adf32764') },
+  { re: /ipad\s*air/i,                url: u('photo-1585789575456-1c0a44eebcfb') },
+  { re: /ipad/i,                      url: u('photo-1561154464-82e9adf32764') },
+  { re: /galaxy\s*tab/i,              url: u('photo-1623126908029-58cb08a2b272') },
+
+  // ── TVs ─────────────────────────────────────
+  { re: /(oled|qled)\s*\b.*\b(65|75|77|85)|65"\s*qled|75"\s*qled/i, url: u('photo-1593305841991-05c297ba4575') },
+  { re: /\boled\b/i,                  url: u('photo-1593305841991-05c297ba4575') },
+  { re: /(qled|crystal|neo qled)/i,   url: u('photo-1593359677879-a4bb92f829d1') },
+  { re: /\btv\b|television/i,         url: u('photo-1461151304267-38535e780c79') },
+  { re: /(fire\s*tv\s*stick|chromecast|roku|apple\s*tv)/i, url: u('photo-1593305841991-05c297ba4575') },
+
+  // ── Headphones & earbuds ────────────────────
+  { re: /airpods\s*pro/i,             url: u('photo-1606220588913-b3aacb4d2f46') },
+  { re: /airpods\s*max/i,             url: u('photo-1618366712010-f4ae9c647dcb') },
+  { re: /airpods/i,                   url: u('photo-1606220588913-b3aacb4d2f46') },
+  { re: /(buds|earbud|in-ear|wf-1000|nothing\s*ear)/i, url: u('photo-1572569511254-d8f925fe2cbb') },
+  { re: /wh-1000xm[45]/i,             url: u('photo-1583394838336-acd977736f90') },
+  { re: /(quietcomfort|qc\s*ultra|bose)/i, url: u('photo-1545127398-14699f92334b') },
+  { re: /(gaming\s*head|arctis|kraken|cloud\s*iii|hyperx|razer|corsair|astro|turtle\s*beach)/i, url: u('photo-1599669454699-248893623440') },
+  { re: /(headphone|over-ear|on-ear|momentum|hd\s*\d|px\s*\d|sennheiser|beats\s*studio)/i, url: u('photo-1583394838336-acd977736f90') },
+
+  // ── Smart speakers ──────────────────────────
+  { re: /(echo|alexa|nest|homepod|sonos)/i, url: u('photo-1543512214-318c7553f230') },
+  { re: /(jbl|soundlink|soundcore\s*boom|portable\s*speaker)/i, url: u('photo-1545454675-3531b543be5d') },
+
+  // ── Smartwatches ────────────────────────────
+  { re: /apple\s*watch\s*ultra/i,     url: u('photo-1546868871-7041f2a55e12') },
+  { re: /apple\s*watch/i,             url: u('photo-1551816230-ef5deaed4a26') },
+  { re: /galaxy\s*watch/i,            url: u('photo-1523275335684-37898b6baf30') },
+  { re: /(fitbit|charge|inspire|sense|versa)/i, url: u('photo-1575311373937-040b8e1fd5b6') },
+  { re: /(garmin|forerunner|fenix|venu|instinct)/i, url: u('photo-1546868871-7041f2a55e12') },
+  { re: /(g-shock|casio)/i,           url: u('photo-1524805444758-089113d48a6d') },
+  { re: /(tag\s*heuer|tudor|omega|rolex|hamilton|tissot|seiko|citizen)/i, url: u('photo-1622434641406-a158123450f9') },
+  { re: /(daniel\s*wellington|olivia\s*burton|cluse|skagen|fossil|sekonda|timex|swatch)/i, url: u('photo-1542496658-e33a6d0d50f6') },
+  { re: /(\bwatch\b|smartwatch|amazfit|huawei\s*watch|withings|ticwatch)/i, url: u('photo-1546868871-7041f2a55e12') },
+
+  // ── Cameras ─────────────────────────────────
+  { re: /gopro/i,                     url: u('photo-1525385133512-2f3bdd039054') },
+  { re: /dji|osmo/i,                  url: u('photo-1606983340075-3a5cf7d3d57c') },
+  { re: /(canon|sony\s*alpha|nikon|mirrorless)/i, url: u('photo-1502920917128-1aa500764cbd') },
+
+  // ── Gaming consoles ─────────────────────────
+  { re: /playstation\s*5|ps5/i,       url: u('photo-1606813907291-d86efa9b94db') },
+  { re: /xbox/i,                      url: u('photo-1621259182978-fbf93132d53d') },
+  { re: /nintendo\s*switch/i,         url: u('photo-1612801799932-2d61e9b97c5d') },
+  { re: /steam\s*deck/i,              url: u('photo-1640955014216-75201056c829') },
+  { re: /quest\s*3|vr/i,              url: u('photo-1622979135225-d2ba269cf1ac') },
+
+  // ── White goods ─────────────────────────────
+  { re: /american|side-by-side/i,     url: u('photo-1571175443880-49e1d25b2bc5') },
+  { re: /(mini|cosmetic.*pink)\s*fridge|husky/i, url: u('photo-1592594406032-4e3f1cdb8d2c') },
+  { re: /retro|smeg/i,                url: u('photo-1571175443880-49e1d25b2bc5') },
+  { re: /(fridge|refrigerator|freezer)/i, url: u('photo-1571175443880-49e1d25b2bc5') },
+  { re: /washer\s*dryer/i,            url: u('photo-1626806787461-102c1bfaaea1') },
+  { re: /(washing\s*machine|washer)/i, url: u('photo-1626806787461-102c1bfaaea1') },
+  { re: /(tumble\s*dryer|heat\s*pump\s*dryer|condenser\s*dryer|vented\s*dryer)/i, url: u('photo-1626806787461-102c1bfaaea1') },
+  { re: /dishwasher/i,                url: u('photo-1581622558663-b2e33377dfb2') },
+  { re: /microwave/i,                 url: u('photo-1585664811087-47f65abbad64') },
+  { re: /(oven|cooker|hob)/i,         url: u('photo-1556909114-f6e7ad7d3136') },
+
+  // ── Fans / cooling ──────────────────────────
+  { re: /(bladeless|dyson\s*cool|dyson\s*hot|dyson\s*pure)/i, url: u('photo-1593358577414-89cb6b15b5cb') },
+  { re: /(tower\s*fan|pedestal\s*fan|desk\s*fan|ceiling\s*fan|cooling)/i, url: u('photo-1593358577414-89cb6b15b5cb') },
+  { re: /air\s*conditioner/i,         url: u('photo-1631545806609-c3f0a91f1c3f') },
+
+  // ── Other home appliances ───────────────────
+  { re: /air\s*fryer|airfryer/i,      url: u('photo-1585515320310-259814833e62') },
+  { re: /vacuum/i,                    url: u('photo-1558317374-067fb5f30001') },
+  { re: /(coffee\s*machine|nespresso|espresso|coffee\s*maker)/i, url: u('photo-1572286258217-215cf8e35858') },
+
+  // ── Beauty / hair ───────────────────────────
+  { re: /(airwrap|supersonic|hair\s*dryer|ghd|hair\s*styler)/i, url: u('photo-1522338242992-e1a54906a8da') },
+  { re: /(makeup|press\s*on\s*nails|nail\s*polish)/i, url: u('photo-1556228720-195a672e8a03') },
+
+  // ── Fashion ─────────────────────────────────
+  { re: /(maxi\s*dress|midi\s*dress|bodycon|cottagecore)/i, url: u('photo-1572804013309-59a88b7e92f1') },
+  { re: /jeans|denim/i,               url: u('photo-1542272604-787c3835535d') },
+  { re: /(leather\s*jacket|denim\s*jacket|puffer\s*jacket|nuptse)/i, url: u('photo-1551028719-00167b16eac5') },
+  { re: /(air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|trainer|sneaker)/i, url: u('photo-1542291026-7eec264c27ff') },
+  { re: /(dr\.\s*martens|ugg|boot)/i, url: u('photo-1542291026-7eec264c27ff') },
+  { re: /(sunglasses|wayfarer|aviator)/i, url: u('photo-1572635196237-14b3f281503f') },
+  { re: /(backpack|tote|crossbody|handbag)/i, url: u('photo-1553062407-98eeb64c6a62') },
+
+  // ── Grocery ─────────────────────────────────
+  { re: /milk/i,                      url: u('photo-1563636619-e9143da7973b') },
+  { re: /cheese/i,                    url: u('photo-1486297678162-eb2a19b0a32d') },
+  { re: /(yoghurt|yogurt)/i,          url: u('photo-1488477181946-6428a0291777') },
+  { re: /butter|lurpak|anchor/i,      url: u('photo-1589985270826-4b7bb135bc9d') },
+  { re: /eggs/i,                      url: u('photo-1582722872445-44dc5f7e3c8f') },
+  { re: /banana/i,                    url: u('photo-1571771894821-ce9b6c11b08e') },
+  { re: /apple\s|pink\s*lady|gala/i,  url: u('photo-1567306226416-28f0efdc88ce') },
+  { re: /strawberr/i,                 url: u('photo-1543528176-61b239494933') },
+  { re: /blueberr|raspberr/i,         url: u('photo-1498557850523-fd3d118b962e') },
+  { re: /green\s*seedless\s*grape|green\s*grape/i, url: u('photo-1537640538966-79f369143f8f') },
+  { re: /grape/i,                     url: u('photo-1599819811279-d5ad9cccf838') },
+  { re: /lemon/i,                     url: u('photo-1582287014914-1db836b8ce5c') },
+  { re: /watermelon/i,                url: u('photo-1587049352846-4a222e784d38') },
+  { re: /carrot/i,                    url: u('photo-1598170845058-32b9d6a5da37') },
+  { re: /potato|maris\s*piper/i,      url: u('photo-1518977676601-b53f82aba655') },
+  { re: /onion/i,                     url: u('photo-1518977956812-cd3dbadaaf31') },
+  { re: /garlic/i,                    url: u('photo-1582284540020-8acbe03f2bdb') },
+  { re: /tomato/i,                    url: u('photo-1592924357228-91a4daadcfea') },
+  { re: /broccoli/i,                  url: u('photo-1459411552884-841db9b3cc2a') },
+  { re: /mushroom/i,                  url: u('photo-1602273532010-9c8a9faf5ea3') },
+  { re: /avocado/i,                   url: u('photo-1601039641847-7857b994d704') },
+  { re: /(chicken\s*breast|chicken\s*fillet|whole\s*chicken|chicken\s*thigh)/i, url: u('photo-1604503468506-a8da13d82791') },
+  { re: /(beef\s*mince|steak|sausage|bacon|pork\s*loin|lamb)/i, url: u('photo-1607623814075-e51df1bdc82f') },
+  { re: /(salmon|cod|prawn|tuna|fish)/i, url: u('photo-1519708227418-c8fd9a32b7a2') },
+  { re: /(garden\s*peas|sweetcorn|frozen.*frozen|aunt\s*bessies|chicago\s*town|goodfellas|quorn|frozen)/i, url: u('photo-1606914501449-5a96b6ce24ca') },
+  { re: /(ice\s*cream|magnum|cornetto|haagen|ben.*jerry)/i, url: u('photo-1581088382144-cffdbf85b8b3') },
+  { re: /(loaf|toastie|kingsmill|hovis|tiger\s*bloomer|warburtons)/i, url: u('photo-1509440159596-0249088772ff') },
+  { re: /(croissant|pain\s*au\s*chocolat|crumpet|english\s*muffin|pancake|greggs)/i, url: u('photo-1555507036-ab1f4038808a') },
+  { re: /(weetabix|cornflake|coco\s*pops|frosties|krispies|crunchy\s*nut|special\s*k|cheerios|shreddies|muesli|alpen|oats|porridge|breakfast)/i, url: u('photo-1517673400267-0251440c45dc') },
+  { re: /baked\s*beans/i,             url: u('photo-1610440042657-612c34d95e9f') },
+  { re: /(ketchup|mayonnaise|mayo)/i, url: u('photo-1556909114-f6e7ad7d3136') },
+  { re: /(pasta|penne|spaghetti)/i,   url: u('photo-1551462147-37885acc36f1') },
+  { re: /(rice|basmati|long\s*grain|tilda)/i, url: u('photo-1586201375761-83865001e31c') },
+  { re: /(coca.cola|coke|pepsi|diet\s*coke|pepsi\s*max|fanta|sprite|7up|dr\s*pepper)/i, url: u('photo-1554866585-cd94860890b7') },
+  { re: /(tropicana|innocent|orange\s*juice|smoothie|juice)/i, url: u('photo-1600271886742-f049cd451bba') },
+  { re: /(evian|highland\s*spring|water|volvic|buxton|perrier|san\s*pellegrino)/i, url: u('photo-1548839140-29a749e1cf4d') },
+  { re: /(beer|lager|ipa|stella|carling|heineken|corona|peroni|guinness|stout|ale|brewdog|kingfisher|cobra)/i, url: u('photo-1535958636474-b021ee887b13') },
+  { re: /(cider|strongbow|kopparberg|magners|rekorderlig)/i, url: u('photo-1551924908-bf3d6cf8eb5b') },
+  { re: /(wine|chardonnay|merlot|shiraz|rosé|rose|cabernet)/i, url: u('photo-1510812431401-41d2bd2722f3') },
+  { re: /(whisky|whiskey|jack\s*daniel|jameson|grouse)/i, url: u('photo-1527281400683-1aae777175f8') },
+  { re: /(vodka|gin|rum|smirnoff|absolut|bombay|gordon|bacardi|captain\s*morgan)/i, url: u('photo-1569529465841-dfecdab7503b') },
+  { re: /(prosecco|cava|sparkling|champagne|freixenet)/i, url: u('photo-1574786577618-8aabf08f4c97') },
+  { re: /(walkers|pringles|doritos|crisps|hula\s*hoops|wotsits|monster\s*munch|mccoy|kettle\s*chips)/i, url: u('photo-1566478989037-eec170784d0b') },
+  { re: /(dairy\s*milk|cadbury|galaxy\s*chocolate|maltesers|kit\s*kat|lindt|toblerone|ferrero|hershey)/i, url: u('photo-1582058091505-f87a2e55a40f') },
+  { re: /(digestive|chocolate\s*digestive|mcvitie|jaffa\s*cakes|biscuit|belvita)/i, url: u('photo-1558961363-fa8fdf82db35') },
+  { re: /(haribo|gummy|sweets)/i,     url: u('photo-1582058091505-f87a2e55a40f') },
+  { re: /(yorkshire\s*tea|pg\s*tips|tea\s*bag)/i, url: u('photo-1576092768241-dec231879fc3') },
+  { re: /(nescaf|lavazza|instant\s*coffee|ground\s*coffee)/i, url: u('photo-1559925393-8be0ec4767c8') },
+
+  // ── Baby ────────────────────────────────────
+  { re: /(pampers|huggies|nappies)/i, url: u('photo-1522771930-78848d9293e8') },
+  { re: /(formula|aptamil|sma|cow\s*&\s*gate|hipp|kendamil|first\s*milk|follow-on)/i, url: u('photo-1631048500928-2e4a6e1c8ee0') },
+  { re: /(ella|organix|plum\s*baby|heinz\s*by\s*nature|baby\s*porridge|baby\s*rice|cerelac)/i, url: u('photo-1547637589-f54c34f5d7a4') },
+  { re: /(tommee\s*tippee|mam\s|avent|baby\s*bottle)/i, url: u('photo-1515488042361-ee00e0ddd4e4') },
+  { re: /(baby\s*wipes|waterwipes)/i, url: u('photo-1604881991720-f91add269bed') },
+  { re: /(johnson|aveeno|sudocrem|bepanthen|calpol)/i, url: u('photo-1556228720-195a672e8a03') },
+
+  // ── Cleaning ───────────────────────────────
+  { re: /(dettol|disinfectant|cif|mr\s*muscle|method|astonish|pink\s*stuff|flash|domestos|toilet\s*duck|windowlene|cleaner)/i, url: u('photo-1585421514738-01798e348b17') },
+  { re: /(bin\s*bag|sponge|microfibre|duster|marigold|gloves)/i, url: u('photo-1584820927498-cfe5211fd8bf') },
+  { re: /(persil|comfort|laundry|bold|surf|vanish|calgon|lenor)/i, url: u('photo-1610557892470-55d9e80c0bce') },
+  { re: /(toothpaste|colgate|shampoo|head\s*shoulders)/i, url: u('photo-1556228720-195a672e8a03') },
+
+  // ── Kitchen products ───────────────────────
+  { re: /(knife\s*set|chef.s\s*knife|wusthof)/i, url: u('photo-1593618998160-e34014e67546') },
+  { re: /(chopping\s*board)/i,        url: u('photo-1556909114-f6e7ad7d3136') },
+  { re: /(tefal|le\s*creuset|pyrex|saucepan|frying\s*pan|casserole|pan\s*set)/i, url: u('photo-1556909114-f6e7ad7d3136') },
+  { re: /(kitchenaid|kenwood|stand\s*mixer|magimix|food\s*processor|nutribullet|blender)/i, url: u('photo-1556909114-f6e7ad7d3136') },
+
+  // ── Cars ────────────────────────────────────
+  { re: /tesla|polestar/i,            url: u('photo-1560958089-b8a1929cea89') },
+  { re: /(bmw)/i,                     url: u('photo-1555215695-3004980ad54e') },
+  { re: /(audi)/i,                    url: u('photo-1606664515524-ed2f786a0bd6') },
+  { re: /(mercedes)/i,                url: u('photo-1605559424843-9e4c228bf1c2') },
+  { re: /(mini\s*cooper|mini\s*countryman)/i, url: u('photo-1583121274602-3e2820c69888') },
+  { re: /(range\s*rover|land\s*rover|jaguar|lexus|volvo|porsche)/i, url: u('photo-1503376780353-7e6692767b70') },
+  { re: /(ford|vauxhall|toyota|honda|nissan|hyundai|kia|peugeot|citroen|renault|seat|skoda|mazda|suzuki|volkswagen|vw\s)/i, url: u('photo-1494976388531-d1058494cdd8') },
+  { re: /(car|suv|hybrid|electric|used)/i, url: u('photo-1494976388531-d1058494cdd8') },
+
+  // ── Food delivery ──────────────────────────
+  { re: /(pizza|domino|papa\s*john|pizza\s*hut|franco\s*manca|margherita)/i, url: u('photo-1565299624946-b28f40a0ae38') },
+  { re: /(burger|mcdonald|big\s*mac|whopper|five\s*guys|honest\s*burger|gbk|shake\s*shack)/i, url: u('photo-1568901346375-23c9450c58cd') },
+  { re: /(kfc|nando|wing|chicken\s*pitta|chicken\s*bucket)/i, url: u('photo-1626082935722-ce0c4ab7c2bf') },
+  { re: /(dishoom|tikka|biryani|thali|curry|naan\s*set)/i, url: u('photo-1565557623262-b51c2513a641') },
+  { re: /(wagamama|katsu|yaki\s*soba|ramen|pho|sushi|itsu|wasabi)/i, url: u('photo-1579871494447-9811cf80d66c') },
+  { re: /(taco|burrito|chipotle|taco\s*bell)/i, url: u('photo-1565299585323-38d6b0865b47') },
+  { re: /(subway|pret|baguette|sandwich)/i, url: u('photo-1528735602780-2552fd46c7af') },
+  { re: /(salad|caesar|leon|hot\s*box)/i, url: u('photo-1546069901-ba9599a7e63c') },
+  { re: /(kebab|shawarma|halloumi\s*wrap)/i, url: u('photo-1529193591184-b1d58069ecdd') },
+  { re: /(greggs|sausage\s*roll|steak\s*bake|breakfast\s*roll)/i, url: u('photo-1509440159596-0249088772ff') },
+  { re: /(starbucks|costa|caffe\s*nero|latte|cappuccino|flat\s*white)/i, url: u('photo-1509042239860-f550ce710b93') },
+  { re: /(krispy\s*kreme|donut|cinnabon)/i, url: u('photo-1551024601-bec78aea704b') },
+  { re: /(eggs\s*benedict|full\s*english|breakfast)/i, url: u('photo-1551782450-a2132b4ba21d') },
+  { re: /(bubble\s*tea|boba)/i,       url: u('photo-1558857563-c0c6ee6f3a0c') },
+];
+
 function smartImage(seed: Seed): string {
+  const t = seed.title;
+  for (const rule of PHOTO_RULES) {
+    if (rule.re.test(t)) return rule.url;
+  }
   return svgPlaceholder(seed);
 }
 
