@@ -29,9 +29,13 @@ export default function InnerShell({ children }: { children: React.ReactNode }) 
       </header>
       <main className="flex-1">{children}</main>
       <footer className="border-t bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+        <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-3">
           <span>© {new Date().getFullYear()} PriceHunt — affiliate links may earn us a commission.</span>
-          <span>Prices accurate at time of indexing.</span>
+          <nav className="flex gap-4">
+            <Link href="/about" className="hover:text-emerald-600">About</Link>
+            <Link href="/privacy" className="hover:text-emerald-600">Privacy</Link>
+            <Link href="/terms" className="hover:text-emerald-600">Terms</Link>
+          </nav>
         </div>
       </footer>
     </div>

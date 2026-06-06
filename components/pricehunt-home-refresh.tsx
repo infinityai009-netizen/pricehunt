@@ -774,10 +774,10 @@ export default function PriceHuntHomeRefresh() {
           <div>
             <h4 className="font-bold mb-3">About</h4>
             <ul className={`space-y-2 ${softText}`}>
-              <li>How we work</li>
-              <li>Privacy</li>
-              <li>Affiliate disclosure</li>
-              <li>Contact</li>
+              <li><Link href="/about" className="hover:text-emerald-500">How we work</Link></li>
+              <li><Link href="/privacy" className="hover:text-emerald-500">Privacy</Link></li>
+              <li><Link href="/terms" className="hover:text-emerald-500">Terms</Link></li>
+              <li><Link href="/about" className="hover:text-emerald-500">Affiliate disclosure</Link></li>
             </ul>
           </div>
         </div>
