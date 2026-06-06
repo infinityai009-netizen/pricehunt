@@ -5,6 +5,7 @@ import { signIn } from 'next-auth/react';
 import { login, popPendingUrl } from '@/lib/authClient';
 
 interface ProviderFlags {
+  realAuthReady: boolean;
   google: boolean;
   facebook: boolean;
   github: boolean;
@@ -13,6 +14,7 @@ interface ProviderFlags {
 }
 
 const DEFAULTS: ProviderFlags = {
+  realAuthReady: false,
   google: false, facebook: false, github: false, email: false, credentials: true,
 };
 
@@ -60,8 +62,8 @@ export default function AuthModal() {
   async function oauthSignIn(provider: 'google' | 'facebook' | 'github') {
     setLoading(true);
     setError('');
-    if (providers[provider]) {
-      // Real OAuth flow — NextAuth handles the redirect
+    // Only attempt real OAuth if BOTH the provider keys AND AUTH_SECRET are set
+    if (providers.realAuthReady && providers[provider]) {
       const pending = popPendingUrl();
       await signIn(provider, { callbackUrl: pending ?? window.location.pathname });
       return;
@@ -91,16 +93,21 @@ export default function AuthModal() {
     }
     setLoading(true);
     setError('');
-    const result = await signIn('credentials', {
-      email: email.trim(),
-      password,
-      name: name.trim() || email.split('@')[0],
-      redirect: false,
-    });
-    if (result?.error) {
-      setError('Sign in failed. Please try again.');
-      setLoading(false);
-      return;
+
+    // If real NextAuth isn't configured (missing AUTH_SECRET), skip the API
+    // call entirely and use localStorage. Same UX, no 500s.
+    if (providers.realAuthReady) {
+      const result = await signIn('credentials', {
+        email: email.trim(),
+        password,
+        name: name.trim() || email.split('@')[0],
+        redirect: false,
+      });
+      if (result?.error) {
+        setError('Sign in failed. Please try again.');
+        setLoading(false);
+        return;
+      }
     }
     finishLogin('email', name.trim() || email.split('@')[0], email.trim());
   }
@@ -114,7 +121,7 @@ export default function AuthModal() {
     }
     setLoading(true);
     setError('');
-    if (providers.email) {
+    if (providers.realAuthReady && providers.email) {
       await signIn('resend', { email: email.trim(), redirect: false });
       setMagicSent(true);
       setLoading(false);

@@ -84,11 +84,15 @@ export const { handlers, auth, signIn, signOut } = NextAuth(config);
 
 // Helper for UI to know what's enabled at runtime
 export function availableProviders() {
+  // AUTH_SECRET is required for ANY real NextAuth flow. Without it, the
+  // site falls back to localStorage-only "demo" mode so it never breaks.
+  const realAuthReady = !!process.env.AUTH_SECRET;
   return {
-    google:   !!(process.env.AUTH_GOOGLE_ID   && process.env.AUTH_GOOGLE_SECRET),
-    facebook: !!(process.env.AUTH_FACEBOOK_ID && process.env.AUTH_FACEBOOK_SECRET),
-    github:   !!(process.env.AUTH_GITHUB_ID   && process.env.AUTH_GITHUB_SECRET),
-    email:    !!process.env.AUTH_RESEND_KEY,
-    credentials: true,
+    realAuthReady,
+    google:   realAuthReady && !!(process.env.AUTH_GOOGLE_ID   && process.env.AUTH_GOOGLE_SECRET),
+    facebook: realAuthReady && !!(process.env.AUTH_FACEBOOK_ID && process.env.AUTH_FACEBOOK_SECRET),
+    github:   realAuthReady && !!(process.env.AUTH_GITHUB_ID   && process.env.AUTH_GITHUB_SECRET),
+    email:    realAuthReady && !!process.env.AUTH_RESEND_KEY,
+    credentials: true, // always works (real if AUTH_SECRET is set, demo otherwise)
   };
 }
