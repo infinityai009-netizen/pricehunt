@@ -40,6 +40,10 @@ const RETAILER_NAME: Record<string, string> = {
   whitestuff: 'White Stuff', mountainwarehouse: 'Mountain Warehouse',
   cotswoldoutdoor: 'Cotswold Outdoor', footasylum: 'Footasylum',
   size: 'size?', flannels: 'Flannels',
+  footlocker: 'Foot Locker', endclothing: 'END.', offspring: 'Offspring',
+  shoezone: 'Shoe Zone', kickers: 'Kickers', hunter: 'Hunter',
+  timberland: 'Timberland', drmartens: 'Dr. Martens', ugg: 'UGG',
+  birkenstock: 'Birkenstock', crocs: 'Crocs', hotter: 'Hotter',
 };
 
 const RETAILER_COLOR: Record<string, string> = {
@@ -149,6 +153,18 @@ const RETAILER_COLOR: Record<string, string> = {
   footasylum: 'bg-orange-100 text-orange-700',
   size: 'bg-slate-900 text-white',
   flannels: 'bg-slate-900 text-white',
+  footlocker: 'bg-slate-900 text-white',
+  endclothing: 'bg-slate-900 text-white',
+  offspring: 'bg-red-100 text-red-700',
+  shoezone: 'bg-blue-100 text-blue-700',
+  kickers: 'bg-yellow-100 text-yellow-800',
+  hunter: 'bg-green-100 text-green-800',
+  timberland: 'bg-yellow-100 text-yellow-800',
+  drmartens: 'bg-red-100 text-red-800',
+  ugg: 'bg-amber-100 text-amber-800',
+  birkenstock: 'bg-stone-100 text-stone-800',
+  crocs: 'bg-green-100 text-green-700',
+  hotter: 'bg-pink-100 text-pink-700',
 };
 
 export default function ProductCard({ p }: { p: Product }) {

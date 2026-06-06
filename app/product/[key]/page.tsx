@@ -48,6 +48,10 @@ const RETAILER_NAME: Record<string, string> = {
   whitestuff: 'White Stuff', mountainwarehouse: 'Mountain Warehouse',
   cotswoldoutdoor: 'Cotswold Outdoor', footasylum: 'Footasylum',
   size: 'size?', flannels: 'Flannels',
+  footlocker: 'Foot Locker', endclothing: 'END.', offspring: 'Offspring',
+  shoezone: 'Shoe Zone', kickers: 'Kickers', hunter: 'Hunter',
+  timberland: 'Timberland', drmartens: 'Dr. Martens', ugg: 'UGG',
+  birkenstock: 'Birkenstock', crocs: 'Crocs', hotter: 'Hotter',
 };
 
 interface PageProps {
@@ -367,6 +371,18 @@ function storeBadgeColor(retailer: string): string {
     whitestuff: 'bg-[#3F2A56] text-white',
     mountainwarehouse: 'bg-[#005D2F] text-white',
     cotswoldoutdoor: 'bg-[#7FB539] text-white',
+    footlocker: 'bg-[#181818] text-[#FF6300]',
+    endclothing: 'bg-black text-white',
+    offspring:   'bg-[#E2231A] text-white',
+    shoezone:    'bg-[#0066CC] text-white',
+    kickers:     'bg-[#FFD200] text-slate-900',
+    hunter:      'bg-[#1C1C1C] text-[#FBB314]',
+    timberland:  'bg-[#FFCD00] text-slate-900',
+    drmartens:   'bg-[#C8102E] text-white',
+    ugg:         'bg-[#7B5538] text-white',
+    birkenstock: 'bg-[#3A2317] text-[#F4E5C9]',
+    crocs:       'bg-[#179C39] text-white',
+    hotter:      'bg-[#E04E8C] text-white',
   };
   return map[retailer] ?? 'bg-slate-800 text-white';
 }

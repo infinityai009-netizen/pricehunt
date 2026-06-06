@@ -113,7 +113,20 @@ export type Retailer =
   | 'cotswoldoutdoor'
   | 'footasylum'
   | 'size'
-  | 'flannels';
+  | 'flannels'
+  // Specialist shoe retailers
+  | 'footlocker'
+  | 'endclothing'
+  | 'offspring'
+  | 'shoezone'
+  | 'kickers'
+  | 'hunter'
+  | 'timberland'
+  | 'drmartens'
+  | 'ugg'
+  | 'birkenstock'
+  | 'crocs'
+  | 'hotter';
 
 export type Category =
   | 'electronics'

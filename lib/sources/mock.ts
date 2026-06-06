@@ -501,7 +501,211 @@ const SEEDS_RAW: any[] = [
   { title: "Women's Strappy Heeled Sandals", category: 'fashion', basePrice: 22, image: 'https://loremflickr.com/400/400/heels,strappy,sandals' },
   { title: "Women's Knee High Boots", category: 'fashion', basePrice: 39, image: 'https://loremflickr.com/400/400/boots,knee,high' },
   { title: "Women's Chunky Loafers", category: 'fashion', basePrice: 28, image: 'https://loremflickr.com/400/400/loafers,chunky,women' },
-  { title: "Women's Birkenstock-style Sandals", category: 'fashion', basePrice: 19, image: 'https://loremflickr.com/400/400/sandals,women,strap' },
+  { title: "Women's Birkenstock-style Sandals", category: 'fashion', basePrice: 19, image: '' },
+
+  // ─── Men's shoes (comprehensive) ───────────────────────────────────────────
+  // Trainers / sneakers
+  { title: "Nike Air Jordan 1 Mid Triple Black", category: 'fashion', basePrice: 119, image: '' },
+  { title: "Nike Air Jordan 1 High OG Chicago", category: 'fashion', basePrice: 169, image: '' },
+  { title: "Nike Air Jordan 4 Retro Bred", category: 'fashion', basePrice: 215, image: '' },
+  { title: "Nike Air Jordan 11 Retro Concord", category: 'fashion', basePrice: 235, image: '' },
+  { title: "Nike Dunk Low Panda White Black", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Nike Dunk High Retro Syracuse", category: 'fashion', basePrice: 125, image: '' },
+  { title: "Nike Air Max 1 Patta Waves", category: 'fashion', basePrice: 145, image: '' },
+  { title: "Nike Air Max 95 OG Neon", category: 'fashion', basePrice: 175, image: '' },
+  { title: "Nike Air Max 97 Silver Bullet", category: 'fashion', basePrice: 165, image: '' },
+  { title: "Nike Cortez Forrest Gump", category: 'fashion', basePrice: 95, image: '' },
+  { title: "Nike Pegasus 41 Running Shoe", category: 'fashion', basePrice: 135, image: '' },
+  { title: "Nike Vaporfly 3 Racing Shoe", category: 'fashion', basePrice: 240, image: '' },
+  { title: "Nike Blazer Mid 77 Vintage", category: 'fashion', basePrice: 100, image: '' },
+  { title: "Adidas Ultraboost 22 Black", category: 'fashion', basePrice: 180, image: '' },
+  { title: "Adidas Ultraboost Light", category: 'fashion', basePrice: 190, image: '' },
+  { title: "Adidas NMD R1 V2 Triple Black", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Adidas Forum Low Cloud White", category: 'fashion', basePrice: 100, image: '' },
+  { title: "Adidas Yeezy Boost 350 V2", category: 'fashion', basePrice: 220, image: '' },
+  { title: "Adidas Yeezy Slide Bone", category: 'fashion', basePrice: 80, image: '' },
+  { title: "Adidas Campus 00s Dark Green", category: 'fashion', basePrice: 95, image: '' },
+  { title: "Adidas Handball Spezial Light Blue", category: 'fashion', basePrice: 100, image: '' },
+  { title: "Adidas Samba ADV Skateboarding", category: 'fashion', basePrice: 95, image: '' },
+  { title: "New Balance 9060 Sea Salt", category: 'fashion', basePrice: 165, image: '' },
+  { title: "New Balance 574 Core Grey", category: 'fashion', basePrice: 85, image: '' },
+  { title: "New Balance 327 Black White", category: 'fashion', basePrice: 95, image: '' },
+  { title: "New Balance 990v6 Grey USA", category: 'fashion', basePrice: 215, image: '' },
+  { title: "New Balance 2002R Protection Pack", category: 'fashion', basePrice: 165, image: '' },
+  { title: "Puma Suede Classic XXI Black", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Puma RS-X 3D Cool White", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Puma Speedcat OG Premium", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Reebok Classic Leather White", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Reebok Club C 85 Vintage", category: 'fashion', basePrice: 80, image: '' },
+  { title: "Asics Gel-Lyte III OG Black", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Asics Gel-Kayano 14 Cream", category: 'fashion', basePrice: 150, image: '' },
+  { title: "Veja V-10 White Black", category: 'fashion', basePrice: 145, image: '' },
+  { title: "Veja Campo Chromefree Extra White", category: 'fashion', basePrice: 130, image: '' },
+  { title: "On Cloud 5 Push Mens", category: 'fashion', basePrice: 130, image: '' },
+  { title: "On Cloudmonster Running Shoe", category: 'fashion', basePrice: 170, image: '' },
+  { title: "Hoka Clifton 9 Running Shoe", category: 'fashion', basePrice: 145, image: '' },
+  { title: "Hoka Bondi 8 Cushioned Run", category: 'fashion', basePrice: 165, image: '' },
+  { title: "Hoka Speedgoat 5 Trail Running", category: 'fashion', basePrice: 155, image: '' },
+  { title: "Brooks Ghost 16 Running Shoe", category: 'fashion', basePrice: 140, image: '' },
+  { title: "Saucony Endorphin Speed 4", category: 'fashion', basePrice: 200, image: '' },
+  { title: "Salomon XT-6 Advanced Black", category: 'fashion', basePrice: 175, image: '' },
+
+  // Skate / casual lifestyle
+  { title: "Vans Sk8-Hi Pro Black White", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Vans Authentic Classic Canvas", category: 'fashion', basePrice: 55, image: '' },
+  { title: "Vans Era Stackform Black", category: 'fashion', basePrice: 65, image: '' },
+  { title: "Vans Knu Skool Suede Two Tone", category: 'fashion', basePrice: 80, image: '' },
+  { title: "Converse Chuck 70 High Top Black", category: 'fashion', basePrice: 95, image: '' },
+  { title: "Converse Run Star Hike Platform", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Converse Pro Leather Vintage", category: 'fashion', basePrice: 95, image: '' },
+
+  // Men's boots
+  { title: "Dr Martens 1461 3-Eye Black Smooth", category: 'fashion', basePrice: 155, image: '' },
+  { title: "Dr Martens 2976 Chelsea Boot Black", category: 'fashion', basePrice: 175, image: '' },
+  { title: "Dr Martens Jadon Platform Black", category: 'fashion', basePrice: 199, image: '' },
+  { title: "Timberland 6-Inch Premium Boot Wheat", category: 'fashion', basePrice: 200, image: '' },
+  { title: "Timberland Chukka Boot Brown", category: 'fashion', basePrice: 140, image: '' },
+  { title: "Clarks Originals Desert Boot Sand Suede", category: 'fashion', basePrice: 115, image: '' },
+  { title: "Clarks Originals Wallabee Boot", category: 'fashion', basePrice: 140, image: '' },
+  { title: "Red Wing Iron Ranger Boot Amber", category: 'fashion', basePrice: 320, image: '' },
+  { title: "Grenson Fred Brogue Boot Tan", category: 'fashion', basePrice: 320, image: '' },
+  { title: "Berghaus Hillmaster II GTX Hiking Boot", category: 'fashion', basePrice: 165, image: '' },
+  { title: "Merrell Moab 3 Mid GTX Hiking Boot", category: 'fashion', basePrice: 145, image: '' },
+  { title: "Salomon X Ultra 4 Mid GTX", category: 'fashion', basePrice: 150, image: '' },
+
+  // Men's formal
+  { title: "Oxford Black Leather Lace-Up Shoes", category: 'fashion', basePrice: 89, image: '' },
+  { title: "Loake 200B Brogue Shoes", category: 'fashion', basePrice: 245, image: '' },
+  { title: "Charles Tyrwhitt Oxford Shoe Black", category: 'fashion', basePrice: 169, image: '' },
+  { title: "Brogue Brown Leather Shoes", category: 'fashion', basePrice: 89, image: '' },
+  { title: "Derby Shoes Tan Leather", category: 'fashion', basePrice: 79, image: '' },
+  { title: "Penny Loafer Slip-On Black", category: 'fashion', basePrice: 99, image: '' },
+  { title: "Suede Tassel Loafer Navy", category: 'fashion', basePrice: 109, image: '' },
+  { title: "Chelsea Boot Black Suede", category: 'fashion', basePrice: 99, image: '' },
+
+  // Men's sandals / slippers
+  { title: "Birkenstock Arizona Black Birko-Flor", category: 'fashion', basePrice: 70, image: '' },
+  { title: "Birkenstock Boston Soft Footbed Mocha", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Crocs Classic Clog Men's Black", category: 'fashion', basePrice: 45, image: '' },
+  { title: "Crocs Bayaband Slide Sandals", category: 'fashion', basePrice: 30, image: '' },
+  { title: "Havaianas Top Mix Flip Flops", category: 'fashion', basePrice: 22, image: '' },
+  { title: "Sketchers Go Walk 6 Slip-On", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Men's Moccasin Slippers Suede", category: 'fashion', basePrice: 35, image: '' },
+  { title: "Mule Slippers Memory Foam", category: 'fashion', basePrice: 28, image: '' },
+
+  // ─── Women's shoes (comprehensive) ─────────────────────────────────────────
+  // Trainers
+  { title: "Nike Air Force 1 Shadow Women's", category: 'fashion', basePrice: 115, image: '' },
+  { title: "Nike Cortez Women's White Red", category: 'fashion', basePrice: 95, image: '' },
+  { title: "Nike P-6000 Women's Photon Dust", category: 'fashion', basePrice: 90, image: '' },
+  { title: "Nike Dunk Low Women's Pastel", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Adidas Samba OG Women's Cloud White", category: 'fashion', basePrice: 90, image: '' },
+  { title: "Adidas Gazelle Bold Women's Platform", category: 'fashion', basePrice: 100, image: '' },
+  { title: "Adidas Stan Smith Women's Recon", category: 'fashion', basePrice: 90, image: '' },
+  { title: "New Balance 530 Women's Pink", category: 'fashion', basePrice: 100, image: '' },
+  { title: "New Balance 327 Women's Moonbeam", category: 'fashion', basePrice: 100, image: '' },
+  { title: "Veja V-10 Women's Extra White", category: 'fashion', basePrice: 140, image: '' },
+  { title: "Puma Speedcat Women's Black", category: 'fashion', basePrice: 110, image: '' },
+  { title: "Vans Old Skool Women's Black White", category: 'fashion', basePrice: 70, image: '' },
+  { title: "Converse Run Star Hike Platform Women's", category: 'fashion', basePrice: 115, image: '' },
+  { title: "On Cloud 5 Women's All White", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Hoka Clifton 9 Women's Running", category: 'fashion', basePrice: 145, image: '' },
+
+  // Heels & formal
+  { title: "Stiletto Heels Pointed Toe Black", category: 'fashion', basePrice: 32, image: '' },
+  { title: "Kitten Heel Slingback Pumps Nude", category: 'fashion', basePrice: 28, image: '' },
+  { title: "Block Heel Court Shoes Black Patent", category: 'fashion', basePrice: 38, image: '' },
+  { title: "Patent Leather Court Shoes Red", category: 'fashion', basePrice: 45, image: '' },
+  { title: "Wedge Espadrilles Tan Suede", category: 'fashion', basePrice: 35, image: '' },
+  { title: "Mary Jane Block Heel Black", category: 'fashion', basePrice: 32, image: '' },
+  { title: "Ballerina Pumps Beige Leather", category: 'fashion', basePrice: 28, image: '' },
+  { title: "Bridal Heels Ivory Satin", category: 'fashion', basePrice: 85, image: '' },
+  { title: "Platform Heels Strappy White", category: 'fashion', basePrice: 42, image: '' },
+
+  // Women's boots
+  { title: "UGG Classic Mini II Chestnut Boot", category: 'fashion', basePrice: 145, image: '' },
+  { title: "UGG Classic Ultra Mini Platform Black", category: 'fashion', basePrice: 165, image: '' },
+  { title: "UGG Tasman Slipper Chestnut", category: 'fashion', basePrice: 110, image: '' },
+  { title: "UGG Tazz Platform Slipper", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Chelsea Boot Black Suede Women's", category: 'fashion', basePrice: 45, image: '' },
+  { title: "Ankle Boot Block Heel Tan", category: 'fashion', basePrice: 42, image: '' },
+  { title: "Knee High Riding Boots Black", category: 'fashion', basePrice: 65, image: '' },
+  { title: "Over-The-Knee Boots Stretch Black", category: 'fashion', basePrice: 55, image: '' },
+  { title: "Combat Boot Chunky Lace-Up Black", category: 'fashion', basePrice: 49, image: '' },
+  { title: "Cowboy Boot Western Embroidered", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Dr Martens 1460 Women's Pascal Black", category: 'fashion', basePrice: 165, image: '' },
+  { title: "Hunter Original Tall Wellington Boot", category: 'fashion', basePrice: 145, image: '' },
+  { title: "Hunter Original Short Wellies Navy", category: 'fashion', basePrice: 120, image: '' },
+  { title: "Joules Welly Print Mid Calf", category: 'fashion', basePrice: 55, image: '' },
+
+  // Women's sandals
+  { title: "Birkenstock Arizona Women's White", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Birkenstock Boston Clog Women's Beige", category: 'fashion', basePrice: 130, image: '' },
+  { title: "Birkenstock Madrid Slim Sandals", category: 'fashion', basePrice: 65, image: '' },
+  { title: "Crocs Classic Clog Women's Lavender", category: 'fashion', basePrice: 45, image: '' },
+  { title: "Havaianas Slim Flip Flops Women's", category: 'fashion', basePrice: 22, image: '' },
+  { title: "Gladiator Sandals Lace-Up Tan", category: 'fashion', basePrice: 35, image: '' },
+  { title: "Slide Sandals Faux Leather Black", category: 'fashion', basePrice: 22, image: '' },
+  { title: "Espadrille Wedge Sandals White", category: 'fashion', basePrice: 38, image: '' },
+  { title: "Toe Post Sandals Gold", category: 'fashion', basePrice: 25, image: '' },
+
+  // Women's slippers & loungewear
+  { title: "UGG Scuffette II Slipper Chestnut", category: 'fashion', basePrice: 80, image: '' },
+  { title: "Faux Fur Mule Slippers Cream", category: 'fashion', basePrice: 22, image: '' },
+  { title: "Knitted Slipper Boots Grey", category: 'fashion', basePrice: 18, image: '' },
+
+  // ─── Kids' / Children's shoes ──────────────────────────────────────────────
+  // Toddler & first shoes
+  { title: "Clarks First Walker Boys Pre-Walker", category: 'fashion', basePrice: 32, image: '' },
+  { title: "Clarks First Walker Girls Soft Sole", category: 'fashion', basePrice: 32, image: '' },
+  { title: "Start-Rite First Shoes Tickle Pink", category: 'fashion', basePrice: 38, image: '' },
+
+  // School shoes
+  { title: "Clarks Scala Loop Black School Shoes Girls", category: 'fashion', basePrice: 42, image: '' },
+  { title: "Clarks Scala Pace Black School Shoes Boys", category: 'fashion', basePrice: 45, image: '' },
+  { title: "Clarks Jazzy Walk Black Patent School Shoes", category: 'fashion', basePrice: 42, image: '' },
+  { title: "Clarks Daisy Beth Mary Jane Black", category: 'fashion', basePrice: 40, image: '' },
+  { title: "Kickers Kick Hi Boot Junior Black", category: 'fashion', basePrice: 70, image: '' },
+  { title: "Kickers Kick Lo Junior Brown Leather", category: 'fashion', basePrice: 60, image: '' },
+  { title: "Start-Rite Boys School Shoes Lace-Up", category: 'fashion', basePrice: 50, image: '' },
+
+  // Kids trainers
+  { title: "Nike Air Force 1 Kids White GS", category: 'fashion', basePrice: 75, image: '' },
+  { title: "Nike Air Max 90 Kids Black PS", category: 'fashion', basePrice: 65, image: '' },
+  { title: "Nike Cortez Kids White Varsity Red", category: 'fashion', basePrice: 55, image: '' },
+  { title: "Adidas Samba OG Kids Black White", category: 'fashion', basePrice: 60, image: '' },
+  { title: "Adidas Stan Smith Kids Green", category: 'fashion', basePrice: 55, image: '' },
+  { title: "Adidas Gazelle Kids Pink", category: 'fashion', basePrice: 50, image: '' },
+  { title: "New Balance 574 Kids Grey", category: 'fashion', basePrice: 55, image: '' },
+  { title: "Converse Chuck Taylor Kids High Top", category: 'fashion', basePrice: 50, image: '' },
+  { title: "Vans Old Skool Kids Black", category: 'fashion', basePrice: 50, image: '' },
+  { title: "Skechers Light-Up Trainers Kids", category: 'fashion', basePrice: 38, image: '' },
+  { title: "Crocs Classic Clog Kids Lime", category: 'fashion', basePrice: 30, image: '' },
+  { title: "Crocs Classic Lined Kids Slipper", category: 'fashion', basePrice: 40, image: '' },
+
+  // Kids boots & wellies
+  { title: "Hunter Original Kids Wellington Boots", category: 'fashion', basePrice: 65, image: '' },
+  { title: "Joules Welly Print Kids Multicolour", category: 'fashion', basePrice: 35, image: '' },
+  { title: "Trespass Kids Wellies Frog Print", category: 'fashion', basePrice: 20, image: '' },
+  { title: "Dr Martens 1460 Junior Black Boots", category: 'fashion', basePrice: 95, image: '' },
+  { title: "Timberland Kids 6-Inch Premium Boot", category: 'fashion', basePrice: 120, image: '' },
+  { title: "UGG Kids Classic II Mini Chestnut", category: 'fashion', basePrice: 110, image: '' },
+
+  // Kids slippers
+  { title: "Disney Character Slippers Kids", category: 'fashion', basePrice: 12, image: '' },
+  { title: "Animal Novelty Slippers Kids Plush", category: 'fashion', basePrice: 15, image: '' },
+
+  // ─── Football boots (all ages) ─────────────────────────────────────────────
+  { title: "Nike Mercurial Vapor 15 Elite FG", category: 'sports', basePrice: 245, image: '' },
+  { title: "Nike Phantom GX Elite FG", category: 'sports', basePrice: 225, image: '' },
+  { title: "Nike Tiempo Legend 10 Elite FG", category: 'sports', basePrice: 215, image: '' },
+  { title: "Adidas Predator 24 Elite FG", category: 'sports', basePrice: 230, image: '' },
+  { title: "Adidas X Crazyfast Elite FG", category: 'sports', basePrice: 240, image: '' },
+  { title: "Adidas Copa Pure 2 Elite FG", category: 'sports', basePrice: 230, image: '' },
+  { title: "Puma Future 7 Ultimate FG", category: 'sports', basePrice: 215, image: '' },
+  { title: "Puma King Match FG/AG", category: 'sports', basePrice: 90, image: '' },
+  { title: "Nike Mercurial Junior Football Boots", category: 'sports', basePrice: 75, image: '' },
+  { title: "Adidas Predator Junior Football Boots", category: 'sports', basePrice: 70, image: '' },
 
   // ─── Bags & accessories ────────────────────────────────────────────────────
   { title: "Women's Crossbody Bag", category: 'fashion', basePrice: 18, image: 'https://loremflickr.com/400/400/crossbody,bag,women' },
@@ -1566,6 +1770,19 @@ const RETAILER_CATEGORIES: Record<Retailer, Category[]> = {
   footasylum:        ['fashion','sports'],
   size:              ['fashion','sports'],
   flannels:          ['fashion','beauty'],
+  // Specialist shoe retailers
+  footlocker:  ['fashion','sports'],
+  endclothing: ['fashion'],
+  offspring:   ['fashion'],
+  shoezone:    ['fashion'],
+  kickers:     ['fashion'],
+  hunter:      ['fashion','outdoor'],
+  timberland:  ['fashion','outdoor'],
+  drmartens:   ['fashion'],
+  ugg:         ['fashion'],
+  birkenstock: ['fashion'],
+  crocs:       ['fashion'],
+  hotter:      ['fashion'],
 };
 
 // Stable hash so the same retailer+title always produces the same price/rating
@@ -1664,7 +1881,17 @@ const MUST_INCLUDE: Retailer[] = ['temu','shein','aliexpress'];
 // Major UK clothing stores — surfaced on all fashion items.
 const FASHION_PLATFORMS: Retailer[] = ['asos','zara','hm','next','primark','newlook','prettylittlething','boohoo','riverisland','uniqlo'];
 // Shoe specialists for fashion footwear.
-const SHOE_PLATFORMS: Retailer[] = ['office','schuh','jdsports','clarks','sportsdirect'];
+const SHOE_PLATFORMS: Retailer[] = ['office','schuh','jdsports','clarks','sportsdirect','footlocker','footasylum','size','offspring','shoezone'];
+// Brand-specific shoe stores — included only when title matches the brand.
+const BRAND_SHOE_STORES: Record<string, Retailer> = {
+  'dr martens|drmartens|doc martens|1460|1461': 'drmartens',
+  'ugg ': 'ugg',
+  'timberland': 'timberland',
+  'hunter ': 'hunter',
+  'birkenstock': 'birkenstock',
+  'crocs': 'crocs',
+  'kickers': 'kickers',
+};
 // Discount stores boost on home/grocery.
 const DISCOUNT_PLATFORMS: Retailer[] = ['bm','homebargains','poundland','wilko','tkmaxx','homesense'];
 // Watch specialist retailers — boost on any watch product.
@@ -2044,6 +2271,64 @@ const PHOTO_RULES: PhotoRule[] = [
   { re: /(maxi\s*dress|midi\s*dress|bodycon|cottagecore)/i, url: u('photo-1572804013309-59a88b7e92f1') },
   { re: /jeans|denim/i,               url: u('photo-1542272604-787c3835535d') },
   { re: /(leather\s*jacket|denim\s*jacket|puffer\s*jacket|nuptse)/i, url: u('photo-1551028719-00167b16eac5') },
+  // Specific iconic sneakers
+  { re: /air\s*jordan\s*1/i,          url: u('photo-1551107696-a4b0c5a0d9a2') },
+  { re: /air\s*jordan\s*4|air\s*jordan\s*11/i, url: u('photo-1551107696-a4b0c5a0d9a2') },
+  { re: /nike\s*dunk/i,                url: u('photo-1542291026-7eec264c27ff') },
+  { re: /nike\s*air\s*max/i,           url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /nike\s*cortez/i,              url: u('photo-1542291026-7eec264c27ff') },
+  { re: /nike\s*pegasus|nike\s*vaporfly|nike\s*blazer/i, url: u('photo-1542291026-7eec264c27ff') },
+  { re: /adidas\s*ultraboost/i,        url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /adidas\s*nmd/i,               url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /adidas\s*yeezy|yeezy\s*slide/i, url: u('photo-1551107696-a4b0c5a0d9a2') },
+  { re: /adidas\s*forum|adidas\s*campus/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /adidas\s*spezial|spezial/i,   url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /new\s*balance\s*(9060|990|2002|327|574|530)/i, url: u('photo-1551107696-a4b0c5a0d9a2') },
+  { re: /puma\s*(suede|rs-x|speedcat)/i, url: u('photo-1542291026-7eec264c27ff') },
+  { re: /reebok\s*(classic|club\s*c)/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /asics\s*gel|gel-lyte|gel-kayano/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /veja/i,                        url: u('photo-1542291026-7eec264c27ff') },
+  { re: /(on\s*cloud|cloudmonster)/i,  url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /(hoka|clifton|bondi|speedgoat)/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /(brooks\s*ghost|saucony|mizuno|salomon\s*xt)/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /vans\s*(sk8|authentic|era|knu\s*skool|old\s*skool)/i, url: u('photo-1525966222134-fcfa99b8ae77') },
+  { re: /converse\s*(chuck|run\s*star|pro\s*leather)/i, url: u('photo-1605408499391-6368c628ef42') },
+  // Specific boot brands
+  { re: /dr\.\s*martens.*chelsea|2976/i, url: u('photo-1520639888713-7851133b1ed0') },
+  { re: /dr\.\s*martens|1460|1461|jadon/i, url: u('photo-1542838132-92c53300491e') },
+  { re: /timberland.*6-inch|timberland.*premium/i, url: u('photo-1520975954732-35dd22299614') },
+  { re: /timberland|chukka/i,          url: u('photo-1520975954732-35dd22299614') },
+  { re: /clarks.*desert\s*boot|clarks.*wallabee/i, url: u('photo-1520639888713-7851133b1ed0') },
+  { re: /(red\s*wing|grenson|iron\s*ranger)/i, url: u('photo-1520975954732-35dd22299614') },
+  { re: /(merrell|salomon|hiking\s*boot|berghaus)/i, url: u('photo-1520975661595-6453be3f7070') },
+  // Formal shoes
+  { re: /(oxford|loake|charles\s*tyrwhitt|brogue|derby)/i, url: u('photo-1614252369475-531eba835eb1') },
+  { re: /(loafer|penny|tassel)/i,      url: u('photo-1582588678413-dbf45f4823e9') },
+  { re: /chelsea\s*boot/i,             url: u('photo-1520639888713-7851133b1ed0') },
+  // Sandals & flip flops
+  { re: /birkenstock.*arizona/i,       url: u('photo-1531310197839-ccf54634509e') },
+  { re: /birkenstock.*boston/i,        url: u('photo-1531310197839-ccf54634509e') },
+  { re: /birkenstock|madrid/i,         url: u('photo-1531310197839-ccf54634509e') },
+  { re: /crocs/i,                      url: u('photo-1620952902724-8d3c3b9d6b5e') },
+  { re: /havaianas|flip\s*flop|toe\s*post/i, url: u('photo-1564677816488-2b9c6e3a1aef') },
+  { re: /(gladiator|slide|espadrille|toe\s*post)/i, url: u('photo-1564677816488-2b9c6e3a1aef') },
+  { re: /(slipper|moccasin|mule|scuffette|tazz|tasman)/i, url: u('photo-1601445638532-3c6f6c3aa1d6') },
+  // Heels
+  { re: /(stiletto|kitten\s*heel|court\s*shoe|pumps|mary\s*jane|ballerina)/i, url: u('photo-1543163521-1bf539c55dd2') },
+  { re: /(wedge|platform.*heel|bridal\s*heel)/i, url: u('photo-1543163521-1bf539c55dd2') },
+  // Boots (women's & general)
+  { re: /ugg.*classic|ugg.*mini|ugg.*ultra/i, url: u('photo-1605815519484-c8f2ab1d8c2c') },
+  { re: /ugg/i,                        url: u('photo-1605815519484-c8f2ab1d8c2c') },
+  { re: /(ankle\s*boot|knee\s*high\s*boot|over-the-knee\s*boot|riding\s*boot|combat\s*boot|cowboy\s*boot)/i, url: u('photo-1543163521-1bf539c55dd2') },
+  { re: /(hunter\s*original|hunter\s*boot|wellington|wellies|welly)/i, url: u('photo-1620966310003-be4cc4a18cef') },
+  // Football boots
+  { re: /(mercurial|phantom|tiempo|predator|crazyfast|copa\s*pure|puma\s*future|puma\s*king|football\s*boot)/i, url: u('photo-1518091043644-c1d4457512c6') },
+  // School & kids shoes
+  { re: /(first\s*walker|first\s*shoes|pre-walker|start-rite|scala|jazzy|daisy\s*beth|school\s*shoes)/i, url: u('photo-1551107696-a4b0c5a0d9a2') },
+  { re: /(kickers|kick\s*hi|kick\s*lo)/i, url: u('photo-1542838132-92c53300491e') },
+  { re: /(kids|junior|gs\s|pre-school|toddler).*shoe|.*kids.*trainers|.*junior.*trainers/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
+  { re: /(disney.*slipper|animal.*slipper|novelty.*slipper)/i, url: u('photo-1601445638532-3c6f6c3aa1d6') },
+  // Generic catchalls (keep last)
   { re: /(air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|trainer|sneaker)/i, url: u('photo-1542291026-7eec264c27ff') },
   { re: /(dr\.\s*martens|ugg|boot)/i, url: u('photo-1542291026-7eec264c27ff') },
   { re: /(sunglasses|wayfarer|aviator)/i, url: u('photo-1572635196237-14b3f281503f') },
@@ -2576,12 +2861,20 @@ function buildVariants(seed: Seed): Product[] {
   }
   // Fashion → always show major UK clothing retailers; shoes get shoe specialists.
   if (seed.category === 'fashion') {
-    const isShoe = /trainer|sneaker|boot|heel|sandal|loafer|shoe|air max|air force|stan smith|gazelle|samba|chuck taylor|vans|new balance|dr\.\s*martens|ugg/i.test(seed.title);
+    const isShoe = /trainer|sneaker|boot|heel|sandal|loafer|shoe|air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|new\s*balance|dr\.\s*martens|ugg|birkenstock|crocs|moccasin|wellington|wellies|football\s*boot|hiking\s*boot|kicker/i.test(seed.title);
     const list = isShoe
       ? [...SHOE_PLATFORMS, ...FASHION_PLATFORMS, 'tkmaxx' as const]
       : [...FASHION_PLATFORMS, 'tkmaxx' as const, 'flannels' as const];
     for (const r of list) {
       if (eligibleRetailers.includes(r) && !chosen.includes(r)) chosen.push(r);
+    }
+    // Brand-specific shoe stores
+    if (isShoe) {
+      for (const [pattern, retailer] of Object.entries(BRAND_SHOE_STORES)) {
+        if (new RegExp(pattern, 'i').test(seed.title) && !chosen.includes(retailer)) {
+          chosen.push(retailer);
+        }
+      }
     }
   }
   // Home / grocery → discount stores join the lineup.
@@ -2755,6 +3048,19 @@ function buildAffiliateUrl(retailer: Retailer, title: string): string {
     case 'footasylum':       return `https://www.footasylum.com/search/?q=${q}`;
     case 'size':             return `https://www.size.co.uk/search/?q=${q}`;
     case 'flannels':         return `https://www.flannels.com/search?searchText=${q}`;
+    // Specialist shoe retailers
+    case 'footlocker':       return `https://www.footlocker.co.uk/en/search/?q=${q}`;
+    case 'endclothing':      return `https://www.endclothing.com/gb/search?q=${q}`;
+    case 'offspring':        return `https://www.offspring.co.uk/search?q=${q}`;
+    case 'shoezone':         return `https://www.shoezone.com/search?q=${q}`;
+    case 'kickers':          return `https://www.kickers.co.uk/search?q=${q}`;
+    case 'hunter':           return `https://www.hunterboots.com/search?q=${q}`;
+    case 'timberland':       return `https://www.timberland.co.uk/shop/en/tbl-uk/search?q=${q}`;
+    case 'drmartens':        return `https://www.drmartens.com/uk/en/search?q=${q}`;
+    case 'ugg':              return `https://www.ugg.com/uk/en/search?q=${q}`;
+    case 'birkenstock':      return `https://www.birkenstock.com/uk/search?q=${q}`;
+    case 'crocs':            return `https://www.crocs.co.uk/search?q=${q}`;
+    case 'hotter':           return `https://www.hotter.com/search?q=${q}`;
   }
 }
 
