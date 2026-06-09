@@ -2293,14 +2293,17 @@ const PHOTO_RULES: PhotoRule[] = [
   { re: /(brooks\s*ghost|saucony|mizuno|salomon\s*xt)/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
   { re: /vans\s*(sk8|authentic|era|knu\s*skool|old\s*skool)/i, url: u('photo-1525966222134-fcfa99b8ae77') },
   { re: /converse\s*(chuck|run\s*star|pro\s*leather)/i, url: u('photo-1605408499391-6368c628ef42') },
-  // Specific boot brands
-  { re: /dr\.\s*martens.*chelsea|2976/i, url: u('photo-1520639888713-7851133b1ed0') },
-  { re: /dr\.\s*martens|1460|1461|jadon/i, url: u('photo-1542838132-92c53300491e') },
-  { re: /timberland.*6-inch|timberland.*premium/i, url: u('photo-1520975954732-35dd22299614') },
-  { re: /timberland|chukka/i,          url: u('photo-1520975954732-35dd22299614') },
+  // Specific boot brands — using verified shoe-only Unsplash IDs.
+  // Note: removed photo-1542838132-92c53300491e (supermarket aisle!)
+  // and photo-1520975954732-35dd22299614 (leather jacket guy).
+  // Made the dot in "dr." optional so "Dr Martens" matches too.
+  { re: /dr\.?\s*martens.*chelsea|2976/i, url: u('photo-1638247025967-b4e38f787b76') },
+  { re: /dr\.?\s*martens|1460|1461|jadon/i, url: u('photo-1520639888713-7851133b1ed0') },
+  { re: /timberland.*6-inch|timberland.*premium/i, url: u('photo-1520639888713-7851133b1ed0') },
+  { re: /timberland|chukka/i,          url: u('photo-1638247025967-b4e38f787b76') },
   { re: /clarks.*desert\s*boot|clarks.*wallabee/i, url: u('photo-1520639888713-7851133b1ed0') },
-  { re: /(red\s*wing|grenson|iron\s*ranger)/i, url: u('photo-1520975954732-35dd22299614') },
-  { re: /(merrell|salomon|hiking\s*boot|berghaus)/i, url: u('photo-1520975661595-6453be3f7070') },
+  { re: /(red\s*wing|grenson|iron\s*ranger)/i, url: u('photo-1520639888713-7851133b1ed0') },
+  { re: /(merrell|salomon|hiking\s*boot|berghaus)/i, url: u('photo-1638247025967-b4e38f787b76') },
   // Formal shoes
   { re: /(oxford|loake|charles\s*tyrwhitt|brogue|derby)/i, url: u('photo-1614252369475-531eba835eb1') },
   { re: /(loafer|penny|tassel)/i,      url: u('photo-1582588678413-dbf45f4823e9') },
@@ -2325,12 +2328,12 @@ const PHOTO_RULES: PhotoRule[] = [
   { re: /(mercurial|phantom|tiempo|predator|crazyfast|copa\s*pure|puma\s*future|puma\s*king|football\s*boot)/i, url: u('photo-1518091043644-c1d4457512c6') },
   // School & kids shoes
   { re: /(first\s*walker|first\s*shoes|pre-walker|start-rite|scala|jazzy|daisy\s*beth|school\s*shoes)/i, url: u('photo-1551107696-a4b0c5a0d9a2') },
-  { re: /(kickers|kick\s*hi|kick\s*lo)/i, url: u('photo-1542838132-92c53300491e') },
+  { re: /(kickers|kick\s*hi|kick\s*lo)/i, url: u('photo-1520639888713-7851133b1ed0') },
   { re: /(kids|junior|gs\s|pre-school|toddler).*shoe|.*kids.*trainers|.*junior.*trainers/i, url: u('photo-1606107557195-0e29a4b5b4aa') },
   { re: /(disney.*slipper|animal.*slipper|novelty.*slipper)/i, url: u('photo-1601445638532-3c6f6c3aa1d6') },
   // Generic catchalls (keep last)
   { re: /(air\s*max|air\s*force|stan\s*smith|gazelle|samba|chuck\s*taylor|vans|trainer|sneaker)/i, url: u('photo-1542291026-7eec264c27ff') },
-  { re: /(dr\.\s*martens|ugg|boot)/i, url: u('photo-1542291026-7eec264c27ff') },
+  { re: /(dr\.?\s*martens|ugg|boot)/i, url: u('photo-1520639888713-7851133b1ed0') },
   { re: /(sunglasses|wayfarer|aviator)/i, url: u('photo-1572635196237-14b3f281503f') },
   { re: /(backpack|tote|crossbody|handbag)/i, url: u('photo-1553062407-98eeb64c6a62') },
 
